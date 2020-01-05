@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		708C90EE439F89C5A8FCBB14 /* Pods_Me2_Business.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15B6D99DD4F89919ACF0F75 /* Pods_Me2_Business.framework */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -22,9 +23,14 @@
 		DDB257CF23C1F6D900DF1EB4 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257CE23C1F6D900DF1EB4 /* UIColorExtensions.swift */; };
 		DDB257D123C20ACB00DF1EB4 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257D023C20ACB00DF1EB4 /* UIViewControllerExtensions.swift */; };
 		DDB257D323C20BE400DF1EB4 /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257D223C20BE400DF1EB4 /* UIAlertControllerExtensions.swift */; };
+		DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257D623C20F0600DF1EB4 /* MainTabsViewController.swift */; };
+		DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */; };
+		DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257DE23C2119200DF1EB4 /* Chat.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		205F855AAAC0BD28F00E207A /* Pods-Me2_Business.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me2_Business.debug.xcconfig"; path = "Target Support Files/Pods-Me2_Business/Pods-Me2_Business.debug.xcconfig"; sourceTree = "<group>"; };
+		4AF46796FF9E20BF636AFD6F /* Pods-Me2_Business.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me2_Business.release.xcconfig"; path = "Target Support Files/Pods-Me2_Business/Pods-Me2_Business.release.xcconfig"; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +48,10 @@
 		DDB257CE23C1F6D900DF1EB4 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		DDB257D023C20ACB00DF1EB4 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		DDB257D223C20BE400DF1EB4 /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
+		DDB257D623C20F0600DF1EB4 /* MainTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabsViewController.swift; sourceTree = "<group>"; };
+		DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabViewController.swift; sourceTree = "<group>"; };
+		DDB257DE23C2119200DF1EB4 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		E15B6D99DD4F89919ACF0F75 /* Pods_Me2_Business.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me2_Business.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +59,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708C90EE439F89C5A8FCBB14 /* Pods_Me2_Business.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CDB4CC1F9A4DE63EF8BFDED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15B6D99DD4F89919ACF0F75 /* Pods_Me2_Business.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FE0D5605A7220EF69194D30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				205F855AAAC0BD28F00E207A /* Pods-Me2_Business.debug.xcconfig */,
+				4AF46796FF9E20BF636AFD6F /* Pods-Me2_Business.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DDB2579423C1B4CF00DF1EB4 = {
 			isa = PBXGroup;
 			children = (
 				DDB2579F23C1B4CF00DF1EB4 /* Me2_Business */,
 				DDB2579E23C1B4CF00DF1EB4 /* Products */,
+				7FE0D5605A7220EF69194D30 /* Pods */,
+				0CDB4CC1F9A4DE63EF8BFDED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +127,7 @@
 		DDB257B323C1B60700DF1EB4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DDB257D623C20F0600DF1EB4 /* MainTabsViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -105,6 +137,7 @@
 			children = (
 				DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */,
 				DDB257B723C1B6B800DF1EB4 /* Login.storyboard */,
+				DDB257DE23C2119200DF1EB4 /* Chat.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -112,6 +145,7 @@
 		DDB257B523C1B69000DF1EB4 /* User stories */ = {
 			isa = PBXGroup;
 			children = (
+				DDB257D823C2114E00DF1EB4 /* Chat */,
 				DDB257B623C1B6A500DF1EB4 /* Login */,
 				DDB257B323C1B60700DF1EB4 /* Main */,
 			);
@@ -190,6 +224,38 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DDB257D823C2114E00DF1EB4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DDB257DB23C2116700DF1EB4 /* Models */,
+				DDB257DA23C2115B00DF1EB4 /* ViewModels */,
+				DDB257D923C2115300DF1EB4 /* Views */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DDB257D923C2115300DF1EB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDB257DA23C2115B00DF1EB4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DDB257DB23C2116700DF1EB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDB257AF23C1B4D100DF1EB4 /* Build configuration list for PBXNativeTarget "Me2_Business" */;
 			buildPhases = (
+				8AD42D248D1DC4EDDCA89945 /* [CP] Check Pods Manifest.lock */,
 				DDB2579923C1B4CF00DF1EB4 /* Sources */,
 				DDB2579A23C1B4CF00DF1EB4 /* Frameworks */,
 				DDB2579B23C1B4CF00DF1EB4 /* Resources */,
+				833C90D551CC9A42F57C559D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,11 +319,54 @@
 				DDB257B823C1B6B800DF1EB4 /* Login.storyboard in Resources */,
 				DDB257AB23C1B4D100DF1EB4 /* LaunchScreen.storyboard in Resources */,
 				DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */,
+				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		833C90D551CC9A42F57C559D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Me2_Business/Pods-Me2_Business-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Me2_Business/Pods-Me2_Business-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Me2_Business/Pods-Me2_Business-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AD42D248D1DC4EDDCA89945 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Me2_Business-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDB2579923C1B4CF00DF1EB4 /* Sources */ = {
@@ -271,6 +382,8 @@
 				DDB257CC23C1F53C00DF1EB4 /* LoginViewController.swift in Sources */,
 				DDB257D323C20BE400DF1EB4 /* UIAlertControllerExtensions.swift in Sources */,
 				DDB257C123C1B90500DF1EB4 /* Typealias.swift in Sources */,
+				DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */,
+				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DDB257BF23C1B8B000DF1EB4 /* Color.swift in Sources */,
 			);
@@ -416,6 +529,7 @@
 		};
 		DDB257B023C1B4D100DF1EB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 205F855AAAC0BD28F00E207A /* Pods-Me2_Business.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -435,6 +549,7 @@
 		};
 		DDB257B123C1B4D100DF1EB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AF46796FF9E20BF636AFD6F /* Pods-Me2_Business.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

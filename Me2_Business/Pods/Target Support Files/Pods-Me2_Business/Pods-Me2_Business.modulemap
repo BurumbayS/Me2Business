@@ -1,0 +1,6 @@
+framework module Pods_Me2_Business {
+  umbrella header "Pods-Me2_Business-umbrella.h"
+
+  export *
+  module * { export * }
+}
