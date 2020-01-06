@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChatTableViewCell: UITableViewCell {
 
@@ -51,7 +52,7 @@ class ChatTableViewCell: UITableViewCell {
             break
         }
         
-//        avatarImageView.kf.setImage(with: URL(string: roomInfo.avatarURL), placeholder: UIImage(named: "placeholder_avatar"), options: [])
+        avatarImageView.kf.setImage(with: URL(string: roomInfo.getSecondParticipant().avatar), placeholder: UIImage(named: "placeholder_avatar"), options: [])
         timeLabel.text = roomInfo.lastMessage.getTime()
     }
     
