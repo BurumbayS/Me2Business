@@ -178,6 +178,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="REZ-23-Kis" id="h5e-0A-vcL"/>
                         <outlet property="errorLabel" destination="H7j-1b-q8d" id="qe2-Eb-k2R"/>
+                        <outlet property="loginButton" destination="aj6-6J-PvW" id="hLy-cf-yhz"/>
                         <outlet property="passwordTextField" destination="zNy-n9-wmT" id="GgU-AC-ou2"/>
                     </connections>
                 </viewController>
