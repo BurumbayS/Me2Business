@@ -1,24 +1,37 @@
 PODS:
   - Alamofire (4.9.0)
   - Cartography (4.0.0)
+  - ImageSlideshow (1.8.0):
+    - ImageSlideshow/Core (= 1.8.0)
+  - ImageSlideshow/Core (1.8.0)
+  - ImageSlideshow/Kingfisher (1.8.0):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
+  - Kingfisher (5.7.1)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - Cartography
+  - ImageSlideshow (~> 1.8)
+  - ImageSlideshow/Kingfisher
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Cartography
+    - ImageSlideshow
+    - Kingfisher
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 619d12fc3dbfddfc6dd0d0c4f97f43c96ae9b227
+PODFILE CHECKSUM: 13ecc3b031e161fb53d3f0c88887bc7edeea804b
 
 COCOAPODS: 1.7.4

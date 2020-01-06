@@ -9,5 +9,7 @@ target 'Me2_Business' do
   pod 'Cartography'
   pod 'Alamofire'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'ImageSlideshow', '~> 1.8'
+  pod 'ImageSlideshow/Kingfisher'
 
 end
