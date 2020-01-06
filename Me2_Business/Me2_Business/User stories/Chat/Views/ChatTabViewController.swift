@@ -12,11 +12,20 @@ class ChatTabViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let viewModel = ChatTabViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavBar()
         configureTableView()
+        fetchData()
+    }
+    
+    private func fetchData() {
+        viewModel.getChatList { [weak self] (status, message) in
+            self?.tableView.reloadData()
+        }
     }
     
     private func configureNavBar() {
@@ -91,14 +100,14 @@ extension ChatTabViewController: UITableViewDelegate, UITableViewDataSource, UIS
 //            return viewModel.searchResults.count
 //        }
 //
-//        return viewModel.chatsList.count
-        return 5
+        return viewModel.chatsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ChatTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
 //        let room = (viewModel.searchActivated) ? viewModel.searchResults[indexPath.row] : viewModel.chatsList[indexPath.row]
-//        cell.configure(with: room)
+        let room = viewModel.chatsList[indexPath.row]
+        cell.configure(with: room)
         return cell
     }
     

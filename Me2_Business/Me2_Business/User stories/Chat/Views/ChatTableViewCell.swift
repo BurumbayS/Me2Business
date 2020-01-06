@@ -27,9 +27,9 @@ class ChatTableViewCell: UITableViewCell {
     
     func configure(with roomInfo: Room) {
         switch roomInfo.type {
-        case .SIMPLE:
+        case .SERVICE:
             
-            simpleChatNameLabel.text = roomInfo.name
+            simpleChatNameLabel.text = roomInfo.getSecondParticipant().username
             simpleChatLastMessage.text = getLastMessageString(from: roomInfo.lastMessage)
             
             simpleChatContextView.isHidden = false
@@ -56,30 +56,14 @@ class ChatTableViewCell: UITableViewCell {
     }
     
     private func getLastMessageString(from message: Message) -> String {
-//        if let place = message.place, place.id != 0 {
-//            return "Заведение"
-//        }
-        
-//        if let event = message.event, event.id != 0 {
-//            return "Событие"
-//        }
-        
         switch message.type {
         case .TEXT:
             
             return message.text
             
-        case .IMAGE:
+        case .BOOKING:
             
-            return "Фото"
-            
-        case .VIDEO:
-            
-            return "Видео"
-            
-        case .WAVE:
-            
-            return "Помахали"
+            return "Заявка на бронирование столика"
             
         default:
             return ""

@@ -17,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //Set root view controller
-        window?.rootViewController = Storyboard.loginViewController()
+        if let _ = UserDefaults().object(forKey: UserDefaultKeys.token.rawValue) {
+            window?.rootViewController = Storyboard.mainTabsViewController()
+        } else {
+            window?.rootViewController = Storyboard.loginViewController()
+        }
         
         return true
     }
