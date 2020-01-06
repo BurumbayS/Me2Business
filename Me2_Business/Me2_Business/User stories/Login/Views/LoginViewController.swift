@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+        window.rootViewController = Storyboard.mainTabsViewController()
     }
     
     @IBAction func sendApplicationPressed(_ sender: Any) {

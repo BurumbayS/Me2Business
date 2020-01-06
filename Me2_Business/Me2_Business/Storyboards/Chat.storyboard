@@ -19,21 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rOV-Gl-6eC">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Поиск" translatesAutoresizingMaskIntoConstraints="NO" id="xWT-X7-G23">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rOV-Gl-6eC" firstAttribute="top" secondItem="tou-Az-Ans" secondAttribute="top" id="5pK-6F-L3y"/>
                             <constraint firstItem="tou-Az-Ans" firstAttribute="trailing" secondItem="rOV-Gl-6eC" secondAttribute="trailing" id="65L-tg-RkG"/>
-                            <constraint firstItem="xWT-X7-G23" firstAttribute="leading" secondItem="tou-Az-Ans" secondAttribute="leading" id="Mcy-HR-oHd"/>
-                            <constraint firstItem="xWT-X7-G23" firstAttribute="top" secondItem="tou-Az-Ans" secondAttribute="top" id="b21-r2-Qyj"/>
-                            <constraint firstItem="rOV-Gl-6eC" firstAttribute="top" secondItem="xWT-X7-G23" secondAttribute="bottom" id="jzm-ma-qyu"/>
-                            <constraint firstItem="xWT-X7-G23" firstAttribute="trailing" secondItem="tou-Az-Ans" secondAttribute="trailing" id="srR-fi-8rj"/>
                             <constraint firstItem="rOV-Gl-6eC" firstAttribute="leading" secondItem="tou-Az-Ans" secondAttribute="leading" id="uqg-JF-UaU"/>
                             <constraint firstItem="tou-Az-Ans" firstAttribute="bottom" secondItem="rOV-Gl-6eC" secondAttribute="bottom" id="yTj-NI-M8V"/>
                         </constraints>
@@ -41,7 +34,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="tdr-DI-DR6"/>
                     <connections>
-                        <outlet property="searchBar" destination="xWT-X7-G23" id="9Y0-vT-tpj"/>
                         <outlet property="tableView" destination="rOV-Gl-6eC" id="xfP-cC-0XS"/>
                     </connections>
                 </viewController>

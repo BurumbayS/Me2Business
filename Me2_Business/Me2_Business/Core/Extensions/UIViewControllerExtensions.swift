@@ -8,6 +8,8 @@
 
 import UIKit
 
+let window = UIApplication.shared.keyWindow!
+
 enum ActionSheetTextAlignment: Int {
     case left = 0
     case center = 1

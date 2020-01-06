@@ -24,6 +24,11 @@ extension Storyboard {
         return loginPage.storyboard.instantiateViewController(withIdentifier: "LoginViewController")
     }
     
+    //Main tab page
+    static var mainTabsViewController = {
+        return main.storyboard.instantiateViewController(withIdentifier: "MainTabsViewController")
+    }
+    
     //Chat tab pages
     static var chatTabViewController = {
         return chat.storyboard.instantiateViewController(withIdentifier: "ChatTabViewController")
