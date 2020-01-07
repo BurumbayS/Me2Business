@@ -42,6 +42,9 @@
 		DD00918C23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */; };
 		DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918D23C49AB100C7B370 /* UINavigationItem.swift */; };
 		DD00919023C49E9700C7B370 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918F23C49E9700C7B370 /* UINavigationBar.swift */; };
+		DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */; };
+		DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */; };
+		DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919923C4C10A00C7B370 /* Booking.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -99,6 +102,9 @@
 		DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDateHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		DD00918D23C49AB100C7B370 /* UINavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
 		DD00918F23C49E9700C7B370 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
+		DD00919923C4C10A00C7B370 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,6 +182,8 @@
 				DD00917C23C4890500C7B370 /* ChatViewController.swift */,
 				DD00918123C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift */,
 				DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */,
+				DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */,
+				DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 				DD00915023C32A4400C7B370 /* MediaFile.swift */,
 				DD00915623C32D1100C7B370 /* ChatParticipant.swift */,
 				DD00918723C4904B00C7B370 /* ChatAdapter.swift */,
+				DD00919923C4C10A00C7B370 /* Booking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -448,6 +457,7 @@
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
 				DD00917823C370A100C7B370 /* Roboto-Regular.ttf in Resources */,
+				DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */,
 				DD00917323C370A100C7B370 /* Roboto-BoldItalic.ttf in Resources */,
 				DD00917923C370A100C7B370 /* Roboto-RegularItalic.ttf in Resources */,
 				DD00917123C370A100C7B370 /* Roboto-BlackItalic.ttf in Resources */,
@@ -504,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */,
+				DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */,
 				DD00918823C4904B00C7B370 /* ChatAdapter.swift in Sources */,
 				DD00915923C331EE00C7B370 /* UITableViewExtensions.swift in Sources */,
 				DDB257CF23C1F6D900DF1EB4 /* UIColorExtensions.swift in Sources */,
@@ -523,6 +534,7 @@
 				DD00919023C49E9700C7B370 /* UINavigationBar.swift in Sources */,
 				DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */,
 				DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */,
+				DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */,
 				DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */,
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,

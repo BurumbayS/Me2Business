@@ -114,12 +114,7 @@ class ChatViewController: UIViewController {
 //            let cellID = "\(MediaFile.mediaFileCellID)\(i)"
 //            collectionView.register(MediaMessageCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
 //        }
-//
-//        collectionView.register(LoadingMessagesCollectionViewCell.self)
-//        collectionView.register(LiveChatMessageCollectionViewCell.self)
-//        collectionView.registerNib(SharedPlaceCollectionViewCell.self)
-//        collectionView.registerNib(SharedEventCollectionViewCell.self)
-//        collectionView.registerNib(WaveCollectionViewCell.self)
+        collectionView.registerNib(BookingCollectionViewCell.self)
         collectionView.registerHeader(SectionDateHeaderCollectionReusableView.self)
     }
     
@@ -225,11 +220,12 @@ class ChatViewController: UIViewController {
     }
 }
 
-extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = viewModel.heightForCell(at: indexPath)
-        
-        return CGSize(width: self.view.frame.width, height: height)
+//        let height = viewModel.heightForCell(at: indexPath)
+//
+//        return CGSize(width: self.view.frame.width, height: height)
+        return CGSize(width: self.view.frame.width, height: 290)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -237,17 +233,19 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.sections.count
+//        return viewModel.sections.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.sections[section].messages.count
+//        return viewModel.sections[section].messages.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader: SectionDateHeaderCollectionReusableView = collectionView.dequeueReusableView(for: indexPath, and: UICollectionView.elementKindSectionHeader)
-            sectionHeader.configure(with: viewModel.sections[indexPath.section].date)
+//            sectionHeader.configure(with: viewModel.sections[indexPath.section].date)
             return sectionHeader
         } else {
             return UICollectionReusableView()
@@ -255,16 +253,21 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let message = viewModel.sections[indexPath.section].messages[indexPath.row]
+//        let message = viewModel.sections[indexPath.section].messages[indexPath.row]
+//
+//        switch message.type {
+//        case .TEXT:
+//
+//            let cellID = "\(Message.messageCellID)\(indexPath.row % 20)"
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ChatMessageCollectionViewCell
+//
+//            cell.configure(message: message)
+//
+//            return cell
+//
+//        case .BOOKING:
         
-        switch message.type {
-        case .TEXT:
-            
-            let cellID = "\(Message.messageCellID)\(indexPath.row % 20)"
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ChatMessageCollectionViewCell
-            
-            cell.configure(message: message)
-            
+            let cell: BookingCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
             return cell
             
 //        case .IMAGE, .VIDEO:
@@ -274,9 +277,9 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //            cell.configure(message: message, vc: self)
 //            return cell
             
-        default:
-            return UICollectionViewCell()
-        }
+//        default:
+//            return UICollectionViewCell()
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

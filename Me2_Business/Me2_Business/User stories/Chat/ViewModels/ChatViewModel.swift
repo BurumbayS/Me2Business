@@ -172,6 +172,10 @@ class ChatViewModel {
             
             return 250
             
+        case .BOOKING:
+            
+            return message.getBookingMessageHeight()
+            
         default:
             return 0
         }
