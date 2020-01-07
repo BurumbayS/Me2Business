@@ -14,15 +14,35 @@ class ChatTabViewController: UIViewController {
     
     let viewModel = ChatTabViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadChatsList()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        showNewChatButton(true)
+//
+//        if viewModel.roomUUIDToOpenFirst.value != "" { openChatOnPush() }
+        
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+//        showNewChatButton(false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavBar()
         configureTableView()
-        fetchData()
+        loadChatsList()
     }
     
-    private func fetchData() {
+    private func loadChatsList() {
         viewModel.getChatList { [weak self] (status, message) in
             self?.tableView.reloadData()
         }
@@ -61,6 +81,20 @@ class ChatTabViewController: UIViewController {
         
         tableView.registerNib(ChatTableViewCell.self)
     }
+    
+    private func goToChat(room: Room) {
+        switch room.type {
+        case .SIMPLE, .SERVICE:
+            
+            let vc = Storyboard.chatViewController() as! ChatViewController
+            vc.viewModel = ChatViewModel(room: room)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        default:
+            break
+        }
+    }
+    
 }
 
 extension ChatTabViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -118,13 +152,13 @@ extension ChatTabViewController: UITableViewDelegate, UITableViewDataSource, UIS
 //        }
 //    }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let room = viewModel.chatsList[indexPath.row]
-//
-//        goToChat(room: room)
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let room = viewModel.chatsList[indexPath.row]
+
+        goToChat(room: room)
+
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 //
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        guard let height = navigationController?.navigationBar.frame.height else { return }

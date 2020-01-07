@@ -8,6 +8,10 @@ PODS:
     - ImageSlideshow/Core
     - Kingfisher (> 3.0)
   - Kingfisher (5.7.1)
+  - NVActivityIndicatorView (4.7.0):
+    - NVActivityIndicatorView/Presenter (= 4.7.0)
+  - NVActivityIndicatorView/Presenter (4.7.0)
+  - Starscream (3.0.6)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -15,6 +19,8 @@ DEPENDENCIES:
   - Cartography
   - ImageSlideshow (~> 1.8)
   - ImageSlideshow/Kingfisher
+  - NVActivityIndicatorView
+  - Starscream (~> 3.0.2)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -23,6 +29,8 @@ SPEC REPOS:
     - Cartography
     - ImageSlideshow
     - Kingfisher
+    - NVActivityIndicatorView
+    - Starscream
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -30,8 +38,10 @@ SPEC CHECKSUMS:
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
   ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
+  NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 13ecc3b031e161fb53d3f0c88887bc7edeea804b
+PODFILE CHECKSUM: 2c395cd0c98560b5d8d8048f0c74b1c637bec8ca
 
 COCOAPODS: 1.7.4

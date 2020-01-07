@@ -11,5 +11,7 @@ target 'Me2_Business' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'ImageSlideshow', '~> 1.8'
   pod 'ImageSlideshow/Kingfisher'
+  pod 'NVActivityIndicatorView'
+  pod 'Starscream', '~> 3.0.2'
 
 end

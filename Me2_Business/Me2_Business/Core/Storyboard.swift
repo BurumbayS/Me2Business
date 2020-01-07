@@ -33,6 +33,9 @@ extension Storyboard {
     static var chatTabViewController = {
         return chat.storyboard.instantiateViewController(withIdentifier: "ChatTabViewController")
     }
+    static var chatViewController = {
+        return chat.storyboard.instantiateViewController(withIdentifier: "ChatViewController")
+    }
 }
 
 
