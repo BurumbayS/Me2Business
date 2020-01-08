@@ -99,7 +99,7 @@ class ChatTabViewController: UIViewController {
 
 extension ChatTabViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        viewModel.searchActivated = false
+        viewModel.searchActivated = false
         tableView.reloadSections([0], with: .automatic)
     }
 
@@ -107,10 +107,10 @@ extension ChatTabViewController: UISearchResultsUpdating, UISearchBarDelegate {
         guard let text = searchController.searchBar.text else { return }
 
         if text != "" {
-//            viewModel.searchActivated = true
-//            viewModel.searchChat(with: text) { [weak self] in
-//                self?.tableView.reloadSections([0], with: .automatic)
-//            }
+            viewModel.searchActivated = true
+            viewModel.searchChat(with: text) { [weak self] in
+                self?.tableView.reloadSections([0], with: .automatic)
+            }
         }
     }
 }
@@ -130,17 +130,17 @@ extension ChatTabViewController: UITableViewDelegate, UITableViewDataSource, UIS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if viewModel.searchActivated {
-//            return viewModel.searchResults.count
-//        }
+        if viewModel.searchActivated {
+            return viewModel.searchResults.count
+        }
 //
         return viewModel.chatsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ChatTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-//        let room = (viewModel.searchActivated) ? viewModel.searchResults[indexPath.row] : viewModel.chatsList[indexPath.row]
-        let room = viewModel.chatsList[indexPath.row]
+        let room = (viewModel.searchActivated) ? viewModel.searchResults[indexPath.row] : viewModel.chatsList[indexPath.row]
+//        let room = viewModel.chatsList[indexPath.row]
         cell.configure(with: room)
         return cell
     }

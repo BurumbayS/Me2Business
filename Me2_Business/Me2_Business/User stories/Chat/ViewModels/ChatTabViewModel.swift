@@ -13,6 +13,9 @@ class ChatTabViewModel {
     
     var chatsList = [Room]()
     
+    var searchResults = [Room]()
+    var searchActivated = false
+    
     func getChatList(completion: ResponseBlock?) {
         Alamofire.request(chatsListURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
             .responseJSON { (response) in
@@ -33,6 +36,18 @@ class ChatTabViewModel {
                     completion?(.fail, "")
                 }
         }
+    }
+    
+    func searchChat(with substr: String, completion: VoidBlock?) {
+        searchResults = []
+        
+        chatsList.forEach { (room) in
+            if room.getSecondParticipant().username.lowercased().contains(substr.lowercased()) {
+                searchResults.append(room)
+            }
+        }
+        
+        completion?()
     }
     
     let chatsListURL = Network.chat + "/room/"
