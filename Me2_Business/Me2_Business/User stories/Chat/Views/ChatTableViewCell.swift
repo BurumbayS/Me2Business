@@ -62,6 +62,14 @@ class ChatTableViewCell: UITableViewCell {
             
             return message.text
             
+        case .IMAGE:
+            
+            return "Фото"
+            
+        case .VIDEO:
+            
+            return "Видео"
+            
         case .BOOKING:
             
             return "Заявка на бронирование столика"

@@ -46,6 +46,8 @@
 		DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */; };
 		DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919923C4C10A00C7B370 /* Booking.swift */; };
 		DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */; };
+		DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919E23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift */; };
+		DD0091A123C612A500C7B370 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0091A023C612A500C7B370 /* Protocols.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -103,10 +105,12 @@
 		DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDateHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		DD00918D23C49AB100C7B370 /* UINavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
 		DD00918F23C49E9700C7B370 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
-		DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
+		DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookingCollectionViewCell.swift; path = ../BookingCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BookingCollectionViewCell.xib; path = ../BookingCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD00919923C4C10A00C7B370 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
-		DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookingViewController.swift; sourceTree = "<group>"; };
+		DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditBookingViewController.swift; path = ../EditBookingViewController.swift; sourceTree = "<group>"; };
+		DD00919E23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD0091A023C612A500C7B370 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,11 +188,20 @@
 				DD00917C23C4890500C7B370 /* ChatViewController.swift */,
 				DD00918123C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift */,
 				DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */,
+				DD00919D23C611E600C7B370 /* Booking */,
+				DD00919E23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DD00919D23C611E600C7B370 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
 				DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */,
 				DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */,
 				DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */,
 			);
-			path = Chat;
+			path = Booking;
 			sourceTree = "<group>";
 		};
 		DDB2579423C1B4CF00DF1EB4 = {
@@ -280,6 +293,7 @@
 				DDB257C023C1B90500DF1EB4 /* Typealias.swift */,
 				DDB257C223C1B93700DF1EB4 /* Network.swift */,
 				DDB257C423C1B98700DF1EB4 /* UserDefaultsKeys.swift */,
+				DD0091A023C612A500C7B370 /* Protocols.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -517,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */,
+				DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */,
 				DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */,
 				DD00918823C4904B00C7B370 /* ChatAdapter.swift in Sources */,
 				DD00915923C331EE00C7B370 /* UITableViewExtensions.swift in Sources */,
@@ -524,6 +539,7 @@
 				DDB257C323C1B93700DF1EB4 /* Network.swift in Sources */,
 				DD00918223C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift in Sources */,
 				DDB257D123C20ACB00DF1EB4 /* UIViewControllerExtensions.swift in Sources */,
+				DD0091A123C612A500C7B370 /* Protocols.swift in Sources */,
 				DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */,
 				DDB257BD23C1B87400DF1EB4 /* AttributedTextField.swift in Sources */,
 				DD00918A23C494AF00C7B370 /* VideoHelper.swift in Sources */,

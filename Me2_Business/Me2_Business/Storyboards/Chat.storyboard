@@ -136,6 +136,9 @@
                                             <constraint firstAttribute="width" constant="30" id="wAh-x3-NsZ"/>
                                         </constraints>
                                         <state key="normal" image="add_icon"/>
+                                        <connections>
+                                            <action selector="addAttachmentPressed:" destination="hzs-Dj-t6e" eventType="touchUpInside" id="FME-d8-or6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WX-av-xan">
                                         <rect key="frame" x="369" y="8" width="34" height="34"/>

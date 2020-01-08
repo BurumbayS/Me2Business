@@ -140,7 +140,6 @@ extension ChatTabViewController: UITableViewDelegate, UITableViewDataSource, UIS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ChatTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let room = (viewModel.searchActivated) ? viewModel.searchResults[indexPath.row] : viewModel.chatsList[indexPath.row]
-//        let room = viewModel.chatsList[indexPath.row]
         cell.configure(with: room)
         return cell
     }

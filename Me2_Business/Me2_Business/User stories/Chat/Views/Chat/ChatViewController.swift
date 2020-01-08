@@ -7,9 +7,12 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
-import SwiftyJSON
 import IQKeyboardManagerSwift
+import SwiftyJSON
+import NVActivityIndicatorView
+import Cartography
+import MobileCoreServices
+import AVKit
 
 class ChatViewController: UIViewController {
 
@@ -21,6 +24,8 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var inputViewBottomConstraints: NSLayoutConstraint!
+    
+    let imagePicker = UIImagePickerController()
     
     var viewModel: ChatViewModel!
     
@@ -88,7 +93,7 @@ class ChatViewController: UIViewController {
     }
     
     private func configureViews() {
-//        imagePicker.delegate = self
+        imagePicker.delegate = self
         
         messageTextField.autocapitalizationType = .sentences
         messageTextField.font = UIFont(name: "Roboto-Regular", size: 15)
@@ -116,10 +121,10 @@ class ChatViewController: UIViewController {
             let cellID = "\(Message.messageCellID)\(i)"
             collectionView.register(ChatMessageCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         }
-//        for i in 0..<20 {
-//            let cellID = "\(MediaFile.mediaFileCellID)\(i)"
-//            collectionView.register(MediaMessageCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
-//        }
+        for i in 0..<20 {
+            let cellID = "\(MediaFile.mediaFileCellID)\(i)"
+            collectionView.register(MediaMessageCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        }
         collectionView.registerNib(BookingCollectionViewCell.self)
         collectionView.registerHeader(SectionDateHeaderCollectionReusableView.self)
     }
@@ -258,6 +263,28 @@ class ChatViewController: UIViewController {
         
         messageTextField.text = ""
     }
+    
+    @IBAction func addAttachmentPressed(_ sender: Any) {
+        self.addActionSheet(titles: ["Камера","Фото/Видео"], images: ["black_camera_icon","image_icon"], actions: [takePhotoVideo, openPhotoLibrary], styles: [.default, .default], tintColor: .black, textAlignment: .left)
+    }
+    
+    private func takePhotoVideo() {
+        imagePicker.sourceType = .camera
+        imagePicker.mediaTypes = [kUTTypeMovie, kUTTypeImage] as [String]
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func openPhotoLibrary() {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.mediaTypes = [kUTTypeMovie, kUTTypeImage] as [String]
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func addLocation() {
+        
+    }
 }
 
 extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -315,12 +342,12 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             return cell
             
-//        case .IMAGE, .VIDEO:
-//
-//            let cellID = "\(MediaFile.mediaFileCellID)\(indexPath.row % 20)"
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MediaMessageCollectionViewCell
-//            cell.configure(message: message, vc: self)
-//            return cell
+        case .IMAGE, .VIDEO:
+
+            let cellID = "\(MediaFile.mediaFileCellID)\(indexPath.row % 20)"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MediaMessageCollectionViewCell
+            cell.configure(message: message, vc: self)
+            return cell
             
         default:
             return UICollectionViewCell()
@@ -344,3 +371,37 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
 }
+
+extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true) { [weak self] in
+            if let type = info[.mediaType] as? String {
+                
+                if type == kUTTypeImage as String {
+                    guard let image = info[.originalImage] as? UIImage  else { return }
+                    
+                    self?.viewModel.sendMessage(ofType: .IMAGE, thumbnail: image)
+                }
+                
+                if type == kUTTypeMovie as String {
+                    guard let url = info[.mediaURL] as? URL else { return }
+                    
+                    self?.viewModel.sendMessage(ofType: .VIDEO, videoURL: url, thumbnail: VideoHelper.getVideoThumbnail(fromURL: url))
+                }
+                
+            }
+        }
+    }
+}
+
+extension ChatViewController: ControllerPresenterDelegate {
+    func present(controller: UIViewController, presntationType: PresentationType, completion: VoidBlock?) {
+        switch presntationType {
+        case .push:
+            self.navigationController?.pushViewController(controller, animated: true)
+        case .present:
+            self.present(controller, animated: true, completion: completion)
+        }
+    }
+}
+
