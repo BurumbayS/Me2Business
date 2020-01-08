@@ -35,4 +35,6 @@ class Network {
     static let contact = host + "/auth/contact"
     static let core = host + "/core"
     static let chat = host + "/chat"
+    static let business = host + "/business"
+    static let booking = host + "/business/booking"
 }

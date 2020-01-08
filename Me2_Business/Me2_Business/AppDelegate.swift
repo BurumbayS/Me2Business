@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             window?.rootViewController = Storyboard.loginViewController()
         }
-        
+    
         return true
     }
 

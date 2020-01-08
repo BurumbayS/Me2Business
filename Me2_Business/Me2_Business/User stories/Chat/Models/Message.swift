@@ -56,7 +56,7 @@ class Message {
         self.type = MessageType(rawValue: json["message_type"].stringValue) ?? .TEXT
         self.sender = json["sender"].intValue
         self.createdAt = json["created_at"].stringValue
-        self.booking = Booking(json: json["data"]["bookig"])
+        self.booking = Booking(json: json["data"]["booking"])
 //        self.place = Place(json: json["data"]["place"])
 //        self.event = Event(json: json["data"]["event"])
         self.file = MediaFile(json: json["file"])
@@ -106,13 +106,14 @@ class Message {
     func getBookingMessageHeight() -> CGFloat {
         guard let booking = self.booking else { return 0 }
         
+        let textHeight = ceil(text.getHeight(withConstrainedWidth: maxWidth, font: UIFont(name: "Roboto-Regular", size: 15)!))
         if booking.status == .NEW {
             //return height with text paddings action buttons and confirm button
-            return height + 40 + 40 + 40
+            return textHeight + 40 + 40 + 40
         }
         
         //return height with text paddings and status label
-        return height + 40 + 40
+        return textHeight + 40 + 40
     }
     
     static let messageCellID = "ChatMessageCell"

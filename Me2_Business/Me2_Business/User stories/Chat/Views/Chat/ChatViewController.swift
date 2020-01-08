@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import SwiftyJSON
 
 class ChatViewController: UIViewController {
 
@@ -48,6 +49,10 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        bindDynamics()
         configureViews()
         configureCollectionView()
         configureNavBar()
@@ -116,6 +121,35 @@ class ChatViewController: UIViewController {
 //        }
         collectionView.registerNib(BookingCollectionViewCell.self)
         collectionView.registerHeader(SectionDateHeaderCollectionReusableView.self)
+    }
+    
+    private func bindDynamics() {
+        viewModel.onNewMessage = ({ message in
+//            self.hideEmptyListStatusLabel()
+            self.insertNewMessage(message: message)
+        })
+        
+        viewModel.onMessageUpdate = ({ index in
+            self.collectionView.reloadItems(at: [IndexPath(row: index, section: self.viewModel.sections.count - 1)])
+        })
+        
+        viewModel.onMessagesLoad = ({
+//            (self.viewModel.messages.count > 0) ? self.hideEmptyListStatusLabel() : self.showEmptyListStatusLabel(withText: "У вас пока нет сообщений")
+            
+            let oldContentHeight = self.collectionView.contentSize.height
+            let oldContentOffset = self.collectionView.contentOffset.y
+            self.collectionView.reloadDataWithCompletion {
+                let newContentHeight = self.collectionView.contentSize.height
+                
+                //if its the first portion of messages
+                if oldContentHeight == 0 {
+                    self.collectionView.contentOffset.y = max(oldContentOffset, newContentHeight - self.collectionView.frame.height + self.collectionView.contentInset.bottom)
+                } else {
+                    self.collectionView.contentOffset.y = oldContentOffset + (newContentHeight - oldContentHeight)
+                }
+                self.collectionView.layoutIfNeeded()
+            }
+        })
     }
     
     private func loadMessages() {
@@ -217,15 +251,19 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendPressed(_ sender: Any) {
+        guard let text = messageTextField.text, text != "" else { return }
+        
+        viewModel.sendMessage(ofType: .TEXT, text: text)
+        
+        messageTextField.text = ""
     }
 }
 
 extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let height = viewModel.heightForCell(at: indexPath)
-//
-//        return CGSize(width: self.view.frame.width, height: height)
-        return CGSize(width: self.view.frame.width, height: 290)
+        let height = viewModel.heightForCell(at: indexPath)
+
+        return CGSize(width: self.view.frame.width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -233,19 +271,17 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return viewModel.sections.count
-        return 1
+        return viewModel.sections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return viewModel.sections[section].messages.count
-        return 1
+        return viewModel.sections[section].messages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let sectionHeader: SectionDateHeaderCollectionReusableView = collectionView.dequeueReusableView(for: indexPath, and: UICollectionView.elementKindSectionHeader)
-//            sectionHeader.configure(with: viewModel.sections[indexPath.section].date)
+            sectionHeader.configure(with: viewModel.sections[indexPath.section].date)
             return sectionHeader
         } else {
             return UICollectionReusableView()
@@ -253,21 +289,28 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let message = viewModel.sections[indexPath.section].messages[indexPath.row]
-//
-//        switch message.type {
-//        case .TEXT:
-//
-//            let cellID = "\(Message.messageCellID)\(indexPath.row % 20)"
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ChatMessageCollectionViewCell
-//
-//            cell.configure(message: message)
-//
-//            return cell
-//
-//        case .BOOKING:
+        let message = viewModel.sections[indexPath.section].messages[indexPath.row]
+
+        switch message.type {
+        case .TEXT:
+
+            let cellID = "\(Message.messageCellID)\(indexPath.row % 20)"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ChatMessageCollectionViewCell
+
+            cell.configure(message: message)
+
+            return cell
+
+        case .BOOKING:
         
             let cell: BookingCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(message: message, onAccept: {
+                message.booking?.accept(messageID: message.id)
+            }, onReject: {
+                print("Rejected")
+            }) {
+                print("Edit")
+            }
             return cell
             
 //        case .IMAGE, .VIDEO:
@@ -277,9 +320,9 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //            cell.configure(message: message, vc: self)
 //            return cell
             
-//        default:
-//            return UICollectionViewCell()
-//        }
+        default:
+            return UICollectionViewCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
