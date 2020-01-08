@@ -9,6 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 import SwiftyJSON
+import IQKeyboardManagerSwift
 
 class ChatViewController: UIViewController {
 
@@ -28,8 +29,8 @@ class ChatViewController: UIViewController {
         
         view.endEditing(true)
         
-//        IQKeyboardManager.shared.enable = true
-//        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
         
         viewModel.abortConnection()
     }
@@ -40,10 +41,10 @@ class ChatViewController: UIViewController {
         navigationController?.navigationBar.shouldRemoveShadow(false)
         navigationController?.navigationBar.isTranslucent = false
         
-//        IQKeyboardManager.shared.enable = false
-//        IQKeyboardManager.shared.enableAutoToolbar = false
-//
-//        if !viewModel.isFirstLaunch { viewModel.reconnect() }
+        IQKeyboardManager.shared.enable = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        
+        if !viewModel.isFirstLaunch { viewModel.reconnect() }
     }
     
     override func viewDidLoad() {
@@ -307,9 +308,10 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.configure(message: message, onAccept: {
                 message.booking?.accept(messageID: message.id)
             }, onReject: {
-                print("Rejected")
-            }) {
-                print("Edit")
+                message.booking?.reject(messageID: message.id)
+            }) { [weak self] in
+                let vc = Storyboard.editBookingViewController()
+                self?.present(vc, animated: true, completion: nil)
             }
             return cell
             

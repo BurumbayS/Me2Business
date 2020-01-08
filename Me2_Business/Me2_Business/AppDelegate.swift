@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = Storyboard.loginViewController()
         }
     
+        //Configure IQKeyboard
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
+        IQKeyboardManager.shared.toolbarTintColor = Color.blue
+        
         return true
     }
 

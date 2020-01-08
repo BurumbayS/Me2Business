@@ -45,6 +45,7 @@
 		DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */; };
 		DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */; };
 		DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919923C4C10A00C7B370 /* Booking.swift */; };
+		DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -105,6 +106,7 @@
 		DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingCollectionViewCell.xib; sourceTree = "<group>"; };
 		DD00919923C4C10A00C7B370 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookingViewController.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */,
 				DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */,
 				DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */,
+				DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				DD00914A23C3215C00C7B370 /* ChatTableViewCell.swift in Sources */,
 				DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
+				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
 				DDB257BF23C1B8B000DF1EB4 /* Color.swift in Sources */,

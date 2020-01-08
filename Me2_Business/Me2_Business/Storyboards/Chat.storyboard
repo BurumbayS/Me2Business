@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Chat Tab View Controller-->
         <scene sceneID="gtf-Dx-fOj">
@@ -190,6 +195,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNk-n1-GhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1728" y="64"/>
+        </scene>
+        <!--Edit Booking View Controller-->
+        <scene sceneID="8FE-WV-Ieu">
+            <objects>
+                <viewController storyboardIdentifier="EditBookingViewController" id="9f0-xv-bE0" customClass="EditBookingViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kyb-2p-Lee">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-Sd-qQf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="MI7-m6-nNk"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата и время" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91x-20-bM5">
+                                <rect key="frame" x="20" y="108" width="83" height="16"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7jV-Cg-nFm">
+                                <rect key="frame" x="20" y="134" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Buw-I0-U0h"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество гостей" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEm-AS-3gT">
+                                <rect key="frame" x="20" y="199" width="116" height="16"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Acp-hE-AKi">
+                                <rect key="frame" x="20" y="225" width="374" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="9au-CH-hse"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ln3-Sd-qQf" firstAttribute="top" secondItem="dXK-KC-LWx" secondAttribute="top" id="1OB-6H-5oc"/>
+                            <constraint firstItem="Acp-hE-AKi" firstAttribute="leading" secondItem="dXK-KC-LWx" secondAttribute="leading" constant="20" id="3i1-dp-OR0"/>
+                            <constraint firstItem="ln3-Sd-qQf" firstAttribute="trailing" secondItem="dXK-KC-LWx" secondAttribute="trailing" id="77K-3E-dEY"/>
+                            <constraint firstItem="UEm-AS-3gT" firstAttribute="leading" secondItem="dXK-KC-LWx" secondAttribute="leading" constant="20" id="ArW-QW-o29"/>
+                            <constraint firstItem="7jV-Cg-nFm" firstAttribute="leading" secondItem="dXK-KC-LWx" secondAttribute="leading" constant="20" id="MjA-b0-wTY"/>
+                            <constraint firstItem="dXK-KC-LWx" firstAttribute="trailing" secondItem="Acp-hE-AKi" secondAttribute="trailing" constant="20" id="UXg-ux-DbR"/>
+                            <constraint firstItem="ln3-Sd-qQf" firstAttribute="leading" secondItem="dXK-KC-LWx" secondAttribute="leading" id="cx4-2T-ZiR"/>
+                            <constraint firstItem="91x-20-bM5" firstAttribute="leading" secondItem="dXK-KC-LWx" secondAttribute="leading" constant="20" id="cyd-Et-Dcs"/>
+                            <constraint firstItem="7jV-Cg-nFm" firstAttribute="top" secondItem="91x-20-bM5" secondAttribute="bottom" constant="10" id="gPb-XT-dnD"/>
+                            <constraint firstItem="UEm-AS-3gT" firstAttribute="top" secondItem="7jV-Cg-nFm" secondAttribute="bottom" constant="30" id="ghW-q4-OnB"/>
+                            <constraint firstItem="Acp-hE-AKi" firstAttribute="top" secondItem="UEm-AS-3gT" secondAttribute="bottom" constant="10" id="iak-GS-KBf"/>
+                            <constraint firstItem="dXK-KC-LWx" firstAttribute="trailing" secondItem="7jV-Cg-nFm" secondAttribute="trailing" constant="20" id="mWp-Y7-M6o"/>
+                            <constraint firstItem="91x-20-bM5" firstAttribute="top" secondItem="ln3-Sd-qQf" secondAttribute="bottom" constant="20" id="va5-Zu-oH9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dXK-KC-LWx"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="7jV-Cg-nFm" id="3zF-CU-CQ5"/>
+                        <outlet property="guestsNumberTextField" destination="Acp-hE-AKi" id="BbP-dr-x4R"/>
+                        <outlet property="navBar" destination="ln3-Sd-qQf" id="Cug-Rk-qDN"/>
+                        <outlet property="navItem" destination="MI7-m6-nNk" id="czQ-kh-ZjK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8F-Cc-Uyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2439" y="64"/>
         </scene>
     </scenes>
     <resources>
