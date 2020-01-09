@@ -19,6 +19,9 @@
 		DD00915923C331EE00C7B370 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915823C331EE00C7B370 /* UITableViewExtensions.swift */; };
 		DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915A23C3325D00C7B370 /* UICollectionViewExtensions.swift */; };
 		DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915C23C33F2D00C7B370 /* LoginViewModel.swift */; };
+		DD42F5A623C6F75E000ADF02 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42F5A523C6F75E000ADF02 /* ApplicationViewController.swift */; };
+		DD42F5A923C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42F5A723C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift */; };
+		DD42F5AA23C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD42F5A823C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		DD00915823C331EE00C7B370 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		DD00915A23C3325D00C7B370 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		DD00915C23C33F2D00C7B370 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DD42F5A523C6F75E000ADF02 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		DD42F5A723C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFieldTableViewCell.swift; sourceTree = "<group>"; };
+		DD42F5A823C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApplicationFieldTableViewCell.xib; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				DDB257CB23C1F53C00DF1EB4 /* LoginViewController.swift */,
+				DD42F5A523C6F75E000ADF02 /* ApplicationViewController.swift */,
+				DD42F5A723C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift */,
+				DD42F5A823C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +362,7 @@
 				DDB257AB23C1B4D100DF1EB4 /* LaunchScreen.storyboard in Resources */,
 				DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
+				DD42F5AA23C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +421,7 @@
 				DDB257CF23C1F6D900DF1EB4 /* UIColorExtensions.swift in Sources */,
 				DDB257C323C1B93700DF1EB4 /* Network.swift in Sources */,
 				DDB257D123C20ACB00DF1EB4 /* UIViewControllerExtensions.swift in Sources */,
+				DD42F5A623C6F75E000ADF02 /* ApplicationViewController.swift in Sources */,
 				DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */,
 				DDB257BD23C1B87400DF1EB4 /* AttributedTextField.swift in Sources */,
 				DDB257C723C1F4C200DF1EB4 /* Storyboard.swift in Sources */,
@@ -427,6 +438,7 @@
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
+				DD42F5A923C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift in Sources */,
 				DDB257BF23C1B8B000DF1EB4 /* Color.swift in Sources */,
 				DD00914D23C3291B00C7B370 /* Room.swift in Sources */,
 			);
