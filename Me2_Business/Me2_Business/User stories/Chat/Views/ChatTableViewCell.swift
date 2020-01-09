@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChatTableViewCell: UITableViewCell {
 
@@ -27,9 +28,9 @@ class ChatTableViewCell: UITableViewCell {
     
     func configure(with roomInfo: Room) {
         switch roomInfo.type {
-        case .SIMPLE:
+        case .SERVICE:
             
-            simpleChatNameLabel.text = roomInfo.name
+            simpleChatNameLabel.text = roomInfo.getSecondParticipant().username
             simpleChatLastMessage.text = getLastMessageString(from: roomInfo.lastMessage)
             
             simpleChatContextView.isHidden = false
@@ -51,19 +52,11 @@ class ChatTableViewCell: UITableViewCell {
             break
         }
         
-//        avatarImageView.kf.setImage(with: URL(string: roomInfo.avatarURL), placeholder: UIImage(named: "placeholder_avatar"), options: [])
+        avatarImageView.kf.setImage(with: URL(string: roomInfo.getSecondParticipant().avatar), placeholder: UIImage(named: "placeholder_avatar"), options: [])
         timeLabel.text = roomInfo.lastMessage.getTime()
     }
     
     private func getLastMessageString(from message: Message) -> String {
-//        if let place = message.place, place.id != 0 {
-//            return "Заведение"
-//        }
-        
-//        if let event = message.event, event.id != 0 {
-//            return "Событие"
-//        }
-        
         switch message.type {
         case .TEXT:
             
@@ -77,9 +70,9 @@ class ChatTableViewCell: UITableViewCell {
             
             return "Видео"
             
-        case .WAVE:
+        case .BOOKING:
             
-            return "Помахали"
+            return "Заявка на бронирование столика"
             
         default:
             return ""

@@ -19,6 +19,35 @@
 		DD00915923C331EE00C7B370 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915823C331EE00C7B370 /* UITableViewExtensions.swift */; };
 		DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915A23C3325D00C7B370 /* UICollectionViewExtensions.swift */; };
 		DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915C23C33F2D00C7B370 /* LoginViewModel.swift */; };
+		DD00915F23C3624600C7B370 /* ChatTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00915E23C3624600C7B370 /* ChatTabViewModel.swift */; };
+		DD00917023C370A100C7B370 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916C23C3702300C7B370 /* Roboto-Black.ttf */; };
+		DD00917123C370A100C7B370 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916D23C3702300C7B370 /* Roboto-BlackItalic.ttf */; };
+		DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916E23C3702300C7B370 /* Roboto-Bold.ttf */; };
+		DD00917323C370A100C7B370 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916F23C3702300C7B370 /* Roboto-BoldItalic.ttf */; };
+		DD00917423C370A100C7B370 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916A23C3702300C7B370 /* Roboto-Light.ttf */; };
+		DD00917523C370A100C7B370 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916B23C3702300C7B370 /* Roboto-LightItalic.ttf */; };
+		DD00917623C370A100C7B370 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916423C3701B00C7B370 /* Roboto-Medium.ttf */; };
+		DD00917723C370A100C7B370 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916623C3701B00C7B370 /* Roboto-MediumItalic.ttf */; };
+		DD00917823C370A100C7B370 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916523C3701B00C7B370 /* Roboto-Regular.ttf */; };
+		DD00917923C370A100C7B370 /* Roboto-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916723C3701B00C7B370 /* Roboto-RegularItalic.ttf */; };
+		DD00917A23C370A100C7B370 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916823C3701B00C7B370 /* Roboto-Thin.ttf */; };
+		DD00917B23C370A100C7B370 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD00916923C3701B00C7B370 /* Roboto-ThinItalic.ttf */; };
+		DD00917D23C4890500C7B370 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00917C23C4890500C7B370 /* ChatViewController.swift */; };
+		DD00917F23C4898900C7B370 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00917E23C4898900C7B370 /* CollectionView.swift */; };
+		DD00918223C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918123C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift */; };
+		DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918323C48E9F00C7B370 /* UIViewExtensions.swift */; };
+		DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918523C48EFC00C7B370 /* ChatViewModel.swift */; };
+		DD00918823C4904B00C7B370 /* ChatAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918723C4904B00C7B370 /* ChatAdapter.swift */; };
+		DD00918A23C494AF00C7B370 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918923C494AF00C7B370 /* VideoHelper.swift */; };
+		DD00918C23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */; };
+		DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918D23C49AB100C7B370 /* UINavigationItem.swift */; };
+		DD00919023C49E9700C7B370 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00918F23C49E9700C7B370 /* UINavigationBar.swift */; };
+		DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */; };
+		DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */; };
+		DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919923C4C10A00C7B370 /* Booking.swift */; };
+		DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */; };
+		DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD00919E23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift */; };
+		DD0091A123C612A500C7B370 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0091A023C612A500C7B370 /* Protocols.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -53,6 +82,35 @@
 		DD00915823C331EE00C7B370 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		DD00915A23C3325D00C7B370 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		DD00915C23C33F2D00C7B370 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DD00915E23C3624600C7B370 /* ChatTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabViewModel.swift; sourceTree = "<group>"; };
+		DD00916423C3701B00C7B370 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-Medium.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916523C3701B00C7B370 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916623C3701B00C7B370 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-MediumItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916723C3701B00C7B370 /* Roboto-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-RegularItalic.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-RegularItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916823C3701B00C7B370 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-Thin.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916923C3701B00C7B370 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916A23C3702300C7B370 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916B23C3702300C7B370 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-LightItalic.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916C23C3702300C7B370 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916D23C3702300C7B370 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BlackItalic.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-BlackItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916E23C3702300C7B370 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00916F23C3702300C7B370 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "Me2_Business/Support/Fonts/Roboto/Roboto-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		DD00917C23C4890500C7B370 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		DD00917E23C4898900C7B370 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		DD00918123C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD00918323C48E9F00C7B370 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		DD00918523C48EFC00C7B370 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		DD00918723C4904B00C7B370 /* ChatAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAdapter.swift; sourceTree = "<group>"; };
+		DD00918923C494AF00C7B370 /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDateHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DD00918D23C49AB100C7B370 /* UINavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationItem.swift; sourceTree = "<group>"; };
+		DD00918F23C49E9700C7B370 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookingCollectionViewCell.swift; path = ../BookingCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BookingCollectionViewCell.xib; path = ../BookingCollectionViewCell.xib; sourceTree = "<group>"; };
+		DD00919923C4C10A00C7B370 /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditBookingViewController.swift; path = ../EditBookingViewController.swift; sourceTree = "<group>"; };
+		DD00919E23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD0091A023C612A500C7B370 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +163,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DD00916023C36F4800C7B370 /* Roboto_Font */ = {
+			isa = PBXGroup;
+			children = (
+				DD00916C23C3702300C7B370 /* Roboto-Black.ttf */,
+				DD00916D23C3702300C7B370 /* Roboto-BlackItalic.ttf */,
+				DD00916E23C3702300C7B370 /* Roboto-Bold.ttf */,
+				DD00916F23C3702300C7B370 /* Roboto-BoldItalic.ttf */,
+				DD00916A23C3702300C7B370 /* Roboto-Light.ttf */,
+				DD00916B23C3702300C7B370 /* Roboto-LightItalic.ttf */,
+				DD00916423C3701B00C7B370 /* Roboto-Medium.ttf */,
+				DD00916623C3701B00C7B370 /* Roboto-MediumItalic.ttf */,
+				DD00916523C3701B00C7B370 /* Roboto-Regular.ttf */,
+				DD00916723C3701B00C7B370 /* Roboto-RegularItalic.ttf */,
+				DD00916823C3701B00C7B370 /* Roboto-Thin.ttf */,
+				DD00916923C3701B00C7B370 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Roboto_Font;
+			sourceTree = "<group>";
+		};
+		DD00918023C48DE400C7B370 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				DD00917C23C4890500C7B370 /* ChatViewController.swift */,
+				DD00918123C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift */,
+				DD00918B23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift */,
+				DD00919D23C611E600C7B370 /* Booking */,
+				DD00919E23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		DD00919D23C611E600C7B370 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				DD00919523C4B10500C7B370 /* BookingCollectionViewCell.swift */,
+				DD00919623C4B10500C7B370 /* BookingCollectionViewCell.xib */,
+				DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
 		DDB2579423C1B4CF00DF1EB4 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +238,7 @@
 		DDB257B223C1B5C700DF1EB4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				DD00916023C36F4800C7B370 /* Roboto_Font */,
 				DDB257A923C1B4D100DF1EB4 /* LaunchScreen.storyboard */,
 				DDB257AC23C1B4D100DF1EB4 /* Info.plist */,
 			);
@@ -193,6 +293,7 @@
 				DDB257C023C1B90500DF1EB4 /* Typealias.swift */,
 				DDB257C223C1B93700DF1EB4 /* Network.swift */,
 				DDB257C423C1B98700DF1EB4 /* UserDefaultsKeys.swift */,
+				DD0091A023C612A500C7B370 /* Protocols.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -201,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				DDB257BB23C1B81100DF1EB4 /* Views */,
+				DD00917E23C4898900C7B370 /* CollectionView.swift */,
+				DD00918923C494AF00C7B370 /* VideoHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -246,6 +349,9 @@
 				DD00915423C32CE200C7B370 /* DateExtensions.swift */,
 				DD00915823C331EE00C7B370 /* UITableViewExtensions.swift */,
 				DD00915A23C3325D00C7B370 /* UICollectionViewExtensions.swift */,
+				DD00918323C48E9F00C7B370 /* UIViewExtensions.swift */,
+				DD00918D23C49AB100C7B370 /* UINavigationItem.swift */,
+				DD00918F23C49E9700C7B370 /* UINavigationBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +372,7 @@
 				DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */,
 				DD00914823C3215C00C7B370 /* ChatTableViewCell.swift */,
 				DD00914923C3215C00C7B370 /* ChatTableViewCell.xib */,
+				DD00918023C48DE400C7B370 /* Chat */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +380,8 @@
 		DDB257DA23C2115B00DF1EB4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DD00915E23C3624600C7B370 /* ChatTabViewModel.swift */,
+				DD00918523C48EFC00C7B370 /* ChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -284,6 +393,8 @@
 				DD00914E23C329DD00C7B370 /* Message.swift */,
 				DD00915023C32A4400C7B370 /* MediaFile.swift */,
 				DD00915623C32D1100C7B370 /* ChatParticipant.swift */,
+				DD00918723C4904B00C7B370 /* ChatAdapter.swift */,
+				DD00919923C4C10A00C7B370 /* Booking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,12 +459,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD00917623C370A100C7B370 /* Roboto-Medium.ttf in Resources */,
 				DDB257B823C1B6B800DF1EB4 /* Login.storyboard in Resources */,
+				DD00917A23C370A100C7B370 /* Roboto-Thin.ttf in Resources */,
 				DD00914B23C3215C00C7B370 /* ChatTableViewCell.xib in Resources */,
+				DD00917523C370A100C7B370 /* Roboto-LightItalic.ttf in Resources */,
+				DD00917723C370A100C7B370 /* Roboto-MediumItalic.ttf in Resources */,
+				DD00917B23C370A100C7B370 /* Roboto-ThinItalic.ttf in Resources */,
 				DDB257AB23C1B4D100DF1EB4 /* LaunchScreen.storyboard in Resources */,
+				DD00917423C370A100C7B370 /* Roboto-Light.ttf in Resources */,
 				DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */,
+				DD00917023C370A100C7B370 /* Roboto-Black.ttf in Resources */,
+				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
+				DD00917823C370A100C7B370 /* Roboto-Regular.ttf in Resources */,
+				DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */,
+				DD00917323C370A100C7B370 /* Roboto-BoldItalic.ttf in Resources */,
+				DD00917923C370A100C7B370 /* Roboto-RegularItalic.ttf in Resources */,
+				DD00917123C370A100C7B370 /* Roboto-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,27 +531,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */,
+				DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */,
+				DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */,
+				DD00918823C4904B00C7B370 /* ChatAdapter.swift in Sources */,
 				DD00915923C331EE00C7B370 /* UITableViewExtensions.swift in Sources */,
 				DDB257CF23C1F6D900DF1EB4 /* UIColorExtensions.swift in Sources */,
 				DDB257C323C1B93700DF1EB4 /* Network.swift in Sources */,
+				DD00918223C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift in Sources */,
 				DDB257D123C20ACB00DF1EB4 /* UIViewControllerExtensions.swift in Sources */,
+				DD0091A123C612A500C7B370 /* Protocols.swift in Sources */,
 				DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */,
 				DDB257BD23C1B87400DF1EB4 /* AttributedTextField.swift in Sources */,
+				DD00918A23C494AF00C7B370 /* VideoHelper.swift in Sources */,
 				DDB257C723C1F4C200DF1EB4 /* Storyboard.swift in Sources */,
+				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,
 				DD00915523C32CE200C7B370 /* DateExtensions.swift in Sources */,
 				DDB257CC23C1F53C00DF1EB4 /* LoginViewController.swift in Sources */,
 				DDB257D323C20BE400DF1EB4 /* UIAlertControllerExtensions.swift in Sources */,
 				DDB257C123C1B90500DF1EB4 /* Typealias.swift in Sources */,
+				DD00915F23C3624600C7B370 /* ChatTabViewModel.swift in Sources */,
+				DD00919023C49E9700C7B370 /* UINavigationBar.swift in Sources */,
 				DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */,
+				DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */,
+				DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */,
 				DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */,
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,
 				DD00915323C32CB000C7B370 /* StringExtensions.swift in Sources */,
+				DD00917F23C4898900C7B370 /* CollectionView.swift in Sources */,
+				DD00917D23C4890500C7B370 /* ChatViewController.swift in Sources */,
 				DD00914A23C3215C00C7B370 /* ChatTableViewCell.swift in Sources */,
+				DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
+				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
 				DDB257BF23C1B8B000DF1EB4 /* Color.swift in Sources */,
+				DD00918C23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift in Sources */,
 				DD00914D23C3291B00C7B370 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
