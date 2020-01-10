@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,17 +27,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-Np-sli">
-                        <rect key="frame" x="16" y="6" width="42" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a8-Np-sli">
+                        <rect key="frame" x="20" y="15" width="32" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EW0-a7-MUA" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
+                        <rect key="frame" x="20" y="36.5" width="280" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="PNG-i5-1h1"/>
+                        </constraints>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="7a8-Np-sli" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2vV-AA-Ouh"/>
+                    <constraint firstItem="EW0-a7-MUA" firstAttribute="top" secondItem="7a8-Np-sli" secondAttribute="bottom" constant="7" id="A6g-El-FJl"/>
+                    <constraint firstAttribute="bottom" secondItem="EW0-a7-MUA" secondAttribute="bottom" id="eqK-EL-OsK"/>
+                    <constraint firstItem="EW0-a7-MUA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="icI-Ip-DYB"/>
+                    <constraint firstItem="7a8-Np-sli" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="yl2-9s-P3h"/>
+                    <constraint firstAttribute="trailing" secondItem="EW0-a7-MUA" secondAttribute="trailing" constant="20" id="zOX-ft-lxq"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+            <connections>
+                <outlet property="textField" destination="EW0-a7-MUA" id="esa-vp-gis"/>
+                <outlet property="titleLabel" destination="7a8-Np-sli" id="azh-dd-JMh"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="129"/>
         </tableViewCell>
     </objects>
 </document>

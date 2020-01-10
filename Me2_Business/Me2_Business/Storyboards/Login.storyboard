@@ -133,7 +133,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
                                                 <real key="value" value="10"/>
@@ -200,8 +200,8 @@
                                     <navigationItem title="Title" id="815-IE-waF"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4xw-vi-zR7">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="4xw-vi-zR7">
+                                <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -212,7 +212,7 @@
                             <constraint firstItem="kFU-1J-6xu" firstAttribute="trailing" secondItem="MUM-OC-Hcw" secondAttribute="trailing" id="VEH-Q6-wSE"/>
                             <constraint firstItem="4xw-vi-zR7" firstAttribute="leading" secondItem="MUM-OC-Hcw" secondAttribute="leading" id="W5f-fT-oy8"/>
                             <constraint firstItem="MUM-OC-Hcw" firstAttribute="trailing" secondItem="4xw-vi-zR7" secondAttribute="trailing" id="dlx-eJ-j8u"/>
-                            <constraint firstItem="4xw-vi-zR7" firstAttribute="top" secondItem="kFU-1J-6xu" secondAttribute="bottom" id="h2I-Df-Psd"/>
+                            <constraint firstItem="4xw-vi-zR7" firstAttribute="top" secondItem="kFU-1J-6xu" secondAttribute="bottom" constant="1" id="h2I-Df-Psd"/>
                             <constraint firstItem="MUM-OC-Hcw" firstAttribute="bottom" secondItem="4xw-vi-zR7" secondAttribute="bottom" id="rXV-2v-ZmQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MUM-OC-Hcw"/>

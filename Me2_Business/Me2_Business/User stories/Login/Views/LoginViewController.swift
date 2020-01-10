@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        navigationController?.navigationBar.isHidden = true
+        
         addDismissKeyboard()
         configureViews()
     }
@@ -79,6 +81,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func sendApplicationPressed(_ sender: Any) {
+        let vc = Storyboard.applicationViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

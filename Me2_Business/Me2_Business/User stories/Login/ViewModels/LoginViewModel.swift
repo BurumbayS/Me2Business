@@ -26,9 +26,9 @@ class LoginViewModel {
                     case 0:
                         
                         let token = json["data"]["token"].stringValue
-//                        let id = json["data"]["user"]["id"].intValue
+                        let id = json["data"]["user"]["id"].intValue
                         UserDefaults().set(token, forKey: UserDefaultKeys.token.rawValue)
-//                        UserDefaults().set(id, forKey: UserDefaultKeys.userID.rawValue)
+                        UserDefaults().set(id, forKey: UserDefaultKeys.userID.rawValue)
 //                        UserDefaults().set(json["data"]["user"].rawString(), forKey: UserDefaultKeys.userInfo.rawValue)
                         
                         completion?(.ok, "")
