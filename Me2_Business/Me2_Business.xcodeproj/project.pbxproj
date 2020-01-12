@@ -54,6 +54,8 @@
 		DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42F5AB23C6FB71000ADF02 /* ApplicationViewModel.swift */; };
 		DD42F5AE23C70695000ADF02 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42F5AD23C70695000ADF02 /* Dynamic.swift */; };
 		DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42F5AF23C7090A000ADF02 /* UIButtonExtensions.swift */; };
+		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
+		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -123,6 +125,8 @@
 		DD42F5AB23C6FB71000ADF02 /* ApplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewModel.swift; sourceTree = "<group>"; };
 		DD42F5AD23C70695000ADF02 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		DD42F5AF23C7090A000ADF02 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
+		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -214,6 +218,15 @@
 				DD00919B23C5EE0B00C7B370 /* EditBookingViewController.swift */,
 			);
 			path = Booking;
+			sourceTree = "<group>";
+		};
+		DD5FD00D23CBAADD00F01725 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */,
+				DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		DDB2579423C1B4CF00DF1EB4 = {
@@ -324,6 +337,7 @@
 		DDB257BB23C1B81100DF1EB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD5FD00D23CBAADD00F01725 /* Loader */,
 				DDB257BC23C1B87400DF1EB4 /* AttributedTextField.swift */,
 			);
 			path = Views;
@@ -487,6 +501,7 @@
 				DDB257AB23C1B4D100DF1EB4 /* LaunchScreen.storyboard in Resources */,
 				DD00917423C370A100C7B370 /* Roboto-Light.ttf in Resources */,
 				DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */,
+				DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */,
 				DD00917023C370A100C7B370 /* Roboto-Black.ttf in Resources */,
 				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
@@ -589,6 +604,7 @@
 				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
+				DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */,
 				DD42F5A923C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift in Sources */,
 				DDB257BF23C1B8B000DF1EB4 /* Color.swift in Sources */,
 				DD00918C23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift in Sources */,

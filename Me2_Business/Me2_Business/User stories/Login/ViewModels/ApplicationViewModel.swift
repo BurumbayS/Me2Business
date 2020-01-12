@@ -113,6 +113,8 @@ class ApplicationViewModel {
             params[field.key] = fieldsData[field]?.value
         }
         
+        
+        
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
             .responseJSON { (response) in
                 switch response.result {
