@@ -115,7 +115,7 @@ class ApplicationViewModel {
         
         
         
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getHeaders()).validate()
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let value):

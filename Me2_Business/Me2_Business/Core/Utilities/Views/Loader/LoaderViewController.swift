@@ -24,6 +24,8 @@ class LoaderViewController: UIViewController {
     @IBOutlet weak var failIcon: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     
+    var loadingCompletionHandler: VoidBlock?
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -53,8 +55,6 @@ class LoaderViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.4)
     }
     
-    
-    
     func succes(withMessage message: String) {
         failIcon.isHidden = true
         successIcon.isHidden = false
@@ -64,15 +64,17 @@ class LoaderViewController: UIViewController {
     }
     
     func fail(withMessage message: String) {
-        failIcon.isHidden = true
-        successIcon.isHidden = false
+        failIcon.isHidden = false
+        successIcon.isHidden = true
         statusLabel.text = message
         
         dismissWithStatus()
     }
     
     func dismiss() {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: false) { [weak self] in
+            self?.loadingCompletionHandler?()
+        }
     }
     
     private func dismissWithStatus() {
@@ -86,6 +88,7 @@ class LoaderViewController: UIViewController {
             self.dismiss(animated: false, completion: {
                 self.statusView.alpha = 0
                 self.loaderView.isHidden = false
+                self.loadingCompletionHandler?()
             })
         }
     }

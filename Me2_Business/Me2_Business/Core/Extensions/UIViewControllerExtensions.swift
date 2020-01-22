@@ -101,7 +101,9 @@ extension UIViewController {
         present(loader, animated: false, completion: nil)
     }
     
-    func stopLoader(withStatus status: LoadingStatus = .dismiss, andText text: String = "") {
+    func stopLoader(withStatus status: LoadingStatus = .dismiss, andText text: String = "", completion: VoidBlock? = nil) {
+        loader.loadingCompletionHandler = completion
+        
         switch status {
         case .success:
             loader.succes(withMessage: text)

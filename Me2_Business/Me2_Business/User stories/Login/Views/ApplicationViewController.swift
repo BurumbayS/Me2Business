@@ -55,10 +55,13 @@ class ApplicationViewController: UIViewController {
         viewModel.sendApplication { [weak self] (status, message) in
             switch status {
             case .ok:
-                self?.stopLoader(withStatus: .success, andText: "Successed")
-//                self?.navigationController?.popViewController(animated: true)
+                self?.stopLoader(withStatus: .success, andText: "Successed", completion: {
+                    self?.navigationController?.popViewController(animated: true)
+                })
             default:
-                break
+                self?.stopLoader(withStatus: .fail, andText: message, completion: {
+                    self?.navigationController?.popViewController(animated: true)
+                })
             }
         }
     }
