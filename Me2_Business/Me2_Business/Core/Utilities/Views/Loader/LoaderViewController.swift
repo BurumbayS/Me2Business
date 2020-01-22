@@ -80,7 +80,7 @@ class LoaderViewController: UIViewController {
     private func dismissWithStatus() {
         loaderView.isHidden = true
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.statusView.alpha = 1
         }
         

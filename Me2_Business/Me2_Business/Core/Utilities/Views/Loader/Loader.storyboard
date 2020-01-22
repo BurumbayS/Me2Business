@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYL-s1-Cvk">
-                                <rect key="frame" x="167" y="413" width="80" height="80"/>
+                                <rect key="frame" x="167" y="363" width="80" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbK-AZ-mnw" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
                                         <rect key="frame" x="10" y="10" width="60" height="60"/>
@@ -45,24 +45,24 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LA-7h-Qe7">
-                                <rect key="frame" x="97" y="402" width="220" height="102"/>
+                                <rect key="frame" x="72" y="352" width="270" height="102"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ldT-xI-Xpo">
-                                        <rect key="frame" x="95" y="15" width="30" height="22"/>
+                                        <rect key="frame" x="120" y="15" width="30" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="a2E-xs-AqF"/>
                                             <constraint firstAttribute="height" constant="22" id="ro3-It-D8J"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fail_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5Xq-SO-IeE">
-                                        <rect key="frame" x="100" y="15" width="20" height="20"/>
+                                        <rect key="frame" x="125" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7eY-Dg-HpT"/>
                                             <constraint firstAttribute="width" constant="20" id="sKc-aa-k86"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dsfhsdfgsdf gsdfgsdfgsdf gsdf gsd fg sdf" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-xf-CGR">
-                                        <rect key="frame" x="10" y="47" width="200" height="40"/>
+                                        <rect key="frame" x="10" y="47" width="250" height="40"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                     <constraint firstItem="hZg-xf-CGR" firstAttribute="leading" secondItem="0LA-7h-Qe7" secondAttribute="leading" constant="10" id="fUn-1v-uDd"/>
                                     <constraint firstItem="5Xq-SO-IeE" firstAttribute="top" secondItem="0LA-7h-Qe7" secondAttribute="top" constant="15" id="m7P-hU-re6"/>
                                     <constraint firstItem="hZg-xf-CGR" firstAttribute="top" secondItem="ldT-xI-Xpo" secondAttribute="bottom" constant="10" id="mqw-qJ-khX"/>
-                                    <constraint firstAttribute="width" constant="220" id="qiE-rS-mBv"/>
+                                    <constraint firstAttribute="width" constant="270" id="qiE-rS-mBv"/>
                                     <constraint firstItem="ldT-xI-Xpo" firstAttribute="top" secondItem="0LA-7h-Qe7" secondAttribute="top" constant="15" id="quc-tb-LBJ"/>
                                     <constraint firstItem="ldT-xI-Xpo" firstAttribute="centerX" secondItem="0LA-7h-Qe7" secondAttribute="centerX" id="tgC-pE-jpS"/>
                                     <constraint firstAttribute="trailing" secondItem="hZg-xf-CGR" secondAttribute="trailing" constant="10" id="vlI-RJ-bti"/>
@@ -89,10 +89,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CYL-s1-Cvk" firstAttribute="centerY" secondItem="Csc-v1-vzh" secondAttribute="centerY" id="9xf-Hu-1rW"/>
+                            <constraint firstItem="CYL-s1-Cvk" firstAttribute="centerY" secondItem="Csc-v1-vzh" secondAttribute="centerY" constant="-50" id="9xf-Hu-1rW"/>
                             <constraint firstItem="0LA-7h-Qe7" firstAttribute="centerX" secondItem="Csc-v1-vzh" secondAttribute="centerX" id="MDh-6i-h8x"/>
                             <constraint firstItem="CYL-s1-Cvk" firstAttribute="centerX" secondItem="Csc-v1-vzh" secondAttribute="centerX" id="xI9-Cg-vZH"/>
-                            <constraint firstItem="0LA-7h-Qe7" firstAttribute="centerY" secondItem="Csc-v1-vzh" secondAttribute="centerY" id="xbO-Y5-GCE"/>
+                            <constraint firstItem="0LA-7h-Qe7" firstAttribute="centerY" secondItem="Csc-v1-vzh" secondAttribute="centerY" constant="-50" id="xbO-Y5-GCE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Csc-v1-vzh"/>
                     </view>

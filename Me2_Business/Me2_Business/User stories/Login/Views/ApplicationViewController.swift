@@ -25,7 +25,14 @@ class ApplicationViewController: UIViewController {
         
         setUpBackBarButton(for: navItem)
         configureTableView()
+        configureNavBar()
         bindDynamics()
+    }
+    
+    private func configureNavBar() {
+        navBar.tintColor = .black
+        navItem.title = "Заявка на регистрацию"
+        setUpBackBarButton(for: navItem)
     }
     
     private func configureTableView() {
@@ -55,13 +62,13 @@ class ApplicationViewController: UIViewController {
         viewModel.sendApplication { [weak self] (status, message) in
             switch status {
             case .ok:
-                self?.stopLoader(withStatus: .success, andText: "Successed", completion: {
+                self?.stopLoader(withStatus: .success, andText: "Ваша заявка отправлена успешно. Наш менеджер свяжется с Вами в ближайшее время.", completion: {
                     self?.navigationController?.popViewController(animated: true)
                 })
+            case .error:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             default:
-                self?.stopLoader(withStatus: .fail, andText: message, completion: {
-                    self?.navigationController?.popViewController(animated: true)
-                })
+                self?.stopLoader(withStatus: .fail, andText: "Упс... что-то пошло не так. Проверьте соединение с интернетом или повторите попытку.", completion: nil)
             }
         }
     }
