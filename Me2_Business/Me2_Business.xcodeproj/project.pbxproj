@@ -56,6 +56,12 @@
 		DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD42F5AF23C7090A000ADF02 /* UIButtonExtensions.swift */; };
 		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
 		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
+		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
+		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
+		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
+		DD81E26523D96D5D00069F23 /* ConfirmCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26423D96D5D00069F23 /* ConfirmCodeViewModel.swift */; };
+		DD81E26723D9783F00069F23 /* SetNewPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26623D9783F00069F23 /* SetNewPassViewController.swift */; };
+		DD81E26923D97B1100069F23 /* SetNewPassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26823D97B1000069F23 /* SetNewPassViewModel.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -127,6 +133,14 @@
 		DD42F5AF23C7090A000ADF02 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
+		DD81E26423D96D5D00069F23 /* ConfirmCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewModel.swift; sourceTree = "<group>"; };
+		DD81E26623D9783F00069F23 /* SetNewPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPassViewController.swift; sourceTree = "<group>"; };
+		DD81E26823D97B1000069F23 /* SetNewPassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewPassViewModel.swift; sourceTree = "<group>"; };
+		DD81E26A23D9B72E00069F23 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		DD81E26B23D9B72F00069F23 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -347,6 +361,9 @@
 			isa = PBXGroup;
 			children = (
 				DDB257CB23C1F53C00DF1EB4 /* LoginViewController.swift */,
+				DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */,
+				DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */,
+				DD81E26623D9783F00069F23 /* SetNewPassViewController.swift */,
 				DD42F5A523C6F75E000ADF02 /* ApplicationViewController.swift */,
 				DD42F5A723C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift */,
 				DD42F5A823C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib */,
@@ -359,6 +376,9 @@
 			children = (
 				DD00915C23C33F2D00C7B370 /* LoginViewModel.swift */,
 				DD42F5AB23C6FB71000ADF02 /* ApplicationViewModel.swift */,
+				DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */,
+				DD81E26423D96D5D00069F23 /* ConfirmCodeViewModel.swift */,
+				DD81E26823D97B1000069F23 /* SetNewPassViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -475,6 +495,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = DDB2579423C1B4CF00DF1EB4;
 			productRefGroup = DDB2579E23C1B4CF00DF1EB4 /* Products */;
@@ -566,6 +587,7 @@
 			files = (
 				DD42F5AE23C70695000ADF02 /* Dynamic.swift in Sources */,
 				DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */,
+				DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
 				DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */,
 				DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */,
@@ -578,9 +600,12 @@
 				DD0091A123C612A500C7B370 /* Protocols.swift in Sources */,
 				DD42F5A623C6F75E000ADF02 /* ApplicationViewController.swift in Sources */,
 				DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */,
+				DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */,
 				DDB257BD23C1B87400DF1EB4 /* AttributedTextField.swift in Sources */,
 				DD00918A23C494AF00C7B370 /* VideoHelper.swift in Sources */,
+				DD81E26923D97B1100069F23 /* SetNewPassViewModel.swift in Sources */,
 				DDB257C723C1F4C200DF1EB4 /* Storyboard.swift in Sources */,
+				DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */,
 				DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */,
 				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,
 				DD00915523C32CE200C7B370 /* DateExtensions.swift in Sources */,
@@ -592,7 +617,9 @@
 				DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */,
 				DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */,
 				DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */,
+				DD81E26723D9783F00069F23 /* SetNewPassViewController.swift in Sources */,
 				DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */,
+				DD81E26523D96D5D00069F23 /* ConfirmCodeViewModel.swift in Sources */,
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,
 				DD00915323C32CB000C7B370 /* StringExtensions.swift in Sources */,
@@ -619,6 +646,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DDB257A523C1B4CF00DF1EB4 /* Base */,
+				DD81E26A23D9B72E00069F23 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -627,6 +655,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DDB257AA23C1B4D100DF1EB4 /* Base */,
+				DD81E26B23D9B72F00069F23 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -638,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -699,6 +729,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -20,10 +20,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        navigationController?.navigationBar.isHidden = true
-        
+        configureNavBar()
         addDismissKeyboard()
         configureViews()
+    }
+    
+    private func configureNavBar() {
+        navigationController?.navigationBar.makeTransparentBar()
+        navigationController?.navigationBar.tintColor = .black
+        removeBackButton()
     }
     
     private func configureViews() {

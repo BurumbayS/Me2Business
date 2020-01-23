@@ -32,6 +32,9 @@ extension Storyboard {
     static var applicationViewController = {
         return loginPage.storyboard.instantiateViewController(withIdentifier: "ApplicationViewController")
     }
+    static var confirmCodeViewController = {
+        return loginPage.storyboard.instantiateViewController(withIdentifier: "ConfirmCodeViewController")
+    }
     
     //Main tab page
     static var mainTabsViewController = {
