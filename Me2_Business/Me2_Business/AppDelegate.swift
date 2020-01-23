@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //Set root view controller
-        if let _ = UserDefaults().object(forKey: UserDefaultKeys.token.rawValue) {
-            window?.rootViewController = Storyboard.mainTabsViewController()
-        } else {
+//        if let _ = UserDefaults().object(forKey: UserDefaultKeys.token.rawValue) {
+//            window?.rootViewController = Storyboard.mainTabsViewController()
+//        } else {
             window?.rootViewController = Storyboard.loginViewController()
-        }
+//        }
     
         //Configure IQKeyboard
         IQKeyboardManager.shared.enable = true

@@ -12,6 +12,7 @@ enum Storyboard: String {
     case main = "Main"
     case loginPage = "Login"
     case chat = "Chat"
+    case loader = "Loader"
     
     private var storyboard: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: nil)
@@ -19,9 +20,20 @@ enum Storyboard: String {
 }
 
 extension Storyboard {
+    //Loader
+    static var loaderViewController = {
+        return loader.storyboard.instantiateViewController(withIdentifier: "LoaderViewController")
+    }
+    
     //Login pages
     static var loginViewController = {
         return loginPage.storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+    }
+    static var applicationViewController = {
+        return loginPage.storyboard.instantiateViewController(withIdentifier: "ApplicationViewController")
+    }
+    static var confirmCodeViewController = {
+        return loginPage.storyboard.instantiateViewController(withIdentifier: "ConfirmCodeViewController")
     }
     
     //Main tab page
