@@ -243,6 +243,37 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		DD81E26C23D9D5D400069F23 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E26F23D9D5F300069F23 /* ViewModels */,
+				DD81E26E23D9D5EE00069F23 /* Models */,
+				DD81E26D23D9D5E300069F23 /* Views */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		DD81E26D23D9D5E300069F23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD81E26E23D9D5EE00069F23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD81E26F23D9D5F300069F23 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DDB2579423C1B4CF00DF1EB4 = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +336,7 @@
 		DDB257B523C1B69000DF1EB4 /* User stories */ = {
 			isa = PBXGroup;
 			children = (
+				DD81E26C23D9D5D400069F23 /* User Profile */,
 				DDB257D823C2114E00DF1EB4 /* Chat */,
 				DDB257B623C1B6A500DF1EB4 /* Login */,
 				DDB257B323C1B60700DF1EB4 /* Main */,
