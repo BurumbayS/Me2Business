@@ -75,11 +75,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+        startLoader()
+        
         viewModel.signIn(with: emailTextField.text!, and: passwordTextField.text!) { [weak self] (status, message) in
             switch status {
             case .ok:
-                window.rootViewController = Storyboard.mainTabsViewController()
+                self?.stopLoader(completion: {
+                    window.rootViewController = Storyboard.mainTabsViewController()
+                })
             case .error, .fail:
+                self?.stopLoader()
                 self?.showError(with: message)
             }
         }

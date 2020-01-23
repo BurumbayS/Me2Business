@@ -26,7 +26,7 @@ class LoaderViewController: UIViewController {
     
     var loadingCompletionHandler: VoidBlock?
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         loader.stopAnimating()
