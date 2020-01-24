@@ -38,8 +38,9 @@ class UserProfileViewController: UIViewController {
         tableView.estimatedRowHeight = 30
         
         tableView.registerNib(ProfileHeaderTableViewCell.self)
-//        tableView.register(TagsTableViewCell.self)
+        tableView.register(TagsTableViewCell.self)
         tableView.register(FavouritePlacesTableViewCell.self)
+        tableView.register(NoInterestsTableViewCell.self)
     }
     
     func fetchData() {
@@ -132,29 +133,24 @@ extension UserProfileViewController : UITableViewDelegate, UITableViewDataSource
             cell.configure(user: viewModel.userInfo.value, viewController: self)
             return cell
                         
-//        case .interests:
-//
-//            if viewModel.userInfo.value.interests.count > 0 {
-//
-//                let cell: TagsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-//                cell.clipsToBounds = true
-//                cell.selectionStyle = .none
-//                cell.configure(tagsType: .normal, tagsList: TagsList(items: viewModel.userInfo.value.interests), expanded: viewModel.tagsExpanded)
-//                return cell
-//
-//            } else {
-//
-//                let cell: AddInterestsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-//                cell.clipsToBounds = true
-//                cell.selectionStyle = .none
-//                cell.configure(for: viewModel.profileType) { [weak self] in
-//                    let vc = Storyboard.editProfileViewController() as! EditProfileViewController
-//                    vc.viewModel = EditProfileViewModel(userInfo: (self?.viewModel.userInfo)!, activateAddTag: true)
-//                    self?.present(vc, animated: true, completion: nil)
-//                }
-//                return cell
-//
-//            }
+        case .interests:
+
+            if viewModel.userInfo.value.interests.count > 0 {
+
+                let cell: TagsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                cell.clipsToBounds = true
+                cell.selectionStyle = .none
+                cell.configure(tagsType: .normal, tagsList: TagsList(items: viewModel.userInfo.value.interests), expanded: viewModel.tagsExpanded)
+                return cell
+
+            } else {
+
+                let cell: NoInterestsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                cell.clipsToBounds = true
+                cell.selectionStyle = .none
+                return cell
+
+            }
             
         case .favourite_places:
             
