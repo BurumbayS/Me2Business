@@ -9,6 +9,7 @@
 import UIKit
 
 let window = UIApplication.shared.keyWindow!
+let loader = Storyboard.loaderViewController() as! LoaderViewController
 
 enum ActionSheetTextAlignment: Int {
     case left = 0
@@ -93,6 +94,24 @@ extension UIViewController {
     func addDismissKeyboard() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+    }
+    
+    func startLoader() {
+        loader.modalPresentationStyle = .custom
+        present(loader, animated: false, completion: nil)
+    }
+    
+    func stopLoader(withStatus status: LoadingStatus = .dismiss, andText text: String = "", completion: VoidBlock? = nil) {
+        loader.loadingCompletionHandler = completion
+        
+        switch status {
+        case .success:
+            loader.succes(withMessage: text)
+        case .fail:
+            loader.fail(withMessage: text)
+        default:
+            loader.dismiss()
+        }
     }
     
     @objc private func dismissKeyboard() {

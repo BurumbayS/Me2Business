@@ -1,19 +1,33 @@
 //
-//  LoginViewModel.swift
+//  ConfirmCodeViewModel.swift
 //  Me2_Business
 //
-//  Created by Sanzhar Burumbay on 1/6/20.
+//  Created by Sanzhar Burumbay on 1/23/20.
 //  Copyright © 2020 AVSoft. All rights reserved.
 //
 
 import Alamofire
 import SwiftyJSON
 
-class LoginViewModel {
-    func signIn(with email: String, and password: String, completion: ((RequestStatus, String) -> ())?) {
-        let params = ["app": "BUSINESS", "username": email, "password": password]
+enum CodeConfirmationType {
+    case onRegistrartion
+    case onChange
+}
+
+class ConfirmCodeViewModel {
+    let phoneActivationID: Int
+    let confirmationType: CodeConfirmationType
+    
+    init(activationID : Int, confirmationType: CodeConfirmationType) {
+        phoneActivationID = activationID
+        self.confirmationType = confirmationType
+    }
+    
+    func activatePhone(with smsCode: String, completion: ((RequestStatus, String) -> ())?) {
+        let activateURL = Network.auth + "/\(phoneActivationID)/activate/"
+        let params = ["code": smsCode]
         
-        Alamofire.request(loginURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getHeaders())
+        Alamofire.request(activateURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getHeaders())
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let result):
@@ -29,7 +43,7 @@ class LoginViewModel {
                         let id = json["data"]["user"]["id"].intValue
                         UserDefaults().set(token, forKey: UserDefaultKeys.token.rawValue)
                         UserDefaults().set(id, forKey: UserDefaultKeys.userID.rawValue)
-//                        UserDefaults().set(json["data"]["user"].rawString(), forKey: UserDefaultKeys.userInfo.rawValue)
+                        UserDefaults().set(json["data"]["user"].rawString(), forKey: UserDefaultKeys.userInfo.rawValue)
                         
                         completion?(.ok, "")
                         
@@ -42,12 +56,10 @@ class LoginViewModel {
                         break
                     }
                     
-                case .failure(_):
-                    let json = JSON(response.data as Any)
-                    completion?(.fail, json["message"].stringValue)
+                case .failure(let error):
+                    print(error)
+                    completion?(.fail, "")
                 }
         }
     }
-    
-    let loginURL = Network.auth + "/authenticate/"
 }

@@ -20,8 +20,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        configureNavBar()
         addDismissKeyboard()
         configureViews()
+    }
+    
+    private func configureNavBar() {
+        navigationController?.navigationBar.makeTransparentBar()
+        navigationController?.navigationBar.tintColor = .black
+        removeBackButton()
     }
     
     private func configureViews() {
@@ -68,17 +75,24 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: Any) {
+        startLoader()
+        
         viewModel.signIn(with: emailTextField.text!, and: passwordTextField.text!) { [weak self] (status, message) in
             switch status {
             case .ok:
-                window.rootViewController = Storyboard.mainTabsViewController()
+                self?.stopLoader(completion: {
+                    window.rootViewController = Storyboard.mainTabsViewController()
+                })
             case .error, .fail:
+                self?.stopLoader()
                 self?.showError(with: message)
             }
         }
     }
     
     @IBAction func sendApplicationPressed(_ sender: Any) {
+        let vc = Storyboard.applicationViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
