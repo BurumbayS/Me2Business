@@ -250,10 +250,9 @@ class ChatViewController: UIViewController {
     }
     
     @objc private func showParticipantProfile() {
-//        let navigationController = Storyboard.userProfileViewController() as! UINavigationController
-//        let vc = navigationController.viewControllers[0] as! UserProfileViewController
-//        vc.viewModel = UserProfileViewModel(userID: viewModel.room.getSecondParticipant().id, profileType: .guestProfile)
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = Storyboard.userProfileViewController() as! UserProfileViewController
+        vc.viewModel = UserProfileViewModel(userID: viewModel.room.getSecondParticipant().id)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func sendPressed(_ sender: Any) {
