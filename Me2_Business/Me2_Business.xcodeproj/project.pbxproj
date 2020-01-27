@@ -80,6 +80,7 @@
 		DD81E29523DB18E200069F23 /* ComplaintReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E29323DB18E200069F23 /* ComplaintReasonTableViewCell.swift */; };
 		DD81E29623DB18E200069F23 /* ComplaintReasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E29423DB18E200069F23 /* ComplaintReasonTableViewCell.xib */; };
 		DD81E29923DEBD1D00069F23 /* UserComplaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E29823DEBD1D00069F23 /* UserComplaintViewModel.swift */; };
+		DD81E29B23DEEC6600069F23 /* CustomLargeTitleBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E29A23DEEC6600069F23 /* CustomLargeTitleBarButton.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -177,6 +178,7 @@
 		DD81E29323DB18E200069F23 /* ComplaintReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintReasonTableViewCell.swift; sourceTree = "<group>"; };
 		DD81E29423DB18E200069F23 /* ComplaintReasonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintReasonTableViewCell.xib; sourceTree = "<group>"; };
 		DD81E29823DEBD1D00069F23 /* UserComplaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComplaintViewModel.swift; sourceTree = "<group>"; };
+		DD81E29A23DEEC6600069F23 /* CustomLargeTitleBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLargeTitleBarButton.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 				DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */,
 				DD00914823C3215C00C7B370 /* ChatTableViewCell.swift */,
 				DD00914923C3215C00C7B370 /* ChatTableViewCell.xib */,
+				DD81E29A23DEEC6600069F23 /* CustomLargeTitleBarButton.swift */,
 				DD00918023C48DE400C7B370 /* Chat */,
 			);
 			path = Views;
@@ -756,6 +759,7 @@
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,
 				DD00915323C32CB000C7B370 /* StringExtensions.swift in Sources */,
+				DD81E29B23DEEC6600069F23 /* CustomLargeTitleBarButton.swift in Sources */,
 				DD00917F23C4898900C7B370 /* CollectionView.swift in Sources */,
 				DD00917D23C4890500C7B370 /* ChatViewController.swift in Sources */,
 				DD00914A23C3215C00C7B370 /* ChatTableViewCell.swift in Sources */,
