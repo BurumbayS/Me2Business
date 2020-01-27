@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class LoginViewModel {
     func signIn(with email: String, and password: String, completion: ((RequestStatus, String) -> ())?) {
-        let params = ["username": email, "password": password]
+        let params = ["app": "BUSINESS", "username": email, "password": password]
         
         Alamofire.request(loginURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getHeaders())
             .responseJSON { (response) in

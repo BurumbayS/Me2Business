@@ -11,6 +11,7 @@ import UIKit
 class ChatTabViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let newChatButton = CustomLargeTitleBarButton()
     
     let viewModel = ChatTabViewModel()
     
@@ -22,7 +23,7 @@ class ChatTabViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        showNewChatButton(true)
+        showNewChatButton(true)
 //
 //        if viewModel.roomUUIDToOpenFirst.value != "" { openChatOnPush() }
         
@@ -31,7 +32,7 @@ class ChatTabViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-//        showNewChatButton(false)
+        showNewChatButton(false)
     }
     
     override func viewDidLoad() {
@@ -65,10 +66,10 @@ class ChatTabViewController: UIViewController {
         navigationItem.searchController = search
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-//
-//        newChatButton.add(to: navigationController!.navigationBar, with: UIImage(named: "new_chat_icon")!) { [weak self] in
+
+        newChatButton.add(to: navigationController!.navigationBar, with: UIImage(named: "new_chat_icon")!) { [weak self] in
 //            self?.createNewChat()
-//        }
+        }
     }
     
     private func configureTableView() {
@@ -95,6 +96,11 @@ class ChatTabViewController: UIViewController {
         }
     }
     
+    private func showNewChatButton(_ show: Bool) {
+       UIView.animate(withDuration: 0.2) {
+           self.newChatButton.alpha = show ? 1.0 : 0.0
+       }
+    }
 }
 
 extension ChatTabViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -133,7 +139,7 @@ extension ChatTabViewController: UITableViewDelegate, UITableViewDataSource, UIS
         if viewModel.searchActivated {
             return viewModel.searchResults.count
         }
-//
+
         return viewModel.chatsList.count
     }
     
@@ -158,9 +164,9 @@ extension ChatTabViewController: UITableViewDelegate, UITableViewDataSource, UIS
 
         tableView.deselectRow(at: indexPath, animated: true)
     }
-//
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        guard let height = navigationController?.navigationBar.frame.height else { return }
-//        newChatButton.moveAndResizeImage(for: height)
-//    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let height = navigationController?.navigationBar.frame.height else { return }
+        newChatButton.moveAndResizeImage(for: height)
+    }
 }
