@@ -371,6 +371,16 @@
 			path = Complaint;
 			sourceTree = "<group>";
 		};
+		DD81E2A823DF08F600069F23 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E29C23DEF21400069F23 /* ContactsViewController.swift */,
+				DD81E29E23DEF64000069F23 /* ContactTableViewCell.swift */,
+				DD81E29F23DEF64000069F23 /* ContactTableViewCell.xib */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		DDB2579423C1B4CF00DF1EB4 = {
 			isa = PBXGroup;
 			children = (
@@ -558,9 +568,7 @@
 				DD00914923C3215C00C7B370 /* ChatTableViewCell.xib */,
 				DD81E29A23DEEC6600069F23 /* CustomLargeTitleBarButton.swift */,
 				DD00918023C48DE400C7B370 /* Chat */,
-				DD81E29C23DEF21400069F23 /* ContactsViewController.swift */,
-				DD81E29E23DEF64000069F23 /* ContactTableViewCell.swift */,
-				DD81E29F23DEF64000069F23 /* ContactTableViewCell.xib */,
+				DD81E2A823DF08F600069F23 /* Contacts */,
 			);
 			path = Views;
 			sourceTree = "<group>";
