@@ -12,6 +12,7 @@ import SwiftyJSON
 class ChatTabViewModel {
     
     var chatsList = [Room]()
+    var newChatRoom: Room!
     
     var searchResults = [Room]()
     var searchActivated = false
@@ -38,6 +39,26 @@ class ChatTabViewModel {
         }
     }
     
+    func openNewChat(withUser id: Int, completion: ResponseBlock?) {
+        let params = ["room_type": "SIMPLE", "participants": [id]] as [String: Any]
+        
+        Alamofire.request(roomURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+            .responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    
+                    let json = JSON(value)
+                    self.newChatRoom = Room(json: json["data"])
+                    
+                    completion?(.ok, "")
+                    
+                case .failure(_ ):
+                    print(JSON(response.data as Any))
+                    completion?(.fail, "")
+                }
+        }
+    }
+    
     func searchChat(with substr: String, completion: VoidBlock?) {
         searchResults = []
         
@@ -51,4 +72,5 @@ class ChatTabViewModel {
     }
     
     let chatsListURL = Network.chat + "/room/"
+    let roomURL = Network.chat + "/room/"
 }

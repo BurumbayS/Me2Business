@@ -68,7 +68,7 @@ class ChatTabViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 
         newChatButton.add(to: navigationController!.navigationBar, with: UIImage(named: "new_chat_icon")!) { [weak self] in
-//            self?.createNewChat()
+            self?.createNewChat()
         }
     }
     
@@ -82,6 +82,32 @@ class ChatTabViewController: UIViewController {
         
         tableView.registerNib(ChatTableViewCell.self)
     }
+    
+    @objc private func createNewChat() {
+        let contactsVC = Storyboard.contactsViewController() as! ContactsViewController
+        contactsVC.viewModel = ContactsViewModel(onContactSelected: { [weak self] (userID) in
+            self?.openNewChat(withUser: userID)
+        })
+        present(contactsVC, animated: true, completion: nil)
+    }
+    
+    private func openNewChat(withUser id: Int) {
+       viewModel.openNewChat(withUser: id) { [weak self] (status, message) in
+           switch status {
+           case .ok:
+               
+               self?.loadChatsList()
+               if let room = self?.viewModel.newChatRoom {
+                   self?.goToChat(room: room)
+               }
+               
+           case .error:
+               break
+           case .fail:
+               break
+           }
+       }
+   }
     
     private func goToChat(room: Room) {
         switch room.type {

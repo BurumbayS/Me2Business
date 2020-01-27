@@ -52,6 +52,9 @@ extension Storyboard {
     static var editBookingViewController = {
         return chat.storyboard.instantiateViewController(withIdentifier: "EditBookingViewController")
     }
+    static var contactsViewController = {
+        return chat.storyboard.instantiateViewController(withIdentifier: "ContactsViewController")
+    }
     
     //User profile pages
     static var userProfileViewController = {
