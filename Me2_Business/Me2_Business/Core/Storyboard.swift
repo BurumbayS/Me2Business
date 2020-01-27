@@ -57,6 +57,9 @@ extension Storyboard {
     static var userProfileViewController = {
         return userProfile.storyboard.instantiateViewController(withIdentifier: "UserProfileViewController")
     }
+    static var complaintViewController = {
+        return userProfile.storyboard.instantiateViewController(withIdentifier: "ComplaintViewController")
+    }
 }
 
 

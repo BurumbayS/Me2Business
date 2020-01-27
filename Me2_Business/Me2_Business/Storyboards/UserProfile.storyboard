@@ -38,5 +38,46 @@
             </objects>
             <point key="canvasLocation" x="20" y="107"/>
         </scene>
+        <!--Complaint View Controller-->
+        <scene sceneID="YSQ-D1-QSd">
+            <objects>
+                <viewController storyboardIdentifier="ComplaintViewController" id="DPK-hM-Olb" customClass="ComplaintViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="faI-Om-xfh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-Bl-gOD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="CEG-9j-WOe"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="fhm-r6-sIx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PeG-Bl-gOD" firstAttribute="trailing" secondItem="wC6-84-Fp8" secondAttribute="trailing" id="1HD-t7-m9a"/>
+                            <constraint firstItem="wC6-84-Fp8" firstAttribute="trailing" secondItem="fhm-r6-sIx" secondAttribute="trailing" id="A6q-Kw-lky"/>
+                            <constraint firstItem="PeG-Bl-gOD" firstAttribute="leading" secondItem="wC6-84-Fp8" secondAttribute="leading" id="RSR-mm-Pg9"/>
+                            <constraint firstItem="fhm-r6-sIx" firstAttribute="top" secondItem="PeG-Bl-gOD" secondAttribute="bottom" id="RjV-ey-klo"/>
+                            <constraint firstItem="fhm-r6-sIx" firstAttribute="leading" secondItem="wC6-84-Fp8" secondAttribute="leading" id="nl5-zE-gzD"/>
+                            <constraint firstItem="PeG-Bl-gOD" firstAttribute="top" secondItem="wC6-84-Fp8" secondAttribute="top" id="tPk-iS-tL0"/>
+                            <constraint firstItem="wC6-84-Fp8" firstAttribute="bottom" secondItem="fhm-r6-sIx" secondAttribute="bottom" id="yzV-uf-48K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wC6-84-Fp8"/>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="PeG-Bl-gOD" id="8Fk-SW-Kv0"/>
+                        <outlet property="navItem" destination="CEG-9j-WOe" id="kCI-NU-0Pa"/>
+                        <outlet property="tableView" destination="fhm-r6-sIx" id="KMO-7b-xCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SsE-Ei-F91" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="106"/>
+        </scene>
     </scenes>
 </document>

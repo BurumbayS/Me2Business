@@ -20,12 +20,17 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        configureNavBar()
+        configureNavBar()
         configureTableView()
 //        configureViewModel()
         fetchData()
     }
 
+    private func configureNavBar() {
+        navigationController?.navigationBar.shouldRemoveShadow(true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "dots_icon"), style: .plain, target: self, action: #selector(moreActions))
+    }
+    
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -61,6 +66,15 @@ class UserProfileViewController: UIViewController {
         }
     }
     
+    @objc private func moreActions() {
+        self.addActionSheet(titles:  ["Пожаловаться на пользователя"], actions: [complainToUser], styles: [.destructive])
+    }
+    
+    private func complainToUser() {
+        let vc = Storyboard.complaintViewController() as! ComplaintViewController
+        vc.viewModel = UserComplaintViewModel(userID: viewModel.userID)
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension UserProfileViewController : UITableViewDelegate, UITableViewDataSource {

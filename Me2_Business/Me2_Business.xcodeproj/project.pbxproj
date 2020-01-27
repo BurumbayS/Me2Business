@@ -76,6 +76,10 @@
 		DD81E28C23DAF4D500069F23 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E28B23DAF4D500069F23 /* Tag.swift */; };
 		DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E28D23DAF4E500069F23 /* TagView.swift */; };
 		DD81E29023DAF6B300069F23 /* NoInterestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E28F23DAF6B300069F23 /* NoInterestsTableViewCell.swift */; };
+		DD81E29223DB0D7200069F23 /* ComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E29123DB0D7200069F23 /* ComplaintViewController.swift */; };
+		DD81E29523DB18E200069F23 /* ComplaintReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E29323DB18E200069F23 /* ComplaintReasonTableViewCell.swift */; };
+		DD81E29623DB18E200069F23 /* ComplaintReasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E29423DB18E200069F23 /* ComplaintReasonTableViewCell.xib */; };
+		DD81E29923DEBD1D00069F23 /* UserComplaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E29823DEBD1D00069F23 /* UserComplaintViewModel.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -169,6 +173,10 @@
 		DD81E28B23DAF4D500069F23 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		DD81E28D23DAF4E500069F23 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		DD81E28F23DAF6B300069F23 /* NoInterestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInterestsTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E29123DB0D7200069F23 /* ComplaintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintViewController.swift; sourceTree = "<group>"; };
+		DD81E29323DB18E200069F23 /* ComplaintReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplaintReasonTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E29423DB18E200069F23 /* ComplaintReasonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComplaintReasonTableViewCell.xib; sourceTree = "<group>"; };
+		DD81E29823DEBD1D00069F23 /* UserComplaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComplaintViewModel.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -291,6 +299,7 @@
 				DD81E27A23DAC4C000069F23 /* FavouritePlacesTableViewCell.swift */,
 				DD81E27C23DACAA600069F23 /* FavouritePlaceCollectionViewCell.swift */,
 				DD81E28F23DAF6B300069F23 /* NoInterestsTableViewCell.swift */,
+				DD81E29723DEBA4B00069F23 /* Complaint */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -307,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				DD81E28423DACF1E00069F23 /* UserProfileViewModel.swift */,
+				DD81E29823DEBD1D00069F23 /* UserComplaintViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -335,6 +345,16 @@
 				DD81E28D23DAF4E500069F23 /* TagView.swift */,
 			);
 			path = Tags;
+			sourceTree = "<group>";
+		};
+		DD81E29723DEBA4B00069F23 /* Complaint */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E29123DB0D7200069F23 /* ComplaintViewController.swift */,
+				DD81E29323DB18E200069F23 /* ComplaintReasonTableViewCell.swift */,
+				DD81E29423DB18E200069F23 /* ComplaintReasonTableViewCell.xib */,
+			);
+			path = Complaint;
 			sourceTree = "<group>";
 		};
 		DDB2579423C1B4CF00DF1EB4 = {
@@ -624,6 +644,7 @@
 				DD00917023C370A100C7B370 /* Roboto-Black.ttf in Resources */,
 				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
+				DD81E29623DB18E200069F23 /* ComplaintReasonTableViewCell.xib in Resources */,
 				DD42F5AA23C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
 				DD00917823C370A100C7B370 /* Roboto-Regular.ttf in Resources */,
@@ -700,6 +721,7 @@
 				DD00918223C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift in Sources */,
 				DDB257D123C20ACB00DF1EB4 /* UIViewControllerExtensions.swift in Sources */,
 				DD0091A123C612A500C7B370 /* Protocols.swift in Sources */,
+				DD81E29923DEBD1D00069F23 /* UserComplaintViewModel.swift in Sources */,
 				DD42F5A623C6F75E000ADF02 /* ApplicationViewController.swift in Sources */,
 				DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */,
 				DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */,
@@ -715,8 +737,10 @@
 				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,
 				DD00915523C32CE200C7B370 /* DateExtensions.swift in Sources */,
 				DDB257CC23C1F53C00DF1EB4 /* LoginViewController.swift in Sources */,
+				DD81E29223DB0D7200069F23 /* ComplaintViewController.swift in Sources */,
 				DDB257D323C20BE400DF1EB4 /* UIAlertControllerExtensions.swift in Sources */,
 				DD81E28523DACF1E00069F23 /* UserProfileViewModel.swift in Sources */,
+				DD81E29523DB18E200069F23 /* ComplaintReasonTableViewCell.swift in Sources */,
 				DD81E28723DADCB300069F23 /* ProfileSectionHeader.swift in Sources */,
 				DDB257C123C1B90500DF1EB4 /* Typealias.swift in Sources */,
 				DD81E28A23DAF4CC00069F23 /* TagsTableViewCell.swift in Sources */,
