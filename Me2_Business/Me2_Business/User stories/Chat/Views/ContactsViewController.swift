@@ -27,11 +27,18 @@ class ContactsViewController: UIViewController {
         configureSearchBar()
         
         fetchData()
+        bindDynamics()
     }
 
     private func fetchData() {
         viewModel.getContacts { [weak self] (status, message) in
             self?.emptyListStatusLabel.isHidden = ((self?.viewModel.byLetterSections.count)! > 0) ? true : false
+            self?.tableView.reloadData()
+        }
+    }
+    
+    private func bindDynamics() {
+        viewModel.updateSearchResults.bind { [weak self] (update) in
             self?.tableView.reloadData()
         }
     }
@@ -47,6 +54,7 @@ class ContactsViewController: UIViewController {
     }
     
     @objc private func cancelNewChat() {
+        self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
     
