@@ -69,6 +69,12 @@ extension Storyboard {
     static var eventsTabViewController = {
         return events.storyboard.instantiateViewController(withIdentifier: "EventsTabViewController")
     }
+    static var archivedEventsViewController = {
+        return events.storyboard.instantiateViewController(withIdentifier: "ArchivedEventsViewController")
+    }
+    static var eventInfoViewController = {
+        return events.storyboard.instantiateViewController(withIdentifier: "EventInfoViewController")
+    }
 }
 
 

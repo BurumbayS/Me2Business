@@ -95,6 +95,15 @@
 		DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */; };
 		DD81E2BB23E0398500069F23 /* ArchiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B923E0398500069F23 /* ArchiveTableViewCell.swift */; };
 		DD81E2BC23E0398500069F23 /* ArchiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2BA23E0398500069F23 /* ArchiveTableViewCell.xib */; };
+		DD81E2BE23E0442000069F23 /* ArchivedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2BD23E0442000069F23 /* ArchivedEventsViewController.swift */; };
+		DD81E2C223E05CDC00069F23 /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2C123E05CDC00069F23 /* EventInfoViewController.swift */; };
+		DD81E2C623E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2C423E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift */; };
+		DD81E2C723E05D7F00069F23 /* EventInfoHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2C523E05D7F00069F23 /* EventInfoHeaderTableViewCell.xib */; };
+		DD81E2CA23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2C823E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift */; };
+		DD81E2CB23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2C923E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.xib */; };
+		DD81E2CE23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2CC23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift */; };
+		DD81E2CF23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2CD23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib */; };
+		DD81E2D123E06F2300069F23 /* EventInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2D023E06F2300069F23 /* EventInfoViewModel.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -207,6 +216,15 @@
 		DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTabViewModel.swift; sourceTree = "<group>"; };
 		DD81E2B923E0398500069F23 /* ArchiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewCell.swift; sourceTree = "<group>"; };
 		DD81E2BA23E0398500069F23 /* ArchiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveTableViewCell.xib; sourceTree = "<group>"; };
+		DD81E2BD23E0442000069F23 /* ArchivedEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedEventsViewController.swift; sourceTree = "<group>"; };
+		DD81E2C123E05CDC00069F23 /* EventInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
+		DD81E2C423E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E2C523E05D7F00069F23 /* EventInfoHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInfoHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		DD81E2C823E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationAndWorkTimeTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E2C923E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventLocationAndWorkTimeTableViewCell.xib; sourceTree = "<group>"; };
+		DD81E2CC23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E2CD23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventAdditionalInfoTableViewCell.xib; sourceTree = "<group>"; };
+		DD81E2D023E06F2300069F23 /* EventInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewModel.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -415,6 +433,8 @@
 				DD81E2B223E003E500069F23 /* EventTableViewCell.xib */,
 				DD81E2B923E0398500069F23 /* ArchiveTableViewCell.swift */,
 				DD81E2BA23E0398500069F23 /* ArchiveTableViewCell.xib */,
+				DD81E2BD23E0442000069F23 /* ArchivedEventsViewController.swift */,
+				DD81E2C323E05D5800069F23 /* Event Info */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,8 +451,23 @@
 			isa = PBXGroup;
 			children = (
 				DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */,
+				DD81E2D023E06F2300069F23 /* EventInfoViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DD81E2C323E05D5800069F23 /* Event Info */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E2C123E05CDC00069F23 /* EventInfoViewController.swift */,
+				DD81E2C423E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift */,
+				DD81E2C523E05D7F00069F23 /* EventInfoHeaderTableViewCell.xib */,
+				DD81E2C823E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift */,
+				DD81E2C923E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.xib */,
+				DD81E2CC23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift */,
+				DD81E2CD23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib */,
+			);
+			path = "Event Info";
 			sourceTree = "<group>";
 		};
 		DDB2579423C1B4CF00DF1EB4 = {
@@ -731,10 +766,13 @@
 				DD81E2A123DEF64000069F23 /* ContactTableViewCell.xib in Resources */,
 				DD81E2BC23E0398500069F23 /* ArchiveTableViewCell.xib in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
+				DD81E2CF23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib in Resources */,
 				DD81E2B423E003E500069F23 /* EventTableViewCell.xib in Resources */,
+				DD81E2CB23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.xib in Resources */,
 				DD81E29623DB18E200069F23 /* ComplaintReasonTableViewCell.xib in Resources */,
 				DD42F5AA23C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
+				DD81E2C723E05D7F00069F23 /* EventInfoHeaderTableViewCell.xib in Resources */,
 				DD00917823C370A100C7B370 /* Roboto-Regular.ttf in Resources */,
 				DD00919823C4B10500C7B370 /* BookingCollectionViewCell.xib in Resources */,
 				DD00917323C370A100C7B370 /* Roboto-BoldItalic.ttf in Resources */,
@@ -798,8 +836,10 @@
 				DD42F5AE23C70695000ADF02 /* Dynamic.swift in Sources */,
 				DD00915D23C33F2D00C7B370 /* LoginViewModel.swift in Sources */,
 				DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */,
+				DD81E2CA23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift in Sources */,
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
+				DD81E2C223E05CDC00069F23 /* EventInfoViewController.swift in Sources */,
 				DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */,
 				DD81E2B323E003E500069F23 /* EventTableViewCell.swift in Sources */,
 				DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */,
@@ -824,11 +864,13 @@
 				DDB257C723C1F4C200DF1EB4 /* Storyboard.swift in Sources */,
 				DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */,
 				DD81E28C23DAF4D500069F23 /* Tag.swift in Sources */,
+				DD81E2CE23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift in Sources */,
 				DD81E27323DABAFD00069F23 /* UserProfileViewController.swift in Sources */,
 				DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */,
 				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,
 				DD81E2A523DEF9E600069F23 /* Contact.swift in Sources */,
 				DD81E2A323DEF95800069F23 /* ContactsViewModel.swift in Sources */,
+				DD81E2C623E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift in Sources */,
 				DD00915523C32CE200C7B370 /* DateExtensions.swift in Sources */,
 				DDB257CC23C1F53C00DF1EB4 /* LoginViewController.swift in Sources */,
 				DD81E29223DB0D7200069F23 /* ComplaintViewController.swift in Sources */,
@@ -858,6 +900,7 @@
 				DD00917F23C4898900C7B370 /* CollectionView.swift in Sources */,
 				DD00917D23C4890500C7B370 /* ChatViewController.swift in Sources */,
 				DD00914A23C3215C00C7B370 /* ChatTableViewCell.swift in Sources */,
+				DD81E2BE23E0442000069F23 /* ArchivedEventsViewController.swift in Sources */,
 				DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */,
 				DD81E2B023DFEC7C00069F23 /* EventsTabViewController.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
@@ -871,6 +914,7 @@
 				DD00918C23C495FC00C7B370 /* SectionDateHeaderCollectionReusableView.swift in Sources */,
 				DD00914D23C3291B00C7B370 /* Room.swift in Sources */,
 				DD81E29023DAF6B300069F23 /* NoInterestsTableViewCell.swift in Sources */,
+				DD81E2D123E06F2300069F23 /* EventInfoViewModel.swift in Sources */,
 				DD81E28323DACC9600069F23 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

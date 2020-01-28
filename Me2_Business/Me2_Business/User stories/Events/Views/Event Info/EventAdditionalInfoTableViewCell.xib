@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="hEc-7i-dkf" customClass="EventAdditionalInfoTableViewCell" customModule="Me2_Business" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="hEc-7i-dkf" id="0fc-sp-oyl">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="CME-oh-oia">
+                        <rect key="frame" x="20" y="10" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="BwH-5K-Up2"/>
+                            <constraint firstAttribute="height" constant="15" id="xdr-aW-oOj"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата публикации:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-Ha-Uyh">
+                        <rect key="frame" x="45" y="9.5" width="110" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="Ddw-an-GyJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кол-во сохранений:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTB-eH-0GV">
+                        <rect key="frame" x="43.5" y="38" width="120" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="5Mu-kH-ZVt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark_icon" translatesAutoresizingMaskIntoConstraints="NO" id="jgM-2K-oU3">
+                        <rect key="frame" x="21.5" y="38" width="12" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="8Cb-Ma-Lz7"/>
+                            <constraint firstAttribute="width" constant="12" id="8gL-yw-oD2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-f8-8CF">
+                        <rect key="frame" x="173.5" y="38" width="126.5" height="16"/>
+                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBw-J4-jL0">
+                        <rect key="frame" x="165" y="9.5" width="135" height="16"/>
+                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="mTB-eH-0GV" firstAttribute="leading" secondItem="jgM-2K-oU3" secondAttribute="trailing" constant="10" id="5b0-QK-91R"/>
+                    <constraint firstItem="CME-oh-oia" firstAttribute="leading" secondItem="0fc-sp-oyl" secondAttribute="leading" constant="20" id="A7U-1S-AoI"/>
+                    <constraint firstItem="CME-oh-oia" firstAttribute="top" secondItem="0fc-sp-oyl" secondAttribute="top" constant="10" id="AZr-HB-U9d"/>
+                    <constraint firstItem="QeM-Ha-Uyh" firstAttribute="centerY" secondItem="CME-oh-oia" secondAttribute="centerY" id="BZ3-0z-SYW"/>
+                    <constraint firstItem="jgM-2K-oU3" firstAttribute="top" secondItem="CME-oh-oia" secondAttribute="bottom" constant="13" id="BiB-h4-ylk"/>
+                    <constraint firstItem="fl4-f8-8CF" firstAttribute="leading" secondItem="mTB-eH-0GV" secondAttribute="trailing" constant="10" id="IPQ-Zu-dxf"/>
+                    <constraint firstItem="mTB-eH-0GV" firstAttribute="centerY" secondItem="jgM-2K-oU3" secondAttribute="centerY" id="LhY-i5-pgg"/>
+                    <constraint firstItem="PBw-J4-jL0" firstAttribute="centerY" secondItem="QeM-Ha-Uyh" secondAttribute="centerY" id="NiQ-eg-lti"/>
+                    <constraint firstItem="PBw-J4-jL0" firstAttribute="leading" secondItem="QeM-Ha-Uyh" secondAttribute="trailing" constant="10" id="Olm-Q8-B1d"/>
+                    <constraint firstAttribute="bottom" secondItem="jgM-2K-oU3" secondAttribute="bottom" constant="20" id="PB2-c1-jEr"/>
+                    <constraint firstAttribute="trailing" secondItem="PBw-J4-jL0" secondAttribute="trailing" constant="20" id="SCz-vu-I7Y"/>
+                    <constraint firstItem="fl4-f8-8CF" firstAttribute="centerY" secondItem="mTB-eH-0GV" secondAttribute="centerY" id="aKe-iP-v5E"/>
+                    <constraint firstItem="QeM-Ha-Uyh" firstAttribute="leading" secondItem="CME-oh-oia" secondAttribute="trailing" constant="10" id="dMg-4u-wP7"/>
+                    <constraint firstItem="jgM-2K-oU3" firstAttribute="centerX" secondItem="CME-oh-oia" secondAttribute="centerX" id="jFN-vD-sqI"/>
+                    <constraint firstAttribute="trailing" secondItem="fl4-f8-8CF" secondAttribute="trailing" constant="20" id="knV-tq-Pnb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="ck9-K3-w35"/>
+            <connections>
+                <outlet property="publicationDate" destination="PBw-J4-jL0" id="Rmn-ji-Ia3"/>
+                <outlet property="savesCount" destination="fl4-f8-8CF" id="ccP-33-f4y"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="120.20089285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark_icon" width="12.5" height="17.5"/>
+        <image name="calendar_icon" width="18" height="16"/>
+    </resources>
+</document>

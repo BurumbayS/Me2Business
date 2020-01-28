@@ -15,6 +15,18 @@ class EventsTabViewController: UIViewController {
     
     let viewModel = EventsTabViewModel()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showNewEventButton(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        showNewEventButton(false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,6 +77,12 @@ class EventsTabViewController: UIViewController {
         tableView.registerNib(EventTableViewCell.self)
         tableView.registerNib(ArchiveTableViewCell.self)
     }
+    
+    private func showNewEventButton(_ show: Bool) {
+      UIView.animate(withDuration: 0.2) {
+          self.newEventButton.alpha = show ? 1.0 : 0.0
+      }
+    }
 }
 
 extension EventsTabViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -113,6 +131,22 @@ extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             cell.configure(wtih: viewModel.events[indexPath.row])
             return cell
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            
+            let vc = Storyboard.archivedEventsViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        default:
+            
+            let vc = Storyboard.eventInfoViewController() as! EventInfoViewController
+            vc.viewModel = EventInfoViewModel(event: viewModel.events[indexPath.row])
+            self.navigationController?.pushViewController(vc, animated: true)
             
         }
     }
