@@ -11,12 +11,14 @@ import UIKit
 class EventsTabViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    let newEventButton = CustomLargeTitleBarButton()
     
     let viewModel = EventsTabViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavBar()
         configureTableView()
         
         fetchData()
@@ -36,6 +38,22 @@ class EventsTabViewController: UIViewController {
         }
     }
     
+    private func configureNavBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "События"
+        
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.searchBar.delegate = self
+        search.searchBar.placeholder = "Поиск"
+        search.searchBar.setValue("Отменить", forKey: "cancelButtonText")
+        navigationItem.searchController = search
+        
+        newEventButton.add(to: navigationController!.navigationBar, with: UIImage(named: "add_event")!) {
+            
+        }
+    }
+    
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,6 +63,24 @@ class EventsTabViewController: UIViewController {
         tableView.separatorStyle = .none
         
         tableView.registerNib(EventTableViewCell.self)
+    }
+}
+
+extension EventsTabViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        viewModel.searchActivated = false
+        tableView.reloadSections([0], with: .automatic)
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+
+        if text != "" {
+//            viewModel.searchActivated = true
+//            viewModel.searchChat(with: text) { [weak self] in
+//                self?.tableView.reloadSections([0], with: .automatic)
+//            }
+        }
     }
 }
 
@@ -58,4 +94,9 @@ extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(wtih: viewModel.events[indexPath.row])
         return cell
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           guard let height = navigationController?.navigationBar.frame.height else { return }
+           newEventButton.moveAndResizeImage(for: height)
+       }
 }
