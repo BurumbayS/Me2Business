@@ -14,6 +14,7 @@ enum Storyboard: String {
     case chat = "Chat"
     case loader = "Loader"
     case userProfile = "UserProfile"
+    case events = "Events"
     
     private var storyboard: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: nil)
@@ -62,6 +63,11 @@ extension Storyboard {
     }
     static var complaintViewController = {
         return userProfile.storyboard.instantiateViewController(withIdentifier: "ComplaintViewController")
+    }
+    
+    //Events tab pages
+    static var eventsTabViewController = {
+        return events.storyboard.instantiateViewController(withIdentifier: "EventsTabViewController")
     }
 }
 

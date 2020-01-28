@@ -87,6 +87,12 @@
 		DD81E2A323DEF95800069F23 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2A223DEF95800069F23 /* ContactsViewModel.swift */; };
 		DD81E2A523DEF9E600069F23 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2A423DEF9E600069F23 /* Contact.swift */; };
 		DD81E2A723DEFAF500069F23 /* ContactUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2A623DEFAF500069F23 /* ContactUser.swift */; };
+		DD81E2AA23DFEB7800069F23 /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2A923DFEB7800069F23 /* Events.storyboard */; };
+		DD81E2B023DFEC7C00069F23 /* EventsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2AF23DFEC7C00069F23 /* EventsTabViewController.swift */; };
+		DD81E2B323E003E500069F23 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B123E003E500069F23 /* EventTableViewCell.swift */; };
+		DD81E2B423E003E500069F23 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2B223E003E500069F23 /* EventTableViewCell.xib */; };
+		DD81E2B623E01DAC00069F23 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B523E01DAC00069F23 /* Event.swift */; };
+		DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -191,6 +197,12 @@
 		DD81E2A223DEF95800069F23 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		DD81E2A423DEF9E600069F23 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		DD81E2A623DEFAF500069F23 /* ContactUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUser.swift; sourceTree = "<group>"; };
+		DD81E2A923DFEB7800069F23 /* Events.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
+		DD81E2AF23DFEC7C00069F23 /* EventsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTabViewController.swift; sourceTree = "<group>"; };
+		DD81E2B123E003E500069F23 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E2B223E003E500069F23 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		DD81E2B523E01DAC00069F23 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTabViewModel.swift; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -381,6 +393,42 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
+		DD81E2AB23DFEC5000069F23 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E2AE23DFEC6600069F23 /* ViewModels */,
+				DD81E2AD23DFEC5E00069F23 /* Models */,
+				DD81E2AC23DFEC5900069F23 /* Views */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		DD81E2AC23DFEC5900069F23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E2AF23DFEC7C00069F23 /* EventsTabViewController.swift */,
+				DD81E2B123E003E500069F23 /* EventTableViewCell.swift */,
+				DD81E2B223E003E500069F23 /* EventTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD81E2AD23DFEC5E00069F23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E2B523E01DAC00069F23 /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD81E2AE23DFEC6600069F23 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DDB2579423C1B4CF00DF1EB4 = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +485,7 @@
 				DDB257B723C1B6B800DF1EB4 /* Login.storyboard */,
 				DDB257DE23C2119200DF1EB4 /* Chat.storyboard */,
 				DD81E27423DABB1D00069F23 /* UserProfile.storyboard */,
+				DD81E2A923DFEB7800069F23 /* Events.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -444,6 +493,7 @@
 		DDB257B523C1B69000DF1EB4 /* User stories */ = {
 			isa = PBXGroup;
 			children = (
+				DD81E2AB23DFEC5000069F23 /* Events */,
 				DD81E27E23DACAC700069F23 /* Place Profile */,
 				DD81E26C23D9D5D400069F23 /* User Profile */,
 				DDB257D823C2114E00DF1EB4 /* Chat */,
@@ -674,6 +724,7 @@
 				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
 				DD81E2A123DEF64000069F23 /* ContactTableViewCell.xib in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
+				DD81E2B423E003E500069F23 /* EventTableViewCell.xib in Resources */,
 				DD81E29623DB18E200069F23 /* ComplaintReasonTableViewCell.xib in Resources */,
 				DD42F5AA23C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib in Resources */,
 				DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */,
@@ -684,6 +735,7 @@
 				DD00917123C370A100C7B370 /* Roboto-BlackItalic.ttf in Resources */,
 				DD81E27523DABB1D00069F23 /* UserProfile.storyboard in Resources */,
 				DD81E27923DABF2500069F23 /* ProfileHeaderTableViewCell.xib in Resources */,
+				DD81E2AA23DFEB7800069F23 /* Events.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +794,7 @@
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
 				DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */,
+				DD81E2B323E003E500069F23 /* EventTableViewCell.swift in Sources */,
 				DD00919A23C4C10A00C7B370 /* Booking.swift in Sources */,
 				DD00918823C4904B00C7B370 /* ChatAdapter.swift in Sources */,
 				DD00915923C331EE00C7B370 /* UITableViewExtensions.swift in Sources */,
@@ -784,11 +837,13 @@
 				DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */,
 				DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */,
 				DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */,
+				DD81E2B623E01DAC00069F23 /* Event.swift in Sources */,
 				DD81E26723D9783F00069F23 /* SetNewPassViewController.swift in Sources */,
 				DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */,
 				DD81E26523D96D5D00069F23 /* ConfirmCodeViewModel.swift in Sources */,
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,
+				DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */,
 				DD00915323C32CB000C7B370 /* StringExtensions.swift in Sources */,
 				DD81E29B23DEEC6600069F23 /* CustomLargeTitleBarButton.swift in Sources */,
 				DD81E2A723DEFAF500069F23 /* ContactUser.swift in Sources */,
@@ -796,6 +851,7 @@
 				DD00917D23C4890500C7B370 /* ChatViewController.swift in Sources */,
 				DD00914A23C3215C00C7B370 /* ChatTableViewCell.swift in Sources */,
 				DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */,
+				DD81E2B023DFEC7C00069F23 /* EventsTabViewController.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
 				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
