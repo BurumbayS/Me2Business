@@ -93,6 +93,8 @@
 		DD81E2B423E003E500069F23 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2B223E003E500069F23 /* EventTableViewCell.xib */; };
 		DD81E2B623E01DAC00069F23 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B523E01DAC00069F23 /* Event.swift */; };
 		DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */; };
+		DD81E2BB23E0398500069F23 /* ArchiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E2B923E0398500069F23 /* ArchiveTableViewCell.swift */; };
+		DD81E2BC23E0398500069F23 /* ArchiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81E2BA23E0398500069F23 /* ArchiveTableViewCell.xib */; };
 		DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */; };
 		DDB257A623C1B4CF00DF1EB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A423C1B4CF00DF1EB4 /* Main.storyboard */; };
 		DDB257A823C1B4D100DF1EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */; };
@@ -203,6 +205,8 @@
 		DD81E2B223E003E500069F23 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		DD81E2B523E01DAC00069F23 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DD81E2B723E01F5B00069F23 /* EventsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTabViewModel.swift; sourceTree = "<group>"; };
+		DD81E2B923E0398500069F23 /* ArchiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewCell.swift; sourceTree = "<group>"; };
+		DD81E2BA23E0398500069F23 /* ArchiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveTableViewCell.xib; sourceTree = "<group>"; };
 		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -409,6 +413,8 @@
 				DD81E2AF23DFEC7C00069F23 /* EventsTabViewController.swift */,
 				DD81E2B123E003E500069F23 /* EventTableViewCell.swift */,
 				DD81E2B223E003E500069F23 /* EventTableViewCell.xib */,
+				DD81E2B923E0398500069F23 /* ArchiveTableViewCell.swift */,
+				DD81E2BA23E0398500069F23 /* ArchiveTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -723,6 +729,7 @@
 				DD00917023C370A100C7B370 /* Roboto-Black.ttf in Resources */,
 				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
 				DD81E2A123DEF64000069F23 /* ContactTableViewCell.xib in Resources */,
+				DD81E2BC23E0398500069F23 /* ArchiveTableViewCell.xib in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
 				DD81E2B423E003E500069F23 /* EventTableViewCell.xib in Resources */,
 				DD81E29623DB18E200069F23 /* ComplaintReasonTableViewCell.xib in Resources */,
@@ -838,6 +845,7 @@
 				DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */,
 				DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */,
 				DD81E2B623E01DAC00069F23 /* Event.swift in Sources */,
+				DD81E2BB23E0398500069F23 /* ArchiveTableViewCell.swift in Sources */,
 				DD81E26723D9783F00069F23 /* SetNewPassViewController.swift in Sources */,
 				DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */,
 				DD81E26523D96D5D00069F23 /* ConfirmCodeViewModel.swift in Sources */,

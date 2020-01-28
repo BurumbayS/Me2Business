@@ -63,6 +63,7 @@ class EventsTabViewController: UIViewController {
         tableView.separatorStyle = .none
         
         tableView.registerNib(EventTableViewCell.self)
+        tableView.registerNib(ArchiveTableViewCell.self)
     }
 }
 
@@ -85,14 +86,35 @@ extension EventsTabViewController: UISearchResultsUpdating, UISearchBarDelegate 
 }
 
 extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.events.count
+        switch section {
+        case 0:
+            return 1
+        default:
+            return viewModel.events.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: EventTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.configure(wtih: viewModel.events[indexPath.row])
-        return cell
+        switch indexPath.section {
+        case 0:
+            
+            let cell: ArchiveTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
+            return cell
+            
+        default:
+            
+            let cell: EventTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
+            cell.configure(wtih: viewModel.events[indexPath.row])
+            return cell
+            
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
