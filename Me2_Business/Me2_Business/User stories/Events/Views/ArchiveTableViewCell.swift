@@ -13,7 +13,6 @@ class ArchiveTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
             
-        addUnderline(with: Color.gray, and: CGSize(width: UIScreen.main.bounds.width, height: 48))
     }
     
 }

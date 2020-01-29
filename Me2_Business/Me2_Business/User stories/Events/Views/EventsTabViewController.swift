@@ -104,6 +104,23 @@ extension EventsTabViewController: UISearchResultsUpdating, UISearchBarDelegate 
 }
 
 extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = UIView()
+        
+        switch section {
+        case 0:
+            footer.backgroundColor = Color.gray
+        default:
+            footer.backgroundColor = .white
+        }
+        
+        return footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
