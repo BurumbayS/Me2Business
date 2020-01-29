@@ -76,6 +76,7 @@ extension EventInfoViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 3:
             let cell: EventAdditionalInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(event: viewModel.event)
             return cell
         default:
             return UITableViewCell()

@@ -40,6 +40,8 @@ class Event {
     var time_end: String?
     var date_type: DateType!
     var tags = [Tag]()
+    var favourite_count: Int?
+    var created_at: String?
     
     init(json: JSON) {
         id = json["id"].intValue
@@ -53,6 +55,8 @@ class Event {
         end = json["end"].stringValue
         time_start = json["time_start"].stringValue
         time_end = json["time_end"].stringValue
+        favourite_count = json["favourite_count"].intValue
+        created_at = json["created_at"].stringValue
         
         for item in json["tags"].arrayValue {
             tags.append(Tag(json: item))
@@ -87,6 +91,16 @@ class Event {
         }
         
         return date_type.title
+    }
+    
+    func getDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSZ"
+        guard let date = dateFormatter.date(from: created_at ?? "") else { return "" }
+        
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        
+        return dateFormatter.string(from: date)
     }
     
     private func formatDate(str: String) -> String {

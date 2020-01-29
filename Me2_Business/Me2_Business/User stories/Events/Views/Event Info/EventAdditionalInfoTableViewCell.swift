@@ -15,7 +15,12 @@ class EventAdditionalInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+    }
+    
+    func configure(event: Event) {
+        publicationDate.text = event.getDateString()
+        if let cnt = event.favourite_count { savesCount.text = "\(cnt)" }
     }
     
 }
