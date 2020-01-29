@@ -19,6 +19,22 @@ class EventInfoViewController: UIViewController {
         
         configureTableView()
         configureNavBar()
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        startLoader()
+        
+        viewModel.fetchData { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                self?.stopLoader()
+                self?.tableView.reloadData()
+            default:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
+            }
+        }
     }
     
     private func configureNavBar() {
@@ -35,12 +51,13 @@ class EventInfoViewController: UIViewController {
         tableView.registerNib(EventInfoHeaderTableViewCell.self)
         tableView.registerNib(EventLocationAndWorkTimeTableViewCell.self)
         tableView.registerNib(EventAdditionalInfoTableViewCell.self)
+        tableView.register(TagsTableViewCell.self)
     }
 }
 
 extension EventInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if viewModel.dataLoaded { return 4 } else { return 0 }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,10 +67,14 @@ extension EventInfoViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(event: viewModel.event)
             return cell
         case 1:
+            let cell: TagsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(tagsType: .normal, tagsList: viewModel.getTagsList())
+            return cell
+        case 2:
             let cell: EventLocationAndWorkTimeTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.configure(location: viewModel.event.place.address1, time: viewModel.event.getTime())
             return cell
-        case 2:
+        case 3:
             let cell: EventAdditionalInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             return cell
         default:

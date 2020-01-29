@@ -39,7 +39,7 @@ class Event {
     var time_start: String?
     var time_end: String?
     var date_type: DateType!
-    var tags = [String]()
+    var tags = [Tag]()
     
     init(json: JSON) {
         id = json["id"].intValue
@@ -55,7 +55,7 @@ class Event {
         time_end = json["time_end"].stringValue
         
         for item in json["tags"].arrayValue {
-            tags.append(item.stringValue)
+            tags.append(Tag(json: item))
         }
     }
     
