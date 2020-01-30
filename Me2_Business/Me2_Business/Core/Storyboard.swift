@@ -75,6 +75,9 @@ extension Storyboard {
     static var eventInfoViewController = {
         return events.storyboard.instantiateViewController(withIdentifier: "EventInfoViewController")
     }
+    static var addEventViewController = {
+        return events.storyboard.instantiateViewController(withIdentifier: "AddEventViewController")
+    }
 }
 
 

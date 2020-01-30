@@ -61,8 +61,8 @@ class EventsTabViewController: UIViewController {
         search.searchBar.setValue("Отменить", forKey: "cancelButtonText")
         navigationItem.searchController = search
         
-        newEventButton.add(to: navigationController!.navigationBar, with: UIImage(named: "add_event")!) {
-            
+        newEventButton.add(to: navigationController!.navigationBar, with: UIImage(named: "add_event")!) { [weak self] in
+            self?.addNewEvent()
         }
     }
     
@@ -82,6 +82,11 @@ class EventsTabViewController: UIViewController {
       UIView.animate(withDuration: 0.2) {
           self.newEventButton.alpha = show ? 1.0 : 0.0
       }
+    }
+    
+    private func addNewEvent() {
+        let vc = Storyboard.addEventViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

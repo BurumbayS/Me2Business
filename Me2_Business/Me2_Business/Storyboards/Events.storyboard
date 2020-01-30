@@ -117,5 +117,35 @@
             </objects>
             <point key="canvasLocation" x="2297" y="110"/>
         </scene>
+        <!--Add Event View Controller-->
+        <scene sceneID="wcL-nc-psL">
+            <objects>
+                <viewController storyboardIdentifier="AddEventViewController" providesPresentationContextTransitionStyle="YES" id="4eX-g6-zZT" customClass="AddEventViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EVF-VN-DyN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="J1a-JS-n6T">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J1a-JS-n6T" firstAttribute="leading" secondItem="015-US-UxO" secondAttribute="leading" id="Cgm-Sc-0Gn"/>
+                            <constraint firstItem="015-US-UxO" firstAttribute="bottom" secondItem="J1a-JS-n6T" secondAttribute="bottom" id="QjU-nC-ahq"/>
+                            <constraint firstItem="J1a-JS-n6T" firstAttribute="top" secondItem="015-US-UxO" secondAttribute="top" id="bPu-hb-7DO"/>
+                            <constraint firstItem="015-US-UxO" firstAttribute="trailing" secondItem="J1a-JS-n6T" secondAttribute="trailing" id="dN9-zO-Efe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="015-US-UxO"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="J1a-JS-n6T" id="ogz-Qx-9z1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05V-qd-a3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757" y="798"/>
+        </scene>
     </scenes>
 </document>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="230" id="KGk-i7-Jjw" customClass="AddEventDateTableViewCell" customModule="Me2_Business" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="298" height="270"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="298" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Периодичность*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-Jg-SQe">
+                        <rect key="frame" x="20" y="20" width="101" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Продолжительность*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-5b-EJV">
+                        <rect key="frame" x="20" y="185.5" width="131.5" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="С" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXa-Hx-dC7">
+                        <rect key="frame" x="20" y="225.5" width="8.5" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gNS-ct-5BZ">
+                        <rect key="frame" x="20" y="50.5" width="258" height="120"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oao-S2-qog" customClass="Checkbox" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="258" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mqv-d1-QjF" customClass="Checkbox" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="258" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-kR-mZF" customClass="Checkbox" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="60" width="258" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8w-di-icR" customClass="Checkbox" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="258" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="fpU-1y-Mu5"/>
+                        </constraints>
+                    </stackView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s65-ch-7VA">
+                        <rect key="frame" x="38.5" y="216" width="102" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQ6-21-c2s">
+                        <rect key="frame" x="176" y="216" width="102" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" priority="750" constant="120" id="NOD-cg-9F5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="до" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CO-RI-XEs">
+                        <rect key="frame" x="150.5" y="225.5" width="15.5" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gQ6-21-c2s" firstAttribute="centerY" secondItem="s65-ch-7VA" secondAttribute="centerY" id="6K3-68-Psm"/>
+                    <constraint firstItem="gNS-ct-5BZ" firstAttribute="top" secondItem="Fix-Jg-SQe" secondAttribute="bottom" constant="15" id="6ON-WW-pVC"/>
+                    <constraint firstItem="gQ6-21-c2s" firstAttribute="width" secondItem="s65-ch-7VA" secondAttribute="width" id="DUY-cb-e5s"/>
+                    <constraint firstItem="s65-ch-7VA" firstAttribute="leading" secondItem="DXa-Hx-dC7" secondAttribute="trailing" constant="10" id="KDF-al-3i7"/>
+                    <constraint firstItem="gNS-ct-5BZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="KJf-OT-xEj"/>
+                    <constraint firstItem="6CO-RI-XEs" firstAttribute="centerY" secondItem="gQ6-21-c2s" secondAttribute="centerY" id="N0j-ad-ljf"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gQ6-21-c2s" secondAttribute="trailing" constant="20" id="Qha-pE-jDc"/>
+                    <constraint firstAttribute="bottom" secondItem="s65-ch-7VA" secondAttribute="bottom" constant="20" id="RBu-PY-gcq"/>
+                    <constraint firstItem="Fix-Jg-SQe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="VWy-ww-h2g"/>
+                    <constraint firstItem="s65-ch-7VA" firstAttribute="top" secondItem="pCu-5b-EJV" secondAttribute="bottom" constant="15" id="bzO-1J-7et"/>
+                    <constraint firstItem="pCu-5b-EJV" firstAttribute="leading" secondItem="gNS-ct-5BZ" secondAttribute="leading" id="cVB-i3-co6"/>
+                    <constraint firstAttribute="trailing" secondItem="gNS-ct-5BZ" secondAttribute="trailing" constant="20" id="eZE-F8-TjA"/>
+                    <constraint firstItem="DXa-Hx-dC7" firstAttribute="leading" secondItem="pCu-5b-EJV" secondAttribute="leading" id="fBf-pO-LN2"/>
+                    <constraint firstItem="pCu-5b-EJV" firstAttribute="top" secondItem="gNS-ct-5BZ" secondAttribute="bottom" constant="15" id="kTq-YV-h5Z"/>
+                    <constraint firstItem="6CO-RI-XEs" firstAttribute="leading" secondItem="s65-ch-7VA" secondAttribute="trailing" constant="10" id="mgS-Jk-gwL"/>
+                    <constraint firstItem="Fix-Jg-SQe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vYH-dx-V3g"/>
+                    <constraint firstItem="DXa-Hx-dC7" firstAttribute="centerY" secondItem="s65-ch-7VA" secondAttribute="centerY" id="xjH-29-DaX"/>
+                    <constraint firstItem="gQ6-21-c2s" firstAttribute="leading" secondItem="6CO-RI-XEs" secondAttribute="trailing" constant="10" id="zdn-gs-TBb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="fromDateTextField" destination="s65-ch-7VA" id="KxS-sI-lHh"/>
+                <outlet property="stackView" destination="gNS-ct-5BZ" id="Snp-CC-cbZ"/>
+                <outlet property="toDateTextField" destination="gQ6-21-c2s" id="Y7c-v3-BuW"/>
+            </connections>
+            <point key="canvasLocation" x="121.73913043478262" y="188.16964285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

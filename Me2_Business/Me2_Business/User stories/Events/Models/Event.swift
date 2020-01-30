@@ -13,15 +13,18 @@ enum DateType: String {
     case weekdays = "WEEKDAYS"
     case everyday = "EVERYDAY"
     case once = "ONCE"
+    case weekends = "WEEKENDS"
     
     var title: String {
         switch self {
+        case .weekends:
+            return "По выходным"
         case .weekdays:
-            return "Будни"
+            return "По будням"
         case .everyday:
             return "Ежедневно"
         case .once:
-            return ""
+            return "Один раз"
         }
     }
 }
