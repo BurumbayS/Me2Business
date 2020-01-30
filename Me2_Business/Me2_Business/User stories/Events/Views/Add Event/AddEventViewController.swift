@@ -34,10 +34,20 @@ class AddEventViewController: UIViewController {
         
         tableView.registerNib(AddEventMainInfoTableViewCell.self)
         tableView.registerNib(AddEventDateTableViewCell.self)
+        tableView.registerNib(AddEventTimeTableViewCell.self)
+        tableView.registerNib(AddEventPriceTableViewCell.self)
     }
 }
 
 extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView()
         footer.backgroundColor = Color.lightGray
@@ -49,7 +59,7 @@ extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,9 +71,17 @@ extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell: AddEventMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             return cell
-        default:
+        case 1:
             let cell: AddEventDateTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             return cell
+        case 2:
+            let cell: AddEventTimeTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            return cell
+        case 3:
+            let cell: AddEventPriceTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            return cell
+        default:
+            return UITableViewCell()
         }
         
     }

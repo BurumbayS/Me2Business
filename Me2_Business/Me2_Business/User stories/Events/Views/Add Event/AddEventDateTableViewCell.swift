@@ -49,7 +49,6 @@ class AddEventDateTableViewCell: UITableViewCell {
         
         fromDateTextField.inputView = datePicker
         toDateTextField.inputView = datePicker
-       
     }
     
     @objc private func datePicked() {

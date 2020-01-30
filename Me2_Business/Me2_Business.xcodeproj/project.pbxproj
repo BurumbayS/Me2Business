@@ -61,6 +61,10 @@
 		DD583ADA23E1AB2F00800339 /* AddEventDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD583AD823E1AB2F00800339 /* AddEventDateTableViewCell.xib */; };
 		DD583ADF23E1C77F00800339 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583ADE23E1C77F00800339 /* Checkbox.swift */; };
 		DD583AE123E2CEEF00800339 /* Checkbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD583AE023E2CEEF00800339 /* Checkbox.xib */; };
+		DD583AE423E2EDC800800339 /* AddEventTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AE223E2EDC800800339 /* AddEventTimeTableViewCell.swift */; };
+		DD583AE523E2EDC800800339 /* AddEventTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD583AE323E2EDC800800339 /* AddEventTimeTableViewCell.xib */; };
+		DD583AE823E2F8B600800339 /* AddEventPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AE623E2F8B600800339 /* AddEventPriceTableViewCell.swift */; };
+		DD583AE923E2F8B600800339 /* AddEventPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD583AE723E2F8B600800339 /* AddEventPriceTableViewCell.xib */; };
 		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
 		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
@@ -187,6 +191,10 @@
 		DD583AD823E1AB2F00800339 /* AddEventDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventDateTableViewCell.xib; sourceTree = "<group>"; };
 		DD583ADE23E1C77F00800339 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		DD583AE023E2CEEF00800339 /* Checkbox.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Checkbox.xib; sourceTree = "<group>"; };
+		DD583AE223E2EDC800800339 /* AddEventTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTimeTableViewCell.swift; sourceTree = "<group>"; };
+		DD583AE323E2EDC800800339 /* AddEventTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventTimeTableViewCell.xib; sourceTree = "<group>"; };
+		DD583AE623E2F8B600800339 /* AddEventPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventPriceTableViewCell.swift; sourceTree = "<group>"; };
+		DD583AE723E2F8B600800339 /* AddEventPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventPriceTableViewCell.xib; sourceTree = "<group>"; };
 		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +348,10 @@
 				DD583AD423E1A78B00800339 /* AddEventMainInfoTableViewCell.xib */,
 				DD583AD723E1AB2F00800339 /* AddEventDateTableViewCell.swift */,
 				DD583AD823E1AB2F00800339 /* AddEventDateTableViewCell.xib */,
+				DD583AE223E2EDC800800339 /* AddEventTimeTableViewCell.swift */,
+				DD583AE323E2EDC800800339 /* AddEventTimeTableViewCell.xib */,
+				DD583AE623E2F8B600800339 /* AddEventPriceTableViewCell.swift */,
+				DD583AE723E2F8B600800339 /* AddEventPriceTableViewCell.xib */,
 			);
 			path = "Add Event";
 			sourceTree = "<group>";
@@ -787,6 +799,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD583AE923E2F8B600800339 /* AddEventPriceTableViewCell.xib in Resources */,
 				DD00917623C370A100C7B370 /* Roboto-Medium.ttf in Resources */,
 				DDB257B823C1B6B800DF1EB4 /* Login.storyboard in Resources */,
 				DD00917A23C370A100C7B370 /* Roboto-Thin.ttf in Resources */,
@@ -803,6 +816,7 @@
 				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
 				DD81E2A123DEF64000069F23 /* ContactTableViewCell.xib in Resources */,
 				DD81E2BC23E0398500069F23 /* ArchiveTableViewCell.xib in Resources */,
+				DD583AE523E2EDC800800339 /* AddEventTimeTableViewCell.xib in Resources */,
 				DD583AE123E2CEEF00800339 /* Checkbox.xib in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
 				DD81E2CF23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib in Resources */,
@@ -880,6 +894,7 @@
 				DD583AD923E1AB2F00800339 /* AddEventDateTableViewCell.swift in Sources */,
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
+				DD583AE423E2EDC800800339 /* AddEventTimeTableViewCell.swift in Sources */,
 				DD81E2C223E05CDC00069F23 /* EventInfoViewController.swift in Sources */,
 				DD00919F23C6126C00C7B370 /* MediaMessageCollectionViewCell.swift in Sources */,
 				DD81E2B323E003E500069F23 /* EventTableViewCell.swift in Sources */,
@@ -899,6 +914,7 @@
 				DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */,
 				DDB257BD23C1B87400DF1EB4 /* AttributedTextField.swift in Sources */,
 				DD00918A23C494AF00C7B370 /* VideoHelper.swift in Sources */,
+				DD583AE823E2F8B600800339 /* AddEventPriceTableViewCell.swift in Sources */,
 				DD583AD023E1A04100800339 /* AddEventViewController.swift in Sources */,
 				DD81E29D23DEF21400069F23 /* ContactsViewController.swift in Sources */,
 				DD81E28123DACAE000069F23 /* Place.swift in Sources */,
