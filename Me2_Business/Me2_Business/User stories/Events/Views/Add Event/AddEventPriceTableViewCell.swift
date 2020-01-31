@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEventPriceTableViewCell: UITableViewCell {
+class AddEventPriceTableViewCell: AddEventTableViewCell {
 
     @IBOutlet weak var fromPriceTextField: UITextField!
     @IBOutlet weak var toPriceTextField: UITextField!
@@ -22,5 +22,17 @@ class AddEventPriceTableViewCell: UITableViewCell {
     private func configureTextFields() {
         fromPriceTextField.keyboardType = .numberPad
         toPriceTextField.keyboardType = .numberPad
+        
+        fromPriceTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        toPriceTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+    }
+    
+    @objc private func textFieldChanged() {
+        if fromPriceTextField.isFirstResponder {
+            eventData.price_min = Int(fromPriceTextField.text!)
+        }
+        if toPriceTextField.isFirstResponder {
+            eventData.price_max = Int(toPriceTextField.text!)
+        }
     }
 }

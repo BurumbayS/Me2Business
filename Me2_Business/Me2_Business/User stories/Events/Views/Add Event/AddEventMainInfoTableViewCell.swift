@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEventMainInfoTableViewCell: UITableViewCell {
+class AddEventMainInfoTableViewCell: AddEventTableViewCell {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -23,8 +23,21 @@ class AddEventMainInfoTableViewCell: UITableViewCell {
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.borderColor = Color.gray.cgColor
         descriptionTextView.layer.cornerRadius = 5
+        descriptionTextView.delegate = self
+        
+        titleTextField.addTarget(self, action: #selector(titleChanged), for: .editingChanged)
+    }
+    
+    @objc private func titleChanged() {
+        eventData.name = titleTextField.text!
     }
     
     @IBAction func addWallpaperPressed(_ sender: Any) {
+    }
+}
+
+extension AddEventMainInfoTableViewCell: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        eventData.description = textView.text
     }
 }

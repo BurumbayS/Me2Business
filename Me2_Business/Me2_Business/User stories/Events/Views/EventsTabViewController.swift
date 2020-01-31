@@ -86,7 +86,7 @@ class EventsTabViewController: UIViewController {
     
     private func addNewEvent() {
         let vc = Storyboard.addEventViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        present(vc, animated: true, completion: nil)
     }
 }
 

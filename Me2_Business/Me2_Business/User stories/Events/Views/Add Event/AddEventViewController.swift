@@ -11,6 +11,8 @@ import UIKit
 class AddEventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     let viewModel = AddEventViewModel()
     
@@ -22,14 +24,17 @@ class AddEventViewController: UIViewController {
     }
 
     private func configureNavBar() {
-        navigationItem.largeTitleDisplayMode = .never
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelCreating))
+        navItem.leftBarButtonItem?.tintColor = Color.red
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeCreating))
+        navItem.rightBarButtonItem?.isEnabled = false
+        navItem.rightBarButtonItem?.tintColor = Color.blue
     }
     
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.contentInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0);
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 40
         tableView.separatorStyle = .none
@@ -38,6 +43,14 @@ class AddEventViewController: UIViewController {
         tableView.registerNib(AddEventDateTableViewCell.self)
         tableView.registerNib(AddEventTimeTableViewCell.self)
         tableView.registerNib(AddEventPriceTableViewCell.self)
+    }
+    
+    @objc private func cancelCreating() {
+        
+    }
+    
+    @objc private func completeCreating() {
+        
     }
 }
 
@@ -95,18 +108,22 @@ extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
         switch viewModel.sections[indexPath.section] {
         case .mainInfo:
             let cell: AddEventMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(data: viewModel.eventData)
             cell.selectionStyle = .none
             return cell
         case .date:
             let cell: AddEventDateTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(data: viewModel.eventData)
             cell.selectionStyle = .none
             return cell
         case .time:
             let cell: AddEventTimeTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(data: viewModel.eventData)
             cell.selectionStyle = .none
             return cell
         case .price:
             let cell: AddEventPriceTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(data: viewModel.eventData)
             cell.selectionStyle = .none
             return cell
         case .tags:

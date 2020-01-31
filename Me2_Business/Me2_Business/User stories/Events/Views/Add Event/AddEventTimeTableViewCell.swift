@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEventTimeTableViewCell: UITableViewCell {
+class AddEventTimeTableViewCell: AddEventTableViewCell {
 
     @IBOutlet weak var fromTimeTextField: UITextField!
     @IBOutlet weak var toTimeTextField: UITextField!
@@ -38,9 +38,11 @@ class AddEventTimeTableViewCell: UITableViewCell {
         
         if fromTimeTextField.isFirstResponder {
             fromTimeTextField.text = formatter.string(from: timePicker.date)
+            eventData.time_start = formatter.string(from: timePicker.date)
         }
         if toTimeTextField.isFirstResponder {
             toTimeTextField.text = formatter.string(from: timePicker.date)
+            eventData.time_end = formatter.string(from: timePicker.date)
         }
     }
 }

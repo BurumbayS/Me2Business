@@ -69,6 +69,7 @@
 		DD583AED23E42E3500800339 /* AddEventTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AEC23E42E3500800339 /* AddEventTagsViewController.swift */; };
 		DD583AEF23E430B300800339 /* EventTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AEE23E430B300800339 /* EventTagTableViewCell.swift */; };
 		DD583AF123E4326600800339 /* EventTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF023E4326600800339 /* EventTagsViewModel.swift */; };
+		DD583AF323E4461900800339 /* AddEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF223E4461900800339 /* AddEventTableViewCell.swift */; };
 		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
 		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
@@ -203,6 +204,7 @@
 		DD583AEC23E42E3500800339 /* AddEventTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTagsViewController.swift; sourceTree = "<group>"; };
 		DD583AEE23E430B300800339 /* EventTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTagTableViewCell.swift; sourceTree = "<group>"; };
 		DD583AF023E4326600800339 /* EventTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTagsViewModel.swift; sourceTree = "<group>"; };
+		DD583AF223E4461900800339 /* AddEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewCell.swift; sourceTree = "<group>"; };
 		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				DD583ACF23E1A04100800339 /* AddEventViewController.swift */,
+				DD583AF223E4461900800339 /* AddEventTableViewCell.swift */,
 				DD583AD323E1A78B00800339 /* AddEventMainInfoTableViewCell.swift */,
 				DD583AD423E1A78B00800339 /* AddEventMainInfoTableViewCell.xib */,
 				DD583AD723E1AB2F00800339 /* AddEventDateTableViewCell.swift */,
@@ -947,6 +950,7 @@
 				DD81E29223DB0D7200069F23 /* ComplaintViewController.swift in Sources */,
 				DDB257D323C20BE400DF1EB4 /* UIAlertControllerExtensions.swift in Sources */,
 				DD81E28523DACF1E00069F23 /* UserProfileViewModel.swift in Sources */,
+				DD583AF323E4461900800339 /* AddEventTableViewCell.swift in Sources */,
 				DD81E29523DB18E200069F23 /* ComplaintReasonTableViewCell.swift in Sources */,
 				DD583AED23E42E3500800339 /* AddEventTagsViewController.swift in Sources */,
 				DD81E28723DADCB300069F23 /* ProfileSectionHeader.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEventDateTableViewCell: UITableViewCell {
+class AddEventDateTableViewCell: AddEventTableViewCell {
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var fromDateTextField: UITextField!
@@ -61,6 +61,15 @@ class AddEventDateTableViewCell: UITableViewCell {
         }
         if toDateTextField.isFirstResponder {
             toDateTextField.text = formatter.string(from: datePicker.date)
+        }
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if fromDateTextField.isFirstResponder {
+            eventData.start = formatter.string(from: datePicker.date)
+        }
+        if toDateTextField.isFirstResponder {
+            eventData.end = formatter.string(from: datePicker.date)
         }
     }
     

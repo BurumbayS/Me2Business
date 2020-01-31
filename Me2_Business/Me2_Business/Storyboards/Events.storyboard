@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="J1a-JS-n6T">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventMainTagsCell" textLabel="ggl-iO-uYy" detailTextLabel="y0z-5B-yPF" style="IBUITableViewCellStyleSubtitle" id="6tS-tY-Dey">
@@ -178,23 +178,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryk-la-STc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="2MI-6Y-PxE"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ryk-la-STc" firstAttribute="leading" secondItem="015-US-UxO" secondAttribute="leading" id="7pJ-af-d9V"/>
+                            <constraint firstItem="Ryk-la-STc" firstAttribute="top" secondItem="015-US-UxO" secondAttribute="top" id="Cdx-7C-dGT"/>
                             <constraint firstItem="J1a-JS-n6T" firstAttribute="leading" secondItem="015-US-UxO" secondAttribute="leading" id="Cgm-Sc-0Gn"/>
+                            <constraint firstItem="J1a-JS-n6T" firstAttribute="top" secondItem="Ryk-la-STc" secondAttribute="bottom" constant="1" id="DhZ-66-lGB"/>
                             <constraint firstItem="015-US-UxO" firstAttribute="bottom" secondItem="J1a-JS-n6T" secondAttribute="bottom" id="QjU-nC-ahq"/>
-                            <constraint firstItem="J1a-JS-n6T" firstAttribute="top" secondItem="015-US-UxO" secondAttribute="top" id="bPu-hb-7DO"/>
                             <constraint firstItem="015-US-UxO" firstAttribute="trailing" secondItem="J1a-JS-n6T" secondAttribute="trailing" id="dN9-zO-Efe"/>
+                            <constraint firstItem="Ryk-la-STc" firstAttribute="trailing" secondItem="015-US-UxO" secondAttribute="trailing" id="kmR-Cf-zzk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="015-US-UxO"/>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="Ryk-la-STc" id="he6-za-Ez1"/>
+                        <outlet property="navItem" destination="2MI-6Y-PxE" id="OXo-Fi-0Ke"/>
                         <outlet property="tableView" destination="J1a-JS-n6T" id="ogz-Qx-9z1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05V-qd-a3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757" y="798"/>
+            <point key="canvasLocation" x="756.52173913043487" y="797.54464285714278"/>
         </scene>
         <!--Add Event Tags View Controller-->
         <scene sceneID="drF-ZT-M08">

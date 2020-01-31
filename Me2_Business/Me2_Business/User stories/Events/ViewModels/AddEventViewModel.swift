@@ -6,7 +6,7 @@
 //  Copyright © 2020 AVSoft. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum AddEventSectionType {
     case mainInfo
@@ -16,6 +16,23 @@ enum AddEventSectionType {
     case tags
 }
 
+class EventData {
+    var name: String!
+    var description: String!
+    var event_type: Int!
+    var place: Int!
+    var start: String?
+    var end: String?
+    var time_start: String?
+    var time_end: String?
+    var price_min: Int!
+    var price_max: Int!
+    var dateType: DateType!
+    var image: UIImage!
+    var tags: [Int]?
+}
+
 class AddEventViewModel {
     let sections = [AddEventSectionType.mainInfo, .date, .time, .price, .tags]
+    let eventData = EventData()
 }
