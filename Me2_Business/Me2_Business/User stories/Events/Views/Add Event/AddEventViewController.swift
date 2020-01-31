@@ -23,7 +23,9 @@ class AddEventViewController: UIViewController {
 
     private func configureNavBar() {
         navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = .black
         
+        navigationItem.title = "Новое событие"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelCreating))
         navigationItem.leftBarButtonItem?.tintColor = Color.red
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Создать", style: .plain, target: self, action: #selector(completeCreating))
@@ -45,7 +47,9 @@ class AddEventViewController: UIViewController {
     }
     
     @objc private func cancelCreating() {
-        
+        showDefaultAlert(title: "", message: "Вы уверены, что хотите отменить действие? Введенные Вами данные не будут сохранены.", doneAction: { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        })
     }
     
     @objc private func completeCreating() {
