@@ -11,8 +11,6 @@ import UIKit
 class AddEventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var navItem: UINavigationItem!
     
     let viewModel = AddEventViewModel()
     
@@ -24,11 +22,13 @@ class AddEventViewController: UIViewController {
     }
 
     private func configureNavBar() {
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelCreating))
-        navItem.leftBarButtonItem?.tintColor = Color.red
-        navItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeCreating))
-        navItem.rightBarButtonItem?.isEnabled = false
-        navItem.rightBarButtonItem?.tintColor = Color.blue
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelCreating))
+        navigationItem.leftBarButtonItem?.tintColor = Color.red
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeCreating))
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.rightBarButtonItem?.tintColor = Color.blue
     }
     
     private func configureTableView() {
@@ -108,7 +108,7 @@ extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
         switch viewModel.sections[indexPath.section] {
         case .mainInfo:
             let cell: AddEventMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configure(data: viewModel.eventData)
+            cell.configure(data: viewModel.eventData, presenterDelegate: self, actionSheetPresenterDelegate: self)
             cell.selectionStyle = .none
             return cell
         case .date:
@@ -154,14 +154,29 @@ extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let vc = Storyboard.addEventTagsViewController() as! AddEventTagsViewController
-            vc.viewModel = EventTagsViewModel(tagSelectionType: .single)
+            vc.viewModel = EventTagsViewModel(tagSelectionType: .single, eventData: viewModel.eventData)
             navigationController?.pushViewController(vc, animated: true)
         default:
             let vc = Storyboard.addEventTagsViewController() as! AddEventTagsViewController
-            vc.viewModel = EventTagsViewModel(tagSelectionType: .multi)
+            vc.viewModel = EventTagsViewModel(tagSelectionType: .multi, eventData: viewModel.eventData)
             navigationController?.pushViewController(vc, animated: true)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension AddEventViewController: ControllerPresenterDelegate, ActionSheetPresenterDelegate {
+    func present(with titles: [String], actions: [VoidBlock?], styles: [UIAlertAction.Style]) {
+        self.addActionSheet(titles: titles, actions: actions, styles: styles)
+    }
+    
+    func present(controller: UIViewController, presntationType: PresentationType, completion: VoidBlock?) {
+        switch presntationType {
+        case .push:
+            navigationController?.pushViewController(controller, animated: true)
+        case .present:
+            present(controller, animated: true, completion: nil)
+        }
     }
 }

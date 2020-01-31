@@ -125,7 +125,7 @@
         <!--Add Event View Controller-->
         <scene sceneID="wcL-nc-psL">
             <objects>
-                <viewController storyboardIdentifier="AddEventViewController" providesPresentationContextTransitionStyle="YES" id="4eX-g6-zZT" customClass="AddEventViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController providesPresentationContextTransitionStyle="YES" id="4eX-g6-zZT" customClass="AddEventViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EVF-VN-DyN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,34 +178,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryk-la-STc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="2MI-6Y-PxE"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ryk-la-STc" firstAttribute="leading" secondItem="015-US-UxO" secondAttribute="leading" id="7pJ-af-d9V"/>
-                            <constraint firstItem="Ryk-la-STc" firstAttribute="top" secondItem="015-US-UxO" secondAttribute="top" id="Cdx-7C-dGT"/>
                             <constraint firstItem="J1a-JS-n6T" firstAttribute="leading" secondItem="015-US-UxO" secondAttribute="leading" id="Cgm-Sc-0Gn"/>
-                            <constraint firstItem="J1a-JS-n6T" firstAttribute="top" secondItem="Ryk-la-STc" secondAttribute="bottom" constant="1" id="DhZ-66-lGB"/>
                             <constraint firstItem="015-US-UxO" firstAttribute="bottom" secondItem="J1a-JS-n6T" secondAttribute="bottom" id="QjU-nC-ahq"/>
+                            <constraint firstItem="J1a-JS-n6T" firstAttribute="top" secondItem="015-US-UxO" secondAttribute="top" constant="1" id="Sof-OA-QM9"/>
                             <constraint firstItem="015-US-UxO" firstAttribute="trailing" secondItem="J1a-JS-n6T" secondAttribute="trailing" id="dN9-zO-Efe"/>
-                            <constraint firstItem="Ryk-la-STc" firstAttribute="trailing" secondItem="015-US-UxO" secondAttribute="trailing" id="kmR-Cf-zzk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="015-US-UxO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dRb-nf-vCv"/>
                     <connections>
-                        <outlet property="navBar" destination="Ryk-la-STc" id="he6-za-Ez1"/>
-                        <outlet property="navItem" destination="2MI-6Y-PxE" id="OXo-Fi-0Ke"/>
                         <outlet property="tableView" destination="J1a-JS-n6T" id="ogz-Qx-9z1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05V-qd-a3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756.52173913043487" y="797.54464285714278"/>
+            <point key="canvasLocation" x="1666.6666666666667" y="797.54464285714278"/>
         </scene>
         <!--Add Event Tags View Controller-->
         <scene sceneID="drF-ZT-M08">
@@ -270,7 +260,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggm-GL-Bn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521.7391304347827" y="797.54464285714278"/>
+            <point key="canvasLocation" x="2431.8840579710145" y="797.54464285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eUY-CS-kr4">
+            <objects>
+                <navigationController storyboardIdentifier="AddEventViewController" automaticallyAdjustsScrollViewInsets="NO" id="o81-ZB-91m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ukm-W3-QDM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4eX-g6-zZT" kind="relationship" relationship="rootViewController" id="tVW-TF-uPj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXI-0G-NQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756.52173913043487" y="797.54464285714278"/>
         </scene>
     </scenes>
     <resources>

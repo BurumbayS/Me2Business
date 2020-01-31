@@ -82,5 +82,6 @@ class AddEventDateTableViewCell: AddEventTableViewCell {
         selectedCheckbox.select()
         
         selectedDateIndex = selectedIndex!
+        eventData.dateType = dates[selectedDateIndex]
     }
 }

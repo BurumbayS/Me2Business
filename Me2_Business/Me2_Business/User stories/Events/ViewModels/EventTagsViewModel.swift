@@ -21,8 +21,11 @@ class EventTagsViewModel {
     var selectedSingleTag: Tag?
     var selectedTags = [Tag]()
     
-    init(tagSelectionType: TagsSelectionType) {
+    let eventData: EventData
+    
+    init(tagSelectionType: TagsSelectionType, eventData: EventData) {
         self.selectionType = tagSelectionType
+        self.eventData = eventData
     }
     
     func getTags(completion: ResponseBlock?) {
@@ -53,11 +56,14 @@ class EventTagsViewModel {
         switch selectionType {
         case .single:
             selectedSingleTag = tag
+            eventData.event_type = tag.id
         case .multi:
             if let index = selectedTags.firstIndex(where: { $0.id == tag.id }) {
                 selectedTags.remove(at: index)
+                eventData.tags.removeAll(where: { $0 == tag.id })
             } else {
                 selectedTags.append(tag)
+                eventData.tags.append(tag.id)
             }
         }
     }

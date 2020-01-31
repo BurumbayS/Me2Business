@@ -12,6 +12,12 @@ class AddEventMainInfoTableViewCell: AddEventTableViewCell {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var wallpaperImageView: UIImageView!
+    
+    var imagePicker = UIImagePickerController()
+    
+    var presenterDelegate: ControllerPresenterDelegate!
+    var actionSheetPresenterDelegate: ActionSheetPresenterDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +25,16 @@ class AddEventMainInfoTableViewCell: AddEventTableViewCell {
         configureViews()
     }
     
+    func configure(data: EventData, presenterDelegate: ControllerPresenterDelegate, actionSheetPresenterDelegate: ActionSheetPresenterDelegate) {
+        super.configure(data: data)
+        
+        self.presenterDelegate = presenterDelegate
+        self.actionSheetPresenterDelegate = actionSheetPresenterDelegate
+    }
+    
     private func configureViews() {
+        imagePicker.delegate = self
+        
         descriptionTextView.layer.borderWidth = 1
         descriptionTextView.layer.borderColor = Color.gray.cgColor
         descriptionTextView.layer.cornerRadius = 5
@@ -32,12 +47,36 @@ class AddEventMainInfoTableViewCell: AddEventTableViewCell {
         eventData.name = titleTextField.text!
     }
     
+    private func showCamera() {
+        imagePicker.sourceType = .camera
+        presenterDelegate.present(controller: imagePicker, presntationType: .present, completion: nil)
+    }
+    
+    private func showPhotoLibrary() {
+        imagePicker.sourceType = .photoLibrary
+        presenterDelegate.present(controller: imagePicker, presntationType: .present, completion: nil)
+    }
+    
     @IBAction func addWallpaperPressed(_ sender: Any) {
+        actionSheetPresenterDelegate.present(with: ["Камера","Выбрать фото"], actions: [showCamera, showPhotoLibrary], styles: [.default, .default])
     }
 }
 
 extension AddEventMainInfoTableViewCell: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         eventData.description = textView.text
+    }
+}
+
+extension AddEventMainInfoTableViewCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            wallpaperImageView.image = pickedImage
+            wallpaperImageView.isHidden = false
+            
+            eventData.image = pickedImage
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }

@@ -62,18 +62,25 @@
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6h-zg-HZF">
+                        <rect key="frame" x="20" y="20" width="280" height="146"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ECc-Bk-5dV" firstAttribute="top" secondItem="EGL-Pg-CVo" secondAttribute="bottom" constant="5" id="AJo-JE-Lbm"/>
+                    <constraint firstItem="A6h-zg-HZF" firstAttribute="top" secondItem="Qod-ri-BcQ" secondAttribute="top" id="ODE-Z5-nAP"/>
                     <constraint firstItem="9HQ-yM-BMY" firstAttribute="top" secondItem="ECc-Bk-5dV" secondAttribute="bottom" constant="15" id="RqZ-Gz-Y10"/>
                     <constraint firstItem="8DZ-F8-5DH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="TDb-qp-8r1"/>
                     <constraint firstItem="9HQ-yM-BMY" firstAttribute="leading" secondItem="ECc-Bk-5dV" secondAttribute="leading" id="WM3-0K-vth"/>
+                    <constraint firstItem="A6h-zg-HZF" firstAttribute="leading" secondItem="Qod-ri-BcQ" secondAttribute="leading" id="YyT-pJ-5Pd"/>
                     <constraint firstAttribute="trailing" secondItem="ECc-Bk-5dV" secondAttribute="trailing" constant="20" id="d8i-hL-HUG"/>
                     <constraint firstItem="ECc-Bk-5dV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dZP-bo-mNQ"/>
                     <constraint firstAttribute="trailing" secondItem="Qod-ri-BcQ" secondAttribute="trailing" constant="20" id="eQx-BW-8sU"/>
                     <constraint firstItem="8DZ-F8-5DH" firstAttribute="top" secondItem="9HQ-yM-BMY" secondAttribute="bottom" constant="5" id="gSa-sW-Ho4"/>
                     <constraint firstItem="Qod-ri-BcQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="h4f-yq-fYo"/>
+                    <constraint firstItem="A6h-zg-HZF" firstAttribute="trailing" secondItem="Qod-ri-BcQ" secondAttribute="trailing" id="ioL-z2-nF5"/>
                     <constraint firstItem="EGL-Pg-CVo" firstAttribute="leading" secondItem="Qod-ri-BcQ" secondAttribute="leading" id="jGi-6n-e5r"/>
+                    <constraint firstItem="A6h-zg-HZF" firstAttribute="bottom" secondItem="Qod-ri-BcQ" secondAttribute="bottom" id="lLz-e8-VEi"/>
                     <constraint firstAttribute="bottom" secondItem="8DZ-F8-5DH" secondAttribute="bottom" constant="20" id="oBq-Y9-Udu"/>
                     <constraint firstAttribute="trailing" secondItem="8DZ-F8-5DH" secondAttribute="trailing" constant="20" id="qQg-BO-skw"/>
                     <constraint firstItem="Qod-ri-BcQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="u6X-Gu-ntj"/>
@@ -84,6 +91,7 @@
             <connections>
                 <outlet property="descriptionTextView" destination="8DZ-F8-5DH" id="XZx-lZ-7RB"/>
                 <outlet property="titleTextField" destination="ECc-Bk-5dV" id="cRd-aF-obA"/>
+                <outlet property="wallpaperImageView" destination="A6h-zg-HZF" id="BHv-gZ-bXX"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="256.80803571428572"/>
         </tableViewCell>

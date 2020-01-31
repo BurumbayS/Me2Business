@@ -29,7 +29,7 @@ class EventData {
     var price_max: Int!
     var dateType: DateType!
     var image: UIImage!
-    var tags: [Int]?
+    var tags: [Int] = []
 }
 
 class AddEventViewModel {
