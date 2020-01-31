@@ -12,6 +12,8 @@ class AddEventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    let viewModel = AddEventViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,11 +43,29 @@ class AddEventViewController: UIViewController {
 
 extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
+        switch viewModel.sections[section] {
+        case .tags:
+            
+            let header = UIView()
+            let title = UILabel(frame: CGRect(x: 20, y: 20, width: 100, height: 15))
+            title.textColor = .darkGray
+            title.font = UIFont(name: "Roboto-Regular", size: 13)
+            title.text = "Тэги"
+            header.addSubview(title)
+            return header
+            
+        default:
+            return UIView()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
+        switch viewModel.sections[section] {
+        case .tags:
+            return 40
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -59,30 +79,72 @@ extension AddEventViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return viewModel.sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch viewModel.sections[section] {
+        case .tags:
+            return 2
+        default:
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
+        switch viewModel.sections[indexPath.section] {
+        case .mainInfo:
             let cell: AddEventMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
             return cell
-        case 1:
+        case .date:
             let cell: AddEventDateTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
             return cell
-        case 2:
+        case .time:
             let cell: AddEventTimeTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
             return cell
-        case 3:
+        case .price:
             let cell: AddEventPriceTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
             return cell
-        default:
-            return UITableViewCell()
+        case .tags:
+            switch indexPath.row {
+            case 0:
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "EventMainTagsCell", for: indexPath)
+                cell.textLabel?.text = "Основной тип события*"
+                cell.detailTextLabel?.text = "(для отобрадения на шапке)"
+                cell.detailTextLabel?.textColor = .lightGray
+                return cell
+                
+            default:
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "EventOtherTagsCell", for: indexPath)
+                cell.textLabel?.text = "Дополнительный тип события"
+                cell.detailTextLabel?.textColor = .lightGray
+                return cell
+                
+            }
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard viewModel.sections[indexPath.section] == .tags else { return }
+        
+        switch indexPath.row {
+        case 0:
+            let vc = Storyboard.addEventTagsViewController() as! AddEventTagsViewController
+            vc.viewModel = EventTagsViewModel(tagSelectionType: .single)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            let vc = Storyboard.addEventTagsViewController() as! AddEventTagsViewController
+            vc.viewModel = EventTagsViewModel(tagSelectionType: .multi)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

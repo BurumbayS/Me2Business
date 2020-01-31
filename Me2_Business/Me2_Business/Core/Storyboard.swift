@@ -78,6 +78,9 @@ extension Storyboard {
     static var addEventViewController = {
         return events.storyboard.instantiateViewController(withIdentifier: "AddEventViewController")
     }
+    static var addEventTagsViewController = {
+        return events.storyboard.instantiateViewController(withIdentifier: "AddEventTagsViewController")
+    }
 }
 
 
