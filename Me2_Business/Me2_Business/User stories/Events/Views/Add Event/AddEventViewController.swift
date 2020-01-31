@@ -26,8 +26,7 @@ class AddEventViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelCreating))
         navigationItem.leftBarButtonItem?.tintColor = Color.red
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeCreating))
-        navigationItem.rightBarButtonItem?.isEnabled = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Создать", style: .plain, target: self, action: #selector(completeCreating))
         navigationItem.rightBarButtonItem?.tintColor = Color.blue
     }
     
@@ -50,7 +49,7 @@ class AddEventViewController: UIViewController {
     }
     
     @objc private func completeCreating() {
-        
+        viewModel.addNewEvent()
     }
 }
 
