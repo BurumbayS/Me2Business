@@ -70,6 +70,7 @@
 		DD583AEF23E430B300800339 /* EventTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AEE23E430B300800339 /* EventTagTableViewCell.swift */; };
 		DD583AF123E4326600800339 /* EventTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF023E4326600800339 /* EventTagsViewModel.swift */; };
 		DD583AF323E4461900800339 /* AddEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF223E4461900800339 /* AddEventTableViewCell.swift */; };
+		DD583AF523E54E0C00800339 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF423E54E0C00800339 /* EventData.swift */; };
 		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
 		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
@@ -205,6 +206,7 @@
 		DD583AEE23E430B300800339 /* EventTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTagTableViewCell.swift; sourceTree = "<group>"; };
 		DD583AF023E4326600800339 /* EventTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTagsViewModel.swift; sourceTree = "<group>"; };
 		DD583AF223E4461900800339 /* AddEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableViewCell.swift; sourceTree = "<group>"; };
+		DD583AF423E54E0C00800339 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 			isa = PBXGroup;
 			children = (
 				DD81E2B523E01DAC00069F23 /* Event.swift */,
+				DD583AF423E54E0C00800339 /* EventData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				DD0091A123C612A500C7B370 /* Protocols.swift in Sources */,
 				DD81E2A023DEF64000069F23 /* ContactTableViewCell.swift in Sources */,
 				DD81E29923DEBD1D00069F23 /* UserComplaintViewModel.swift in Sources */,
+				DD583AF523E54E0C00800339 /* EventData.swift in Sources */,
 				DD42F5A623C6F75E000ADF02 /* ApplicationViewController.swift in Sources */,
 				DDB257A123C1B4CF00DF1EB4 /* AppDelegate.swift in Sources */,
 				DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */,

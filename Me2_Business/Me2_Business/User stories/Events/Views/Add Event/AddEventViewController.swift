@@ -53,7 +53,18 @@ class AddEventViewController: UIViewController {
     }
     
     @objc private func completeCreating() {
-        viewModel.addNewEvent()
+        startLoader()
+        
+        viewModel.addNewEvent { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                self?.stopLoader()
+            case .error:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
+            case .fail:
+                self?.stopLoader()
+            }
+        }
     }
 }
 

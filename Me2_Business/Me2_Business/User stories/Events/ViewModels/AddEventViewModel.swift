@@ -18,55 +18,25 @@ enum AddEventSectionType {
     case tags
 }
 
-class EventData {
-    var name: String!
-    var description: String!
-    var event_type: Int!
-    var place: Int!
-    var start: String?
-    var end: String?
-    var time_start: String?
-    var time_end: String?
-    var price_min: Int!
-    var price_max: Int!
-    var dateType: DateType!
-    var image: UIImage!
-    var tags: [Int] = []
-    
-    func getParams() -> Parameters {
-        var params = Parameters()
-        
-        params["name"] = name
-        params["description"] = description
-        params["event_type"] = event_type
-        params["place"] = 5
-        if start != nil { params["start"] = start }
-        if end != nil { params["end"] = end }
-        if time_start != nil { params["time_start"] = time_start }
-        if time_end != nil { params["time_end"] = time_end }
-        params["price_min"] = price_min
-        params["price_max"] = price_max
-        params["date_type"] = dateType.rawValue
-        params["tags"] = tags
-        
-        return params
-    }
-}
-
 class AddEventViewModel {
     let sections = [AddEventSectionType.mainInfo, .date, .time, .price, .tags]
     let eventData = EventData()
     
-    func addNewEvent() {
+    func addNewEvent(completion: ResponseBlock?) {
+        guard eventData.requiredFieldsFilled() else {
+            completion?(.error, "Заполните все необходимые поля")
+            return
+        }
+        
         var params = eventData.getParams()
         
         uploadImage(image: eventData.image) { [weak self] (id) in
             params["image"] = id
-            self?.createEvent(with: params)
+            self?.createEvent(with: params, completion: completion)
         }
     }
     
-    private func createEvent(with params: Parameters) {
+    private func createEvent(with params: Parameters, completion: ResponseBlock?) {
         let url = Network.business + "/event/"
         
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
@@ -77,14 +47,26 @@ class AddEventViewModel {
                     let json = JSON(value)
                     print(json)
                     
+                    switch json["code"].intValue {
+                    case 0:
+                        completion?(.ok, "")
+                    default:
+                        completion?(.error, json["message"].stringValue)
+                    }
+                    
                 case .failure(_):
-                    print(JSON(response.data as Any))
+                    let json = JSON(response.data as Any)
+                    if json["code"].intValue == 1 {
+                        completion?(.error, json["message"].stringValue)
+                    } else {
+                        completion?(.fail, "")
+                    }
                 }
         }
     }
     
-    private func uploadImage(image: UIImage, completion: ((Int) -> ())?) {
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
+    private func uploadImage(image: UIImage?, completion: ((Int) -> ())?) {
+        guard let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
         
         let url = Network.host + "/image/"
         
