@@ -69,10 +69,6 @@ class EventInfoViewController: UIViewController {
     }
     
     private func shareEvent() {
-        
-    }
-    
-    private func editEvent() {
         let str = viewModel.event.generateShareInfo()
         
         let activityViewController = UIActivityViewController(activityItems: [str], applicationActivities: nil)
@@ -80,6 +76,10 @@ class EventInfoViewController: UIViewController {
         activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop]
         
         self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    private func editEvent() {
+        
     }
     
     private func archiveEvent() {
