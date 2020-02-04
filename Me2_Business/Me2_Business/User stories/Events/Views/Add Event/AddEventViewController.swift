@@ -58,7 +58,9 @@ class AddEventViewController: UIViewController {
         viewModel.addNewEvent { [weak self] (status, message) in
             switch status {
             case .ok:
-                self?.stopLoader()
+                self?.stopLoader(withStatus: .success, andText: "Событие создано", completion: {
+                    self?.dismiss(animated: true, completion: nil)
+                })
             case .error:
                 self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             case .fail:

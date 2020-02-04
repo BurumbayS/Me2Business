@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsTabViewController: UIViewController {
+class EventsTabViewController: ListedViewController {
 
     @IBOutlet weak var tableView: UITableView!
     let newEventButton = CustomLargeTitleBarButton()
@@ -49,7 +49,11 @@ class EventsTabViewController: UIViewController {
             switch status {
             case .ok:
                 self?.stopLoader()
-                self?.tableView.reloadData()
+                if (self?.viewModel.events.count)! > 0 {
+                    self?.tableView.reloadData()
+                } else {
+                    self?.showEmptyListStatusLabel(withText: "Событий нет:(\n Нажмите на значок в верхнем углу, чтобы создать новое.")
+                }
             default:
                 self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             }

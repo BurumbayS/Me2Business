@@ -43,6 +43,8 @@ class EventInfoViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.isTranslucent = false
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "dots_icon"), style: .plain, target: self, action: #selector(doActionOnEvent))
     }
 
     private func configureTableView() {
@@ -55,6 +57,43 @@ class EventInfoViewController: UIViewController {
         tableView.registerNib(EventLocationAndWorkTimeTableViewCell.self)
         tableView.registerNib(EventAdditionalInfoTableViewCell.self)
         tableView.register(TagsTableViewCell.self)
+    }
+    
+    @objc private func doActionOnEvent() {
+        switch viewModel.event.status {
+        case .ACTIVE:
+            addActionSheet(titles: ["Поделиться","Изменить","Архивировать"], actions: [shareEvent,editEvent,archiveEvent], styles: [.default,.default,.destructive])
+        default:
+            addActionSheet(titles: ["Поделиться","Изменить"], actions: [shareEvent,editEvent], styles: [.default,.default])
+        }
+    }
+    
+    private func shareEvent() {
+        
+    }
+    
+    private func editEvent() {
+        let str = viewModel.event.generateShareInfo()
+        
+        let activityViewController = UIActivityViewController(activityItems: [str], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop]
+        
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    private func archiveEvent() {
+        startLoader()
+        
+        viewModel.archiveEvent { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                self?.stopLoader(withStatus: .success, andText: "Событие архивировано", completion: nil)
+                self?.tableView.reloadData()
+            default:
+                break
+            }
+        }
     }
 }
 

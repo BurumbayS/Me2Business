@@ -41,6 +41,27 @@ class EventInfoViewModel {
         }
     }
     
+    func archiveEvent(completion: ResponseBlock?) {
+        let url = Network.business + "/event/\(event.id)/archive/"
+        
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+            .responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    
+                    let json = JSON(value)
+                    print(json)
+                    self.event = Event(json: json["data"])
+                    
+                    completion?(.ok, "")
+                    
+                case .failure(_):
+                    print(JSON(response.data as Any))
+                    completion?(.fail, "")
+                }
+        }
+    }
+    
     func getTagsList() -> TagsList {
         var tags = [String]()
         

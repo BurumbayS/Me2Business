@@ -69,6 +69,43 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2R-Jt-dO6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lto-8C-gpc">
+                                <rect key="frame" x="20" y="10" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="5rj-sx-9x8"/>
+                                    <constraint firstAttribute="width" constant="15" id="Njf-TL-Dts"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата архивации:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh6-cK-li6">
+                                <rect key="frame" x="45" y="9.5" width="110" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="TAR-wZ-5rC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l72-pb-7iq">
+                                <rect key="frame" x="165" y="17.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lto-8C-gpc" firstAttribute="leading" secondItem="c2R-Jt-dO6" secondAttribute="leading" constant="20" id="IEA-oI-VTK"/>
+                            <constraint firstItem="mh6-cK-li6" firstAttribute="leading" secondItem="lto-8C-gpc" secondAttribute="trailing" constant="10" id="PL9-Kt-7wA"/>
+                            <constraint firstItem="mh6-cK-li6" firstAttribute="centerY" secondItem="lto-8C-gpc" secondAttribute="centerY" id="RPT-77-7i3"/>
+                            <constraint firstItem="lto-8C-gpc" firstAttribute="top" secondItem="c2R-Jt-dO6" secondAttribute="top" constant="10" id="h9I-Uf-0j8"/>
+                            <constraint firstItem="l72-pb-7iq" firstAttribute="centerY" secondItem="mh6-cK-li6" secondAttribute="centerY" id="jSj-1s-XdG"/>
+                            <constraint firstAttribute="height" constant="71" id="loz-nd-RW9"/>
+                            <constraint firstItem="l72-pb-7iq" firstAttribute="leading" secondItem="mh6-cK-li6" secondAttribute="trailing" constant="10" id="smh-hc-jkl"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="mTB-eH-0GV" firstAttribute="leading" secondItem="jgM-2K-oU3" secondAttribute="trailing" constant="10" id="5b0-QK-91R"/>
@@ -76,6 +113,7 @@
                     <constraint firstItem="CME-oh-oia" firstAttribute="top" secondItem="0fc-sp-oyl" secondAttribute="top" constant="10" id="AZr-HB-U9d"/>
                     <constraint firstItem="QeM-Ha-Uyh" firstAttribute="centerY" secondItem="CME-oh-oia" secondAttribute="centerY" id="BZ3-0z-SYW"/>
                     <constraint firstItem="jgM-2K-oU3" firstAttribute="top" secondItem="CME-oh-oia" secondAttribute="bottom" constant="13" id="BiB-h4-ylk"/>
+                    <constraint firstAttribute="bottom" secondItem="c2R-Jt-dO6" secondAttribute="bottom" id="EC2-Dy-SLV"/>
                     <constraint firstItem="fl4-f8-8CF" firstAttribute="leading" secondItem="mTB-eH-0GV" secondAttribute="trailing" constant="10" id="IPQ-Zu-dxf"/>
                     <constraint firstItem="mTB-eH-0GV" firstAttribute="centerY" secondItem="jgM-2K-oU3" secondAttribute="centerY" id="LhY-i5-pgg"/>
                     <constraint firstItem="PBw-J4-jL0" firstAttribute="centerY" secondItem="QeM-Ha-Uyh" secondAttribute="centerY" id="NiQ-eg-lti"/>
@@ -83,17 +121,22 @@
                     <constraint firstAttribute="bottom" secondItem="jgM-2K-oU3" secondAttribute="bottom" constant="20" id="PB2-c1-jEr"/>
                     <constraint firstAttribute="trailing" secondItem="PBw-J4-jL0" secondAttribute="trailing" constant="20" id="SCz-vu-I7Y"/>
                     <constraint firstItem="fl4-f8-8CF" firstAttribute="centerY" secondItem="mTB-eH-0GV" secondAttribute="centerY" id="aKe-iP-v5E"/>
+                    <constraint firstItem="c2R-Jt-dO6" firstAttribute="top" secondItem="0fc-sp-oyl" secondAttribute="top" id="adk-RE-aD6"/>
                     <constraint firstItem="QeM-Ha-Uyh" firstAttribute="leading" secondItem="CME-oh-oia" secondAttribute="trailing" constant="10" id="dMg-4u-wP7"/>
+                    <constraint firstItem="c2R-Jt-dO6" firstAttribute="leading" secondItem="0fc-sp-oyl" secondAttribute="leading" id="gZb-Uv-kJf"/>
                     <constraint firstItem="jgM-2K-oU3" firstAttribute="centerX" secondItem="CME-oh-oia" secondAttribute="centerX" id="jFN-vD-sqI"/>
                     <constraint firstAttribute="trailing" secondItem="fl4-f8-8CF" secondAttribute="trailing" constant="20" id="knV-tq-Pnb"/>
+                    <constraint firstAttribute="trailing" secondItem="c2R-Jt-dO6" secondAttribute="trailing" id="vGe-rI-4jf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="ck9-K3-w35"/>
             <connections>
+                <outlet property="archivedDateLabel" destination="l72-pb-7iq" id="f6j-51-myv"/>
+                <outlet property="archivedDateView" destination="c2R-Jt-dO6" id="4cQ-Wp-PaF"/>
                 <outlet property="publicationDate" destination="PBw-J4-jL0" id="Rmn-ji-Ia3"/>
                 <outlet property="savesCount" destination="fl4-f8-8CF" id="ccP-33-f4y"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="120.20089285714285"/>
+            <point key="canvasLocation" x="14" y="94"/>
         </tableViewCell>
     </objects>
     <resources>

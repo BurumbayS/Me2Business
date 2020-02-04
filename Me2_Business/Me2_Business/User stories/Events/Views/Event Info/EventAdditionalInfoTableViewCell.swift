@@ -12,15 +12,24 @@ class EventAdditionalInfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var publicationDate: UILabel!
     @IBOutlet weak var savesCount: UILabel!
+    @IBOutlet weak var archivedDateView: UIView!
+    @IBOutlet weak var archivedDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+     
+        archivedDateView.isHidden = true
     }
     
     func configure(event: Event) {
-        publicationDate.text = event.getDateString()
-        if let cnt = event.favourite_count { savesCount.text = "\(cnt)" }
+        switch event.status {
+        case .ACTIVE:
+            publicationDate.text = event.getDateString()
+            if let cnt = event.favourite_count { savesCount.text = "\(cnt)" }
+        default:
+            archivedDateView.isHidden = false
+//            archivedDateLabel.text = event
+        }
     }
     
 }

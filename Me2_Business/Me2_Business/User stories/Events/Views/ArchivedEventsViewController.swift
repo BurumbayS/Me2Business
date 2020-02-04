@@ -58,7 +58,14 @@ extension ArchivedEventsViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EventTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        cell.selectionStyle = .none
         cell.configure(wtih: events[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = Storyboard.eventInfoViewController() as! EventInfoViewController
+        vc.viewModel = EventInfoViewModel(event: events[indexPath.row])
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

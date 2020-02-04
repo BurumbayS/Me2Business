@@ -24,12 +24,12 @@ class ListedViewController: UIViewController {
         emptyListStatusLabel.textColor = .darkGray
         emptyListStatusLabel.textAlignment = .center
         emptyListStatusLabel.numberOfLines = 0
-        emptyListStatusLabel.font = UIFont(name: "Roboto-Regular", size: 20)
+        emptyListStatusLabel.font = UIFont(name: "Roboto-Regular", size: 15)
         self.view.addSubview(emptyListStatusLabel)
         constrain(emptyListStatusLabel, self.view) { label, view in
             label.centerX == view.centerX
             label.centerY == view.centerY - 50
-            label.width == 200
+            label.width == 250
         }
     }
     
