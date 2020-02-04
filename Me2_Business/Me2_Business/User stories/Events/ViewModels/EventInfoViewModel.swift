@@ -13,9 +13,11 @@ class EventInfoViewModel {
     var event: Event
     
     var dataLoaded = false
+    let eventArchivationHandler: VoidBlock?
     
-    init(event: Event) {
+    init(event: Event, onEventArchived: VoidBlock?) {
         self.event = event
+        self.eventArchivationHandler = onEventArchived
     }
     
     func fetchData(completion: ResponseBlock?) {
@@ -52,6 +54,8 @@ class EventInfoViewModel {
                     let json = JSON(value)
                     print(json)
                     self.event = Event(json: json["data"])
+                    
+                    self.eventArchivationHandler?()
                     
                     completion?(.ok, "")
                     

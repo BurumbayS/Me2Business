@@ -12,7 +12,7 @@ class AddEventViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = AddEventViewModel()
+    var viewModel: AddEventViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

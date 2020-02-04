@@ -98,8 +98,13 @@ class EventsTabViewController: ListedViewController {
     }
     
     private func addNewEvent() {
-        let vc = Storyboard.addEventViewController()
-        present(vc, animated: true, completion: nil)
+        let navigation = Storyboard.addEventViewController() as! UINavigationController
+        let vc = navigation.viewControllers[0] as! AddEventViewController
+        vc.viewModel = AddEventViewModel(eventChangesType: .create, onEventAdded: { [weak self] (event) in
+            self?.viewModel.events.insert(event, at: 0)
+            self?.tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+        })
+        present(navigation, animated: true, completion: nil)
     }
 }
 
@@ -181,7 +186,11 @@ extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             
             let vc = Storyboard.eventInfoViewController() as! EventInfoViewController
-            vc.viewModel = EventInfoViewModel(event: viewModel.events[indexPath.row])
+            vc.viewModel = EventInfoViewModel(event: viewModel.events[indexPath.row], onEventArchived: { [weak self] in
+                self?.viewModel.archivedEvents.append((self?.viewModel.events[indexPath.row])!)
+                self?.viewModel.events.remove(at: indexPath.row)
+                self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+            })
             self.navigationController?.pushViewController(vc, animated: true)
             
         }

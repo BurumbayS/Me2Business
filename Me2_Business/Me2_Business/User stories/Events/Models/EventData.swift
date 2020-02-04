@@ -9,7 +9,14 @@
 import Alamofire
 import SwiftyJSON
 
+enum EventChangesType {
+    case create
+    case update
+}
+
 class EventData {
+    let changesType: EventChangesType
+    
     var name: String!
     var description: String!
     var event_type: Int!
@@ -23,6 +30,10 @@ class EventData {
     var dateType: DateType?
     var image: UIImage!
     var tags: [Int] = []
+    
+    init(changesType: EventChangesType) {
+        self.changesType = changesType
+    }
     
     func getParams() -> Parameters {
         var params = Parameters()
@@ -50,7 +61,7 @@ class EventData {
         guard let _ = price_min else { return false }
         guard let _ = price_max else { return false }
         guard let _ = dateType else { return false }
-        guard let _ = image else { return false }
+        guard let _ = image, changesType == .create else { return false }
         guard tags.count > 0 else { return false }
         
         return true

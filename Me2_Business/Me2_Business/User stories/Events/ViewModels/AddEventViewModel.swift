@@ -20,7 +20,14 @@ enum AddEventSectionType {
 
 class AddEventViewModel {
     let sections = [AddEventSectionType.mainInfo, .date, .time, .price, .tags]
-    let eventData = EventData()
+    let eventData: EventData
+    
+    let eventAdditionHandler: ((Event) -> ())?
+    
+    init(eventChangesType: EventChangesType, onEventAdded: ((Event) -> ())?) {
+        eventAdditionHandler = onEventAdded
+        eventData = EventData(changesType: eventChangesType)
+    }
     
     func addNewEvent(completion: ResponseBlock?) {
         guard eventData.requiredFieldsFilled() else {
@@ -31,7 +38,7 @@ class AddEventViewModel {
         var params = eventData.getParams()
         
         uploadImage(image: eventData.image) { [weak self] (id) in
-            params["image"] = id
+            if let id = id { params["image"] = id }
             self?.createEvent(with: params, completion: completion)
         }
     }
@@ -49,6 +56,9 @@ class AddEventViewModel {
                     
                     switch json["code"].intValue {
                     case 0:
+                        let event = Event(json: json["data"])
+                        self.eventAdditionHandler?(event)
+                        
                         completion?(.ok, "")
                     default:
                         completion?(.error, json["message"].stringValue)
@@ -65,8 +75,11 @@ class AddEventViewModel {
         }
     }
     
-    private func uploadImage(image: UIImage?, completion: ((Int) -> ())?) {
-        guard let imageData = image?.jpegData(compressionQuality: 0.5) else { return }
+    private func uploadImage(image: UIImage?, completion: ((Int?) -> ())?) {
+        guard let imageData = image?.jpegData(compressionQuality: 0.5) else {
+            completion?(nil)
+            return
+        }
         
         let url = Network.host + "/image/"
         
