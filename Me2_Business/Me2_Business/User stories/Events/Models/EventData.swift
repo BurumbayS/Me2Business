@@ -29,10 +29,27 @@ class EventData {
     var price_max: Int!
     var dateType: DateType?
     var image: UIImage!
+    var imageURL: String?
     var tags: [Int] = []
     
     init(changesType: EventChangesType) {
         self.changesType = changesType
+    }
+    
+    func copyFrom(event: Event) {
+        name = event.title
+        description = event.description
+        event_type = event.eventType.id
+        imageURL = event.imageURL
+        place = 5
+        start = event.start
+        end = event.end
+        dateType = event.date_type
+        time_start = event.time_start
+        time_end = event.time_end
+        price_min = event.price_min
+        price_max = event.price_max
+        event.tags.forEach({ self.tags.append($0.id) })
     }
     
     func getParams() -> Parameters {
@@ -61,7 +78,9 @@ class EventData {
         guard let _ = price_min else { return false }
         guard let _ = price_max else { return false }
         guard let _ = dateType else { return false }
-        guard let _ = image, changesType == .create else { return false }
+        if changesType == .create && image == nil {
+            return false
+        }
         guard tags.count > 0 else { return false }
         
         return true

@@ -21,6 +21,13 @@ class AddEventTimeTableViewCell: AddEventTableViewCell {
         configureTextFields()
     }
     
+    override func configure(data: EventData) {
+        super.configure(data: data)
+        
+        fromTimeTextField.text = String(eventData.time_start?.prefix(5) ?? "")
+        toTimeTextField.text = String(eventData.time_end?.prefix(5) ?? "")
+    }
+    
     private func configureTextFields() {
         timePicker.datePickerMode = .time
         timePicker.locale = .init(identifier: "ru")

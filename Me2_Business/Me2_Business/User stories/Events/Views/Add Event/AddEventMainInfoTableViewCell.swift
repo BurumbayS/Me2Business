@@ -30,6 +30,13 @@ class AddEventMainInfoTableViewCell: AddEventTableViewCell {
         
         self.presenterDelegate = presenterDelegate
         self.actionSheetPresenterDelegate = actionSheetPresenterDelegate
+        
+        if let url = eventData.imageURL {
+            wallpaperImageView.isHidden = false
+            wallpaperImageView.kf.setImage(with: URL(string: url), placeholder: UIImage(named: "default_place_logo"), options: [])
+        }
+        titleTextField.text = eventData.name
+        descriptionTextView.text = eventData.description
     }
     
     private func configureViews() {

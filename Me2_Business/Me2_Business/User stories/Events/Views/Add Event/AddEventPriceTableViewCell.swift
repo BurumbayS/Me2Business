@@ -19,6 +19,15 @@ class AddEventPriceTableViewCell: AddEventTableViewCell {
         configureTextFields()
     }
     
+    override func configure(data: EventData) {
+        super.configure(data: data)
+        
+        if let price_min = eventData.price_min, let price_max = eventData.price_max {
+            fromPriceTextField.text = String(price_min)
+            toPriceTextField.text = String(price_max)
+        }
+    }
+    
     private func configureTextFields() {
         fromPriceTextField.keyboardType = .numberPad
         toPriceTextField.keyboardType = .numberPad

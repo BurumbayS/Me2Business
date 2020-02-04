@@ -23,13 +23,23 @@ class AddEventViewModel {
     let eventData: EventData
     
     let eventAdditionHandler: ((Event) -> ())?
+    let eventChangesType: EventChangesType
     
-    init(eventChangesType: EventChangesType, onEventAdded: ((Event) -> ())?) {
+    var eventID: Int = 0
+    
+    init(event: Event? = nil, eventChangesType: EventChangesType, onEventAdded: ((Event) -> ())?) {
         eventAdditionHandler = onEventAdded
+        
+        self.eventChangesType = eventChangesType
         eventData = EventData(changesType: eventChangesType)
+        
+        if let event = event {
+            eventID = event.id
+            eventData.copyFrom(event: event)
+        }
     }
     
-    func addNewEvent(completion: ResponseBlock?) {
+    func editEvent(completion: ResponseBlock?) {
         guard eventData.requiredFieldsFilled() else {
             completion?(.error, "Заполните все необходимые поля")
             return
@@ -39,14 +49,15 @@ class AddEventViewModel {
         
         uploadImage(image: eventData.image) { [weak self] (id) in
             if let id = id { params["image"] = id }
-            self?.createEvent(with: params, completion: completion)
+            self?.updateEvent(with: params, completion: completion)
         }
     }
     
-    private func createEvent(with params: Parameters, completion: ResponseBlock?) {
-        let url = Network.business + "/event/"
+    private func updateEvent(with params: Parameters, completion: ResponseBlock?) {
+        let url = (eventChangesType == .create) ? Network.business + "/event/" : Network.business + "/event/\(eventID)/"
+        let method: HTTPMethod = (eventChangesType == .create) ? .post : .put
         
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+        Alamofire.request(url, method: method, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
             .responseJSON { (response) in
                 switch response.result {
                 case .success(let value):

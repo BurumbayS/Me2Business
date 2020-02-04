@@ -41,12 +41,14 @@ class Event {
     var imageURL: String?
     var place: Place!
     var flagImage = UIImage(named: "unselected_flag")
-    var eventType: String!
+    var eventType: Tag!
     var start: String!
     var end: String!
     var time_start: String?
     var time_end: String?
     var date_type: DateType!
+    var price_min: Int!
+    var price_max: Int!
     var tags = [Tag]()
     var favourite_count: Int?
     var created_at: String?
@@ -57,13 +59,15 @@ class Event {
         title = json["name"].stringValue
         description = json["description"].stringValue
         imageURL = json["image"].stringValue
-        eventType = json["event_type"]["name"].stringValue
+        eventType = Tag(json: json["event_type"])
         place = Place(json: json["place"])
         date_type = DateType(rawValue: json["date_type"].stringValue)
         start = json["start"].stringValue
         end = json["end"].stringValue
         time_start = json["time_start"].stringValue
         time_end = json["time_end"].stringValue
+        price_min = json["price_min"].intValue
+        price_max = json["price_max"].intValue
         favourite_count = json["favourite_count"].intValue
         created_at = json["created_at"].stringValue
         status = EventStatus(rawValue: json["status"].stringValue)

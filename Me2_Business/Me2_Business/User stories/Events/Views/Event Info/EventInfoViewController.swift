@@ -79,7 +79,13 @@ class EventInfoViewController: UIViewController {
     }
     
     private func editEvent() {
-        
+        let navigation = Storyboard.addEventViewController() as! UINavigationController
+        let vc = navigation.viewControllers[0] as! AddEventViewController
+        vc.viewModel = AddEventViewModel(event: viewModel.event, eventChangesType: .update, onEventAdded: { [weak self] (event) in
+//            self?.viewModel.events.insert(event, at: 0)
+//            self?.tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+        })
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func archiveEvent() {

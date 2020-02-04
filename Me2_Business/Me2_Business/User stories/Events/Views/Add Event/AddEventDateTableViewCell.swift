@@ -25,6 +25,19 @@ class AddEventDateTableViewCell: AddEventTableViewCell {
         configureViews()
     }
     
+    override func configure(data: EventData) {
+        super.configure(data: data)
+        
+        if let dateType = eventData.dateType, let i = dates.firstIndex(of: dateType) {
+            if let checkbox = stackView.subviews[i] as? Checkbox {
+                checkbox.checkFlag.image = UIImage(named: "selected_checkbox")
+            }
+        }
+            
+        fromDateTextField.text = dateString(fromString: eventData.start ?? "")
+        toDateTextField.text = dateString(fromString: eventData.end ?? "")
+    }
+    
     private func configureViews() {
         for (i, item) in stackView.subviews.enumerated() {
             if let checkbox = item as? Checkbox {
@@ -83,5 +96,18 @@ class AddEventDateTableViewCell: AddEventTableViewCell {
         
         selectedDateIndex = selectedIndex!
         eventData.dateType = dates[selectedDateIndex]
+    }
+    
+    private func dateString(fromString string: String) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: "ru")
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if let date = formatter.date(from: string) {
+            formatter.dateFormat = "dd MMM yyyy"
+            return formatter.string(from: date)
+        }
+        
+        return ""
     }
 }

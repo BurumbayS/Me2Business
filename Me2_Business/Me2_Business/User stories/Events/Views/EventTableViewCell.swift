@@ -37,7 +37,7 @@ class EventTableViewCell: UITableViewCell {
         
         placeLogoImageView.kf.setImage(with: URL(string: event.place.logo ?? ""), placeholder: UIImage(named: "default_place_logo"), options: [])
         eventWallpaperImageView.kf.setImage(with: URL(string: event.imageURL ?? ""), placeholder: UIImage(named: "default_place_logo"), options: [])
-        eventTypeLabel.text = event.eventType
+        eventTypeLabel.text = event.eventType.name
         titleLabel.text = event.title
         locationLabel.text = event.place.name
         timeLabel.text = event.getTime()

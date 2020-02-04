@@ -60,11 +60,7 @@ extension AddEventTagsViewController: UITableViewDelegate, UITableViewDataSource
         cell.selectionStyle = .none
         
         let tag = viewModel.tags[indexPath.row]
-        var selected = viewModel.selectedTags.contains(where: { $0.id == tag.id })
-        if viewModel.selectedSingleTag != nil {
-            selected = tag.id == viewModel.selectedSingleTag!.id
-        }
-        cell.configure(title: viewModel.tags[indexPath.row].name, selected: selected)
+        cell.configure(title: viewModel.tags[indexPath.row].name, selected: viewModel.isTagSelected(tag: tag))
         
         return cell
     }

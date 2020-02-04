@@ -19,13 +19,20 @@ class EventTagsViewModel {
     var tags = [Tag]()
     
     var selectedSingleTag: Tag?
+    var eventMainType: Int!
     var selectedTags = [Tag]()
+    var selectedTagIDs = [Int]()
     
     let eventData: EventData
     
     init(tagSelectionType: TagsSelectionType, eventData: EventData) {
         self.selectionType = tagSelectionType
         self.eventData = eventData
+        
+        if let type = eventData.event_type {
+            eventMainType = type
+        }
+        self.selectedTagIDs = eventData.tags
     }
     
     func getTags(completion: ResponseBlock?) {
@@ -37,9 +44,16 @@ class EventTagsViewModel {
                 case .success(let value):
                     
                     let json = JSON(value)
-                    print(json)
+                    
                     for item in json["data"].arrayValue {
                         self.tags.append(Tag(json: item))
+                    }
+                    
+                    self.selectedSingleTag = self.tags.first(where: { $0.id == self.eventMainType})
+                    self.selectedTagIDs.forEach { (id) in
+                        if let tag = self.tags.first(where: { $0.id == id }) {
+                            self.selectedTags.append(tag)
+                        }
                     }
                     
                     completion?(.ok, "")
@@ -49,6 +63,19 @@ class EventTagsViewModel {
                     completion?(.fail, "")
                 }
         }
+    }
+    
+    func isTagSelected(tag: Tag) -> Bool {
+        switch selectionType {
+        case .single:
+            if selectedSingleTag != nil {
+                return tag.id == selectedSingleTag!.id
+            }
+        default:
+            return selectedTags.contains(where: { $0.id == tag.id })
+        }
+        
+        return false
     }
     
     func selectedTag(atIndexPath indexPath: IndexPath) {

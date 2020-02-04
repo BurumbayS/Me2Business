@@ -28,7 +28,8 @@ class AddEventViewController: UIViewController {
         navigationItem.title = "Новое событие"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelCreating))
         navigationItem.leftBarButtonItem?.tintColor = Color.red
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Создать", style: .plain, target: self, action: #selector(completeCreating))
+        let rightButtonTitle = (viewModel.eventChangesType == .create) ? "Создать" : "Изменить"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTitle, style: .plain, target: self, action: #selector(completeCreating))
         navigationItem.rightBarButtonItem?.tintColor = Color.blue
     }
     
@@ -48,24 +49,33 @@ class AddEventViewController: UIViewController {
     
     @objc private func cancelCreating() {
         showDefaultAlert(title: "", message: "Вы уверены, что хотите отменить действие? Введенные Вами данные не будут сохранены.", doneAction: { [weak self] in
-            self?.dismiss(animated: true, completion: nil)
+            self?.dismiss()
         })
     }
     
     @objc private func completeCreating() {
         startLoader()
         
-        viewModel.addNewEvent { [weak self] (status, message) in
+        viewModel.editEvent { [weak self] (status, message) in
             switch status {
             case .ok:
                 self?.stopLoader(withStatus: .success, andText: "Событие создано", completion: {
-                    self?.dismiss(animated: true, completion: nil)
+                    self?.dismiss()
                 })
             case .error:
                 self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             case .fail:
                 self?.stopLoader()
             }
+        }
+    }
+    
+    private func dismiss() {
+        switch viewModel.eventChangesType {
+        case .create:
+            self.dismiss(animated: true, completion: nil)
+        default:
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
