@@ -38,8 +38,11 @@ class EventInfoViewController: UIViewController {
     }
     
     private func configureNavBar() {
+        extendedLayoutIncludesOpaqueBars = true
+        
         navigationController?.navigationBar.tintColor = .black
         navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.isTranslucent = false
     }
 
     private func configureTableView() {

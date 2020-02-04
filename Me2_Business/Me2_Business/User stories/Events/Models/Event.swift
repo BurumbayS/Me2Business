@@ -29,6 +29,11 @@ enum DateType: String {
     }
 }
 
+enum EventStatus: String {
+    case ACTIVE
+    case ARCHIVED
+}
+
 class Event {
     let id: Int
     var title: String!
@@ -45,6 +50,7 @@ class Event {
     var tags = [Tag]()
     var favourite_count: Int?
     var created_at: String?
+    var status: EventStatus!
     
     init(json: JSON) {
         id = json["id"].intValue
@@ -60,6 +66,7 @@ class Event {
         time_end = json["time_end"].stringValue
         favourite_count = json["favourite_count"].intValue
         created_at = json["created_at"].stringValue
+        status = EventStatus(rawValue: json["status"].stringValue)
         
         for item in json["tags"].arrayValue {
             tags.append(Tag(json: item))

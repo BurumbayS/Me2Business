@@ -15,6 +15,12 @@ class EventsTabViewController: UIViewController {
     
     let viewModel = EventsTabViewModel()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -51,6 +57,9 @@ class EventsTabViewController: UIViewController {
     }
     
     private func configureNavBar() {
+        extendedLayoutIncludesOpaqueBars = true
+        
+        navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "События"
         
@@ -161,7 +170,8 @@ extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             
-            let vc = Storyboard.archivedEventsViewController()
+            let vc = Storyboard.archivedEventsViewController() as! ArchivedEventsViewController
+            vc.events = viewModel.archivedEvents
             self.navigationController?.pushViewController(vc, animated: true)
             
         default:

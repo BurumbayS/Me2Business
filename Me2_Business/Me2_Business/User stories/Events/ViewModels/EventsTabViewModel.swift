@@ -11,6 +11,7 @@ import SwiftyJSON
 
 class EventsTabViewModel {
     var events = [Event]()
+    var archivedEvents = [Event]()
     
     func getEvents(completion: ResponseBlock?) {
         Alamofire.request(eventURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
@@ -21,11 +22,12 @@ class EventsTabViewModel {
                     let json = JSON(value)
                     print(json)
                     
+                    var events = [Event]()
                     for item in json["data"]["results"].arrayValue {
-                        self.events.append(Event(json: item))
+                        events.append(Event(json: item))
                     }
                     
-                    completion?(.ok, "")
+                    self.sortEvents(events: events, completion: completion)
                     
                 case .failure(_):
                     
@@ -34,6 +36,18 @@ class EventsTabViewModel {
                     
                 }
         }
+    }
+    
+    private func sortEvents(events: [Event], completion: ResponseBlock?) {
+        for event in events {
+            if event.status == .ACTIVE {
+                self.events.append(event)
+            } else {
+                self.archivedEvents.append(event)
+            }
+        }
+        
+        completion?(.ok, "")
     }
     
     let eventURL = Network.business + "/event/"
