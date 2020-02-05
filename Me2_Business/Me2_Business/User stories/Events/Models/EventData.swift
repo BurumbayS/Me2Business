@@ -41,7 +41,7 @@ class EventData {
         description = event.description
         event_type = event.eventType.id
         imageURL = event.imageURL
-        place = 5
+        place = UserDefaults().object(forKey: UserDefaultKeys.placeID.rawValue) as? Int
         start = event.start
         end = event.end
         dateType = event.date_type
@@ -58,7 +58,7 @@ class EventData {
         params["name"] = name
         params["description"] = description
         params["event_type"] = event_type
-        params["place"] = 5
+        params["place"] = UserDefaults().object(forKey: UserDefaultKeys.placeID.rawValue) as? Int
         if start != nil { params["start"] = start }
         if end != nil { params["end"] = end }
         if time_start != nil { params["time_start"] = time_start }
