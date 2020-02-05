@@ -44,7 +44,9 @@ class EventInfoViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.isTranslucent = false
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "dots_icon"), style: .plain, target: self, action: #selector(doActionOnEvent))
+        if viewModel.event.status == .ACTIVE {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "dots_icon"), style: .plain, target: self, action: #selector(doActionOnEvent))
+        }
     }
 
     private func configureTableView() {
@@ -60,12 +62,7 @@ class EventInfoViewController: UIViewController {
     }
     
     @objc private func doActionOnEvent() {
-        switch viewModel.event.status {
-        case .ACTIVE:
-            addActionSheet(titles: ["Поделиться","Изменить","Архивировать"], actions: [shareEvent,editEvent,archiveEvent], styles: [.default,.default,.destructive])
-        default:
-            addActionSheet(titles: ["Поделиться","Изменить"], actions: [shareEvent,editEvent], styles: [.default,.default])
-        }
+        addActionSheet(titles: ["Поделиться","Изменить","Архивировать"], actions: [shareEvent,editEvent,archiveEvent], styles: [.default,.default,.destructive])
     }
     
     private func shareEvent() {
@@ -94,6 +91,7 @@ class EventInfoViewController: UIViewController {
         viewModel.archiveEvent { [weak self] (status, message) in
             switch status {
             case .ok:
+                self?.navigationItem.rightBarButtonItem = nil
                 self?.stopLoader(withStatus: .success, andText: "Событие архивировано", completion: nil)
                 self?.tableView.reloadData()
             default:
