@@ -79,8 +79,9 @@ class EventInfoViewController: UIViewController {
         let navigation = Storyboard.addEventViewController() as! UINavigationController
         let vc = navigation.viewControllers[0] as! AddEventViewController
         vc.viewModel = AddEventViewModel(event: viewModel.event, eventChangesType: .update, onEventAdded: { [weak self] (event) in
-//            self?.viewModel.events.insert(event, at: 0)
-//            self?.tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+            self?.viewModel.eventUpdateHandler?(event)
+            self?.viewModel.event = event
+            self?.tableView.reloadData()
         })
         navigationController?.pushViewController(vc, animated: true)
     }

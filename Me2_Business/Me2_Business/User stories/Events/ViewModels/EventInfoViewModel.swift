@@ -14,10 +14,12 @@ class EventInfoViewModel {
     
     var dataLoaded = false
     let eventArchivationHandler: VoidBlock?
+    let eventUpdateHandler: ((Event) -> ())?
     
-    init(event: Event, onEventArchived: VoidBlock?) {
+    init(event: Event, onEventArchived: VoidBlock?, onEventUpdate: ((Event) -> ())?) {
         self.event = event
         self.eventArchivationHandler = onEventArchived
+        self.eventUpdateHandler = onEventUpdate
     }
     
     func fetchData(completion: ResponseBlock?) {

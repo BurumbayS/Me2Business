@@ -190,6 +190,9 @@ extension EventsTabViewController: UITableViewDelegate, UITableViewDataSource {
                 self?.viewModel.archivedEvents.append((self?.viewModel.events[indexPath.row])!)
                 self?.viewModel.events.remove(at: indexPath.row)
                 self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }, onEventUpdate: { [weak self] (event) in
+                self?.viewModel.events[indexPath.row] = event
+                self?.tableView.reloadData()
             })
             self.navigationController?.pushViewController(vc, animated: true)
             

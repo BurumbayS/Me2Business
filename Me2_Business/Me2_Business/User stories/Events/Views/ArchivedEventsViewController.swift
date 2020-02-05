@@ -65,7 +65,7 @@ extension ArchivedEventsViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = Storyboard.eventInfoViewController() as! EventInfoViewController
-        vc.viewModel = EventInfoViewModel(event: events[indexPath.row], onEventArchived: nil)
+        vc.viewModel = EventInfoViewModel(event: events[indexPath.row], onEventArchived: nil, onEventUpdate: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
