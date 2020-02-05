@@ -18,6 +18,11 @@ class EditBookingViewController: UIViewController {
     let picker = UIPickerView()
     let datePicker = UIDatePicker()
     
+    var pickedDate = ""
+    var pickedNumberOfGuests = 0
+
+    var booking: Booking!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +62,9 @@ class EditBookingViewController: UIViewController {
         formatter.locale = .init(identifier: "ru")
         formatter.dateFormat = "dd MMMM yyyy HH:mm"
         dateTextField.text = formatter.string(from: datePicker.date)
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        pickedDate = formatter.string(from: datePicker.date)
     }
     
     @objc private func cancelEditing() {
@@ -67,8 +75,18 @@ class EditBookingViewController: UIViewController {
     @objc private func completeEditing() {
         self.view.endEditing(true)
         
+        startLoader()
         
-        self.dismiss(animated: true, completion: nil)
+        booking.edit(dateAndTime: pickedDate, numOfGuests: pickedNumberOfGuests) { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                self?.stopLoader(withStatus: .success, andText: "Бронь изменена") {
+                    self?.dismiss(animated: true , completion: nil)
+                }
+            default:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
+            }
+        }
     }
 }
 
@@ -88,6 +106,7 @@ extension EditBookingViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         navItem.rightBarButtonItem?.isEnabled = true
         guestsNumberTextField.text = "\(row + 1)"
+        pickedNumberOfGuests = row + 1
     }
 }
 

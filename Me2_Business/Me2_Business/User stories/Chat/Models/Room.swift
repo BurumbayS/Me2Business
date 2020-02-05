@@ -44,7 +44,11 @@ class Room {
     func getSecondParticipant() -> ChatParticipant {
         let participants = self.participants.filter({ $0.id != UserDefaults().object(forKey: UserDefaultKeys.userID.rawValue) as? Int })
         
-        return participants[0]
+        if participants.count > 0 {
+            return participants[0]
+        }
+        
+        return ChatParticipant(json: JSON())
     }
     
     func getLastMessageSender() -> ChatParticipant? {

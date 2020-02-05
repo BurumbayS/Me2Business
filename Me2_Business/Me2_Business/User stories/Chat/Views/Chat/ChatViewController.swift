@@ -336,7 +336,8 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }, onReject: {
                 message.booking?.reject(messageID: message.id)
             }) { [weak self] in
-                let vc = Storyboard.editBookingViewController()
+                let vc = Storyboard.editBookingViewController() as! EditBookingViewController
+                vc.booking = message.booking
                 self?.present(vc, animated: true, completion: nil)
             }
             return cell

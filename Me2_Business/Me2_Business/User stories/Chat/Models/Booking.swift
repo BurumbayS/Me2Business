@@ -66,7 +66,33 @@ class Booking {
         }
     }
     
-    func edit() {
+    func edit(dateAndTime: String, numOfGuests: Int, completion: ResponseBlock?) {
+        let url = Network.booking + "/\(id)/"
+        let params: Parameters = ["date": dateAndTime, "amount": numOfGuests]
         
+        Alamofire.request(url, method: .put, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+            .responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    
+                    let json = JSON(value)
+                    print(json)
+                    
+                    switch json["code"].intValue {
+                    case 0:
+                        completion?(.ok, "")
+                    default:
+                        completion?(.error, json["message"].stringValue)
+                    }
+                    
+                case .failure(_):
+                    
+                    let json = JSON(response.data as Any)
+                    print(json)
+                    
+                    completion?(.fail, "")
+                    
+                }
+        }
     }
 }

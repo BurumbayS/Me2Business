@@ -261,7 +261,7 @@
 		DD81E2CC23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
 		DD81E2CD23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventAdditionalInfoTableViewCell.xib; sourceTree = "<group>"; };
 		DD81E2D023E06F2300069F23 /* EventInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoViewModel.swift; sourceTree = "<group>"; };
-		DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me2_Business.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB2579D23C1B4CF00DF1EB4 /* Me2 Business.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Me2 Business.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB257A023C1B4CF00DF1EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB257A523C1B4CF00DF1EB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDB257A723C1B4D100DF1EB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -551,7 +551,7 @@
 		DDB2579E23C1B4CF00DF1EB4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */,
+				DDB2579D23C1B4CF00DF1EB4 /* Me2 Business.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -778,7 +778,7 @@
 			);
 			name = Me2_Business;
 			productName = Me2_Business;
-			productReference = DDB2579D23C1B4CF00DF1EB4 /* Me2_Business.app */;
+			productReference = DDB2579D23C1B4CF00DF1EB4 /* Me2 Business.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1162,8 +1162,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.avsoft.metwobusiness;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = kz.me2.me2appbusiness;
+				PRODUCT_NAME = "Me2 Business";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1182,8 +1182,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.avsoft.metwobusiness;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = kz.me2.me2appbusiness;
+				PRODUCT_NAME = "Me2 Business";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
