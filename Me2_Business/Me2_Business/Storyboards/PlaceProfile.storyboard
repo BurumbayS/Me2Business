@@ -57,6 +57,36 @@
             </objects>
             <point key="canvasLocation" x="512" y="76"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="re0-sQ-Ngp">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="uE0-7h-X5A" customClass="SettingsViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yPf-fl-IDN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-D0-cXu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GYa-D0-cXu" firstAttribute="top" secondItem="yCU-A4-SlJ" secondAttribute="top" id="1LJ-MG-SP1"/>
+                            <constraint firstItem="yCU-A4-SlJ" firstAttribute="bottom" secondItem="GYa-D0-cXu" secondAttribute="bottom" id="4Qt-0I-ba1"/>
+                            <constraint firstItem="yCU-A4-SlJ" firstAttribute="trailing" secondItem="GYa-D0-cXu" secondAttribute="trailing" id="9aN-Uo-PQS"/>
+                            <constraint firstItem="GYa-D0-cXu" firstAttribute="leading" secondItem="yCU-A4-SlJ" secondAttribute="leading" id="bzw-Bh-IeJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yCU-A4-SlJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GYa-D0-cXu" id="MEX-Vw-FKQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2R-Ji-91I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="76"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2lt-tg-rYj">
             <objects>

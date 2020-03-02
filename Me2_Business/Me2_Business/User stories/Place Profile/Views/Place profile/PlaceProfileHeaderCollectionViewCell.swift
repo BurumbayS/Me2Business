@@ -136,6 +136,18 @@ class PlaceProfileHeaderCollectionViewCell: UICollectionViewCell {
             title.bottom == logo.bottom
         }
         
+        let settingsButton = UIButton()
+        settingsButton.setImage(UIImage(named: "settings_icon"), for: .normal)
+        settingsButton.addTarget(self, action: #selector(showSettings), for: .touchDown)
+        view.addSubview(settingsButton)
+        constrain(settingsButton, titleLabel, view) { btn, label, view in
+            btn.centerY == label.centerY
+            btn.left == label.right + 10
+            btn.right == view.right - 20
+            btn.height == 20
+            btn.width == 20
+        }
+        
         ratingView.isUserInteractionEnabled = false
         ratingView.settings.starSize = 10
         ratingView.settings.starMargin = 3
@@ -168,5 +180,10 @@ class PlaceProfileHeaderCollectionViewCell: UICollectionViewCell {
     
     @objc private func showImages() {
         imageCarousel.presentFullScreenController(from: parentVC)
+    }
+    
+    @objc private func showSettings() {
+        let vc = Storyboard.settingsViewController()
+        parentVC.navigationController?.pushViewController(vc, animated: true)
     }
 }

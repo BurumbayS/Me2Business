@@ -87,6 +87,9 @@ extension Storyboard {
     static var placeProfileViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "PlaceProfileViewController")
     }
+    static var settingsViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
+    }
 }
 
 

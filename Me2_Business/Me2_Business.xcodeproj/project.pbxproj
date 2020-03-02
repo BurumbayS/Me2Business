@@ -74,6 +74,10 @@
 		DD583AF723E93C0C00800339 /* ListedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF623E93C0C00800339 /* ListedViewController.swift */; };
 		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
 		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
+		DD7E343F240D4136001B5836 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E343E240D4136001B5836 /* SettingsViewController.swift */; };
+		DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */; };
+		DD7E3443240D41A3001B5836 /* SettingsParameterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */; };
+		DD7E3445240D48AB001B5836 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
 		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
 		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
@@ -240,6 +244,10 @@
 		DD583AF623E93C0C00800339 /* ListedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedViewController.swift; sourceTree = "<group>"; };
 		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		DD7E343E240D4136001B5836 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParameterTableViewCell.swift; sourceTree = "<group>"; };
+		DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsParameterTableViewCell.xib; sourceTree = "<group>"; };
+		DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
@@ -415,12 +423,8 @@
 		DD1A237724066DAC00A480CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DDA0D8DD2407A267001DBFD5 /* PlaceProfileViewController.swift */,
-				DDA0D8E12407D3E7001DBFD5 /* PlaceProfileCollectionLayout.swift */,
-				DDA0D8E32407D466001DBFD5 /* PlaceProfileHeaderCollectionViewCell.swift */,
-				DDA0D8E52407E2C8001DBFD5 /* PlaceDetailsCollectionViewCell.swift */,
-				DDA0D903240A8045001DBFD5 /* PlaceTabView.swift */,
-				DDA0D8E92407E579001DBFD5 /* PlaceDetails */,
+				DD7E343D240D40EE001B5836 /* Settings */,
+				DD7E343C240D40DA001B5836 /* Place profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,6 +436,7 @@
 				DDA0D8E72407E413001DBFD5 /* PlaceDetailsViewModel.swift */,
 				DDA0D8F32407F383001DBFD5 /* PlaceInfoViewModel.swift */,
 				DDA0D918240A8618001DBFD5 /* PlaceReviewViewModel.swift */,
+				DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -471,6 +476,29 @@
 				DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */,
 			);
 			path = Loader;
+			sourceTree = "<group>";
+		};
+		DD7E343C240D40DA001B5836 /* Place profile */ = {
+			isa = PBXGroup;
+			children = (
+				DDA0D8DD2407A267001DBFD5 /* PlaceProfileViewController.swift */,
+				DDA0D8E12407D3E7001DBFD5 /* PlaceProfileCollectionLayout.swift */,
+				DDA0D8E32407D466001DBFD5 /* PlaceProfileHeaderCollectionViewCell.swift */,
+				DDA0D8E52407E2C8001DBFD5 /* PlaceDetailsCollectionViewCell.swift */,
+				DDA0D903240A8045001DBFD5 /* PlaceTabView.swift */,
+				DDA0D8E92407E579001DBFD5 /* PlaceDetails */,
+			);
+			path = "Place profile";
+			sourceTree = "<group>";
+		};
+		DD7E343D240D40EE001B5836 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E343E240D4136001B5836 /* SettingsViewController.swift */,
+				DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */,
+				DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		DD81E26C23D9D5D400069F23 /* User Profile */ = {
@@ -980,6 +1008,7 @@
 				DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */,
 				DD00917023C370A100C7B370 /* Roboto-Black.ttf in Resources */,
 				DD00917223C370A100C7B370 /* Roboto-Bold.ttf in Resources */,
+				DD7E3443240D41A3001B5836 /* SettingsParameterTableViewCell.xib in Resources */,
 				DD81E2A123DEF64000069F23 /* ContactTableViewCell.xib in Resources */,
 				DD81E2BC23E0398500069F23 /* ArchiveTableViewCell.xib in Resources */,
 				DD583AE523E2EDC800800339 /* AddEventTimeTableViewCell.xib in Resources */,
@@ -1098,12 +1127,14 @@
 				DDA0D8E62407E2C8001DBFD5 /* PlaceDetailsCollectionViewCell.swift in Sources */,
 				DDA0D909240A80C0001DBFD5 /* CustomSegmentedControlViewModel.swift in Sources */,
 				DD583AEB23E4270B00800339 /* AddEventViewModel.swift in Sources */,
+				DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */,
 				DD81E2CE23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift in Sources */,
 				DD81E27323DABAFD00069F23 /* UserProfileViewController.swift in Sources */,
 				DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */,
 				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,
 				DD81E2A523DEF9E600069F23 /* Contact.swift in Sources */,
 				DDA0D90F240A81AA001DBFD5 /* MenuFileTableViewCell.swift in Sources */,
+				DD7E343F240D4136001B5836 /* SettingsViewController.swift in Sources */,
 				DD81E2A323DEF95800069F23 /* ContactsViewModel.swift in Sources */,
 				DDA0D913240A82B9001DBFD5 /* PlaceReviewTableViewCell.swift in Sources */,
 				DD81E2C623E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift in Sources */,
@@ -1176,6 +1207,7 @@
 				DDA0D8E22407D3E7001DBFD5 /* PlaceProfileCollectionLayout.swift in Sources */,
 				DDA0D8FF240A7978001DBFD5 /* AdditionalPlaceInfoTableViewCell.swift in Sources */,
 				DD81E28323DACC9600069F23 /* User.swift in Sources */,
+				DD7E3445240D48AB001B5836 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
