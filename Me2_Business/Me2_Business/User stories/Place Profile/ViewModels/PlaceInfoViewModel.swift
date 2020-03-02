@@ -9,7 +9,7 @@
 import Alamofire
 import SwiftyJSON
 
-enum PlaceInfoSection {
+enum PlaceInfoSection: String {
     case description
     case address
     case workTime
@@ -41,6 +41,21 @@ class PlaceInfoViewModel {
 //        if let subs = placeInfo.subsidiaries, subs.count > 0 {
 //            placeSections.append(.subsidiaries)
 //        }
+    }
+    
+    func info(forSection section: PlaceInfoSection) -> String {
+        switch section {
+        case .mail:
+            return placeInfo.email ?? ""
+        case .phone:
+            return placeInfo.phone ?? ""
+        case .instagram:
+            return placeInfo.instagram ?? ""
+        case .site:
+            return placeInfo.website ?? ""
+        default:
+            return ""
+        }
     }
 
 }

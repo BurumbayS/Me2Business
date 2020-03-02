@@ -42,6 +42,7 @@ class ResponseReviewTableViewCell: UITableViewCell {
             icon.height == 14
         }
         
+        avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = 20
         self.contentView.addSubview(avatarImageView)
         constrain(avatarImageView, replyIcon, self.contentView) { avatar, replyIcon, view in

@@ -66,7 +66,7 @@ class PlaceInfoCollectionViewCell: PlaceDetailCollectionCell {
         tableView.register(AdressTableViewCell.self)
         tableView.register(PlaceWorkTimeTableViewCell.self)
         tableView.register(TagsTableViewCell.self)
-        tableView.register(AdditionalPlaceInfoTableViewCell.self)
+        tableView.registerNib(AdditionalPlaceInfoTableViewCell.self)
     }
     
     private func configureViews() {
@@ -85,7 +85,8 @@ extension PlaceInfoCollectionViewCell: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch viewModel.placeSections[indexPath.row] {
+        let section = viewModel.placeSections[indexPath.row]
+        switch section {
         case .description:
             
             let cell: PlaceDescriptionTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
@@ -118,6 +119,7 @@ extension PlaceInfoCollectionViewCell: UITableViewDelegate, UITableViewDataSourc
         case .phone, .mail, .site, .instagram:
             
             let cell: AdditionalPlaceInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.configure(type: AdditionalPlaceInfoType(rawValue: section.rawValue)!, detail: viewModel.info(forSection: section))
             return cell
             
         case .tags:
