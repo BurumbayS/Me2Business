@@ -124,7 +124,7 @@ class Event {
         let date = formatter.date(from: str)
         
         formatter.dateFormat = "dd/MM/yyyy"
-        return formatter.string(from: date!)
+        return formatter.string(from: date ?? Date())
     }
     
     func generateShareInfo() -> String {

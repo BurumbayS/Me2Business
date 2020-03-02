@@ -15,6 +15,7 @@ enum Storyboard: String {
     case loader = "Loader"
     case userProfile = "UserProfile"
     case events = "Events"
+    case placeProfile = "PlaceProfile"
     
     private var storyboard: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: nil)
@@ -80,6 +81,11 @@ extension Storyboard {
     }
     static var addEventTagsViewController = {
         return events.storyboard.instantiateViewController(withIdentifier: "AddEventTagsViewController")
+    }
+    
+    //Place profile pages
+    static var placeProfileViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "PlaceProfileViewController")
     }
 }
 

@@ -114,6 +114,18 @@ extension UIViewController {
         }
     }
     
+    func makeNavBarTransparent() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+    }
+    
+    func makeNavBarVisible() {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.view.backgroundColor = .white
+    }
+    
     @objc private func dismissKeyboard() {
         self.view.endEditing(true)
     }
