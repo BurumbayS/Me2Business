@@ -60,12 +60,12 @@
         <!--Settings View Controller-->
         <scene sceneID="re0-sQ-Ngp">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="uE0-7h-X5A" customClass="SettingsViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" hidesBottomBarWhenPushed="YES" id="uE0-7h-X5A" customClass="SettingsViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yPf-fl-IDN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-D0-cXu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GYa-D0-cXu">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -86,6 +86,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2R-Ji-91I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1228" y="76"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="VKG-9H-kpk">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" id="tiz-gu-NjD" customClass="EditProfileViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YjG-yV-A5a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rch-53-YF3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.97244364023208618" green="0.97260981798171997" blue="0.97243314981460571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zgk-Pe-Pw3" firstAttribute="trailing" secondItem="rch-53-YF3" secondAttribute="trailing" id="1Ci-I4-DsM"/>
+                            <constraint firstAttribute="bottom" secondItem="rch-53-YF3" secondAttribute="bottom" id="EdW-m3-79L"/>
+                            <constraint firstItem="rch-53-YF3" firstAttribute="top" secondItem="Zgk-Pe-Pw3" secondAttribute="top" id="maB-Bb-hfa"/>
+                            <constraint firstItem="rch-53-YF3" firstAttribute="leading" secondItem="Zgk-Pe-Pw3" secondAttribute="leading" id="tIz-xd-G85"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zgk-Pe-Pw3"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="rch-53-YF3" id="LRj-9i-G4h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bl4-iy-hoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="75.669642857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2lt-tg-rYj">

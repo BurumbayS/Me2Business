@@ -78,6 +78,13 @@
 		DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */; };
 		DD7E3443240D41A3001B5836 /* SettingsParameterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */; };
 		DD7E3445240D48AB001B5836 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */; };
+		DD7E3448240E1E69001B5836 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3447240E1E69001B5836 /* EditProfileViewController.swift */; };
+		DD7E344B240E1F96001B5836 /* EditMainInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3449240E1F96001B5836 /* EditMainInfoTableViewCell.swift */; };
+		DD7E344C240E1F96001B5836 /* EditMainInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7E344A240E1F96001B5836 /* EditMainInfoTableViewCell.xib */; };
+		DD7E344E240E2767001B5836 /* EditDefaultInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E344D240E2767001B5836 /* EditDefaultInfoTableViewCell.swift */; };
+		DD7E3450240E359D001B5836 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */; };
+		DD7E3452240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */; };
+		DD7E3454240E4200001B5836 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3453240E4200001B5836 /* TextField.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
 		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
 		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
@@ -248,6 +255,13 @@
 		DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParameterTableViewCell.swift; sourceTree = "<group>"; };
 		DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsParameterTableViewCell.xib; sourceTree = "<group>"; };
 		DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DD7E3447240E1E69001B5836 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		DD7E3449240E1F96001B5836 /* EditMainInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMainInfoTableViewCell.swift; sourceTree = "<group>"; };
+		DD7E344A240E1F96001B5836 /* EditMainInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditMainInfoTableViewCell.xib; sourceTree = "<group>"; };
+		DD7E344D240E2767001B5836 /* EditDefaultInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDefaultInfoTableViewCell.swift; sourceTree = "<group>"; };
+		DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		DD7E3453240E4200001B5836 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +437,7 @@
 		DD1A237724066DAC00A480CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD7E3446240E1E36001B5836 /* Edit profile */,
 				DD7E343D240D40EE001B5836 /* Settings */,
 				DD7E343C240D40DA001B5836 /* Place profile */,
 			);
@@ -437,6 +452,7 @@
 				DDA0D8F32407F383001DBFD5 /* PlaceInfoViewModel.swift */,
 				DDA0D918240A8618001DBFD5 /* PlaceReviewViewModel.swift */,
 				DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */,
+				DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -499,6 +515,18 @@
 				DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		DD7E3446240E1E36001B5836 /* Edit profile */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E3447240E1E69001B5836 /* EditProfileViewController.swift */,
+				DD7E3449240E1F96001B5836 /* EditMainInfoTableViewCell.swift */,
+				DD7E344A240E1F96001B5836 /* EditMainInfoTableViewCell.xib */,
+				DD7E344D240E2767001B5836 /* EditDefaultInfoTableViewCell.swift */,
+				DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */,
+			);
+			path = "Edit profile";
 			sourceTree = "<group>";
 		};
 		DD81E26C23D9D5D400069F23 /* User Profile */ = {
@@ -826,6 +854,7 @@
 				DD81E28823DAF4AB00069F23 /* Tags */,
 				DD5FD00D23CBAADD00F01725 /* Loader */,
 				DDB257BC23C1B87400DF1EB4 /* AttributedTextField.swift */,
+				DD7E3453240E4200001B5836 /* TextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1015,6 +1044,7 @@
 				DD583AE123E2CEEF00800339 /* Checkbox.xib in Resources */,
 				DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */,
 				DD81E2CF23E0679E00069F23 /* EventAdditionalInfoTableViewCell.xib in Resources */,
+				DD7E344C240E1F96001B5836 /* EditMainInfoTableViewCell.xib in Resources */,
 				DD81E2B423E003E500069F23 /* EventTableViewCell.xib in Resources */,
 				DD81E2CB23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.xib in Resources */,
 				DD583AD623E1A78B00800339 /* AddEventMainInfoTableViewCell.xib in Resources */,
@@ -1102,6 +1132,7 @@
 				DDB257CF23C1F6D900DF1EB4 /* UIColorExtensions.swift in Sources */,
 				DDA0D919240A8618001DBFD5 /* PlaceReviewViewModel.swift in Sources */,
 				DD81E27D23DACAA600069F23 /* FavouritePlaceCollectionViewCell.swift in Sources */,
+				DD7E344B240E1F96001B5836 /* EditMainInfoTableViewCell.swift in Sources */,
 				DDB257C323C1B93700DF1EB4 /* Network.swift in Sources */,
 				DD00918223C48E3E00C7B370 /* ChatMessageCollectionViewCell.swift in Sources */,
 				DDB257D123C20ACB00DF1EB4 /* UIViewControllerExtensions.swift in Sources */,
@@ -1125,6 +1156,7 @@
 				DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */,
 				DD81E28C23DAF4D500069F23 /* Tag.swift in Sources */,
 				DDA0D8E62407E2C8001DBFD5 /* PlaceDetailsCollectionViewCell.swift in Sources */,
+				DD7E3452240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift in Sources */,
 				DDA0D909240A80C0001DBFD5 /* CustomSegmentedControlViewModel.swift in Sources */,
 				DD583AEB23E4270B00800339 /* AddEventViewModel.swift in Sources */,
 				DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */,
@@ -1161,6 +1193,8 @@
 				DD81E27823DABF2500069F23 /* ProfileHeaderTableViewCell.swift in Sources */,
 				DD00915F23C3624600C7B370 /* ChatTabViewModel.swift in Sources */,
 				DD00919023C49E9700C7B370 /* UINavigationBar.swift in Sources */,
+				DD7E344E240E2767001B5836 /* EditDefaultInfoTableViewCell.swift in Sources */,
+				DD7E3448240E1E69001B5836 /* EditProfileViewController.swift in Sources */,
 				DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */,
 				DD00918E23C49AB100C7B370 /* UINavigationItem.swift in Sources */,
 				DD00919723C4B10500C7B370 /* BookingCollectionViewCell.swift in Sources */,
@@ -1171,6 +1205,7 @@
 				DD00915B23C3325D00C7B370 /* UICollectionViewExtensions.swift in Sources */,
 				DD81E26523D96D5D00069F23 /* ConfirmCodeViewModel.swift in Sources */,
 				DDA0D907240A8093001DBFD5 /* CustomSegmentedControl.swift in Sources */,
+				DD7E3450240E359D001B5836 /* EditProfileViewModel.swift in Sources */,
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,
 				DDA0D8FA240A787D001DBFD5 /* AdressTableViewCell.swift in Sources */,
@@ -1188,6 +1223,7 @@
 				DD583AF123E4326600800339 /* EventTagsViewModel.swift in Sources */,
 				DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */,
 				DD81E2B023DFEC7C00069F23 /* EventsTabViewController.swift in Sources */,
+				DD7E3454240E4200001B5836 /* TextField.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
 				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,

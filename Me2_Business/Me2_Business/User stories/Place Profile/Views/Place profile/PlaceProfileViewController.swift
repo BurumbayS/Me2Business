@@ -36,6 +36,7 @@ class PlaceProfileViewController: UIViewController {
         viewModel.fetchData { [weak self] (status, message) in
             switch status {
             case .ok:
+                self?.topBarView.isHidden = false
                 self?.collectionView.reloadData()
                 self?.collectionView.alpha = 1.0
             case .error:
@@ -48,6 +49,7 @@ class PlaceProfileViewController: UIViewController {
     
     private func configureNavBar() {
         makeNavBarTransparent()
+        removeBackButton()
         
         navigationController?.navigationBar.tintColor = .black
     }
@@ -94,6 +96,7 @@ class PlaceProfileViewController: UIViewController {
             share.width == 38
         }
 
+        topBarView.isHidden = true
     }
     
     @objc private func updateCellHeight(_ notification: NSNotification) {
