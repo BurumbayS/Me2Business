@@ -70,6 +70,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case .feedback:
             let vc = Storyboard.feedbackViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case .security:
+            let vc = Storyboard.securityViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             return
         }

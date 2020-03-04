@@ -163,6 +163,36 @@
             </objects>
             <point key="canvasLocation" x="2657" y="76"/>
         </scene>
+        <!--Security View Controller-->
+        <scene sceneID="QWt-zT-lcO">
+            <objects>
+                <viewController storyboardIdentifier="SecurityViewController" id="DgW-Wy-ebX" customClass="SecurityViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D8L-vE-7cp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VSA-Vv-WMu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.97244364023208618" green="0.97260981798171997" blue="0.97243314981460571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="37G-Ak-WdX" firstAttribute="trailing" secondItem="VSA-Vv-WMu" secondAttribute="trailing" id="8gx-pH-9MC"/>
+                            <constraint firstItem="VSA-Vv-WMu" firstAttribute="top" secondItem="37G-Ak-WdX" secondAttribute="top" id="Btt-eJ-Acu"/>
+                            <constraint firstAttribute="bottom" secondItem="VSA-Vv-WMu" secondAttribute="bottom" id="aK5-mR-c42"/>
+                            <constraint firstItem="VSA-Vv-WMu" firstAttribute="leading" secondItem="37G-Ak-WdX" secondAttribute="leading" id="dwI-10-LJg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="37G-Ak-WdX"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="VSA-Vv-WMu" id="42C-da-tOW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-7h-X2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3392.753623188406" y="75.669642857142847"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2lt-tg-rYj">
             <objects>

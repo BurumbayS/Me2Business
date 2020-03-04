@@ -102,4 +102,7 @@ extension Storyboard {
     static var feedbackViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "FeedbackViewController")
     }
+    static var securityViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "SecurityViewController")
+    }
 }
