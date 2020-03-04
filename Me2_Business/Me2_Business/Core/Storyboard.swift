@@ -99,4 +99,7 @@ extension Storyboard {
     static var aboutAppViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "AboutAppViewController")
     }
+    static var feedbackViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "FeedbackViewController")
+    }
 }
