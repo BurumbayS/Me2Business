@@ -15,6 +15,9 @@ class MyContactsViewModel {
     var contacts = [Contact]()
     var searchResults = [Contact]()
     
+    var contactsListEditing = false
+    var contactsToDelete = [Contact]()
+    
     var searchActivated = false
     
     func getContacts(completion: ResponseBlock?) {
@@ -65,5 +68,49 @@ class MyContactsViewModel {
         }
         
         completion?(.ok, "")
+    }
+    
+    func deleteContacts(completion: ResponseBlock?) {
+        let url = Network.contact + "/delete_many/"
+        var contactIDs = [Int]()
+        contactsToDelete.forEach({ contactIDs.append($0.id) })
+        
+        let params = ["contact_ids": contactIDs]
+        
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+            .responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    
+                    let json = JSON(value)
+                    print(json)
+                    
+                    if json["code"].intValue == 0 {
+                        for contact in self.contactsToDelete {
+                            self.contacts.removeAll(where: { $0.id == contact.id })
+                        }
+                        
+                        completion?(.ok, "")
+                    } else {
+                        completion?(.error, json["message"].stringValue)
+                    }
+
+                case .failure( _):
+                    print(JSON(response.data as Any))
+                }
+        }
+    }
+    
+    func select(cell : ContactTableViewCell, atIndexPath indexPath: IndexPath) {
+        cell.select()
+        
+        switch cell.checked {
+        case .checked:
+            let contact = (searchActivated) ? searchResults[indexPath.row] : byLetterSections[indexPath.section].contacts[indexPath.row]
+            contactsToDelete.append(contact)
+        default:
+            let contact = (searchActivated) ? searchResults[indexPath.row] : byLetterSections[indexPath.section].contacts[indexPath.row]
+            contactsToDelete.removeAll(where: { contact.id == $0.id })
+        }
     }
 }

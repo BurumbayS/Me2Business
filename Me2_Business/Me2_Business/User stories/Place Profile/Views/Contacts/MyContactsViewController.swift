@@ -19,6 +19,7 @@ class MyContactsViewController: ListedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavBar()
         configureTableView()
         fetchData()
     }
@@ -30,8 +31,10 @@ class MyContactsViewController: ListedViewController {
                 
                 if self?.viewModel.contacts.count == 0 {
                     self?.showEmptyListStatusLabel(withText: "Ваш список контактов пуст")
+                    self?.navigationItem.rightBarButtonItem?.isEnabled = false
                 } else {
                     self?.hideEmptyListStatusLabel()
+                    self?.navigationItem.rightBarButtonItem?.isEnabled = true
                     self?.tableView.reloadData()
                 }
                 
@@ -43,6 +46,13 @@ class MyContactsViewController: ListedViewController {
         }
     }
     
+    private func configureNavBar() {
+        navigationItem.title = "Контакты"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(editContactsList))
+        navigationItem.rightBarButtonItem?.tintColor = Color.blue
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+    
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,6 +61,53 @@ class MyContactsViewController: ListedViewController {
         
         tableView.registerNib(ContactTableViewCell.self)
     }
+    
+    @objc private func editContactsList() {
+        if viewModel.contactsListEditing {
+            deleteContacts()
+        } else {
+            viewModel.contactsListEditing = true
+            
+            navigationItem.rightBarButtonItem?.title = "Удалить"
+            navigationItem.rightBarButtonItem?.tintColor = Color.red
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            
+            let leftBarButton = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelEditing))
+            leftBarButton.tintColor = Color.blue
+            navigationItem.leftBarButtonItem = leftBarButton
+            
+            tableView.reloadData()
+        }
+    }
+    
+    @objc private func cancelEditing() {
+        viewModel.contactsListEditing = false
+        viewModel.contactsToDelete = []
+        
+        navigationItem.rightBarButtonItem?.title = "Править"
+        navigationItem.rightBarButtonItem?.tintColor = Color.blue
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        
+        navigationItem.leftBarButtonItem = nil
+        
+        tableView.reloadData()
+    }
+    
+    private func deleteContacts() {
+        viewModel.deleteContacts { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                
+                self?.cancelEditing()
+                
+            case .error:
+                break
+            case .fail:
+                break
+            }
+        }
+    }
+
 
 }
 
@@ -105,7 +162,28 @@ extension MyContactsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell : ContactTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let contact = (viewModel.searchActivated) ? viewModel.searchResults[indexPath.row] : viewModel.byLetterSections[indexPath.section].contacts[indexPath.row]
         cell.configure(contact: contact.user2)
+        cell.configure(contact: contact.user2, selectable: viewModel.contactsListEditing)
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+//        if !viewModel.contactsListEditing {
+//
+//            let navigationController = Storyboard.userProfileViewController() as! UINavigationController
+//            let vc = navigationController.viewControllers[0] as! UserProfileViewController
+//            vc.viewModel = UserProfileViewModel(userID: viewModel.byLetterSections[indexPath.section]?.contacts[indexPath.row].user2.id ?? 0, profileType: .guestProfile)
+//            self.navigationController?.pushViewController(vc, animated: true)
+//
+//        } else {
+            
+            let cell = tableView.cellForRow(at: indexPath) as! ContactTableViewCell
+            viewModel.select(cell: cell, atIndexPath: indexPath)
+            navigationItem.rightBarButtonItem?.isEnabled = (viewModel.contactsToDelete.count > 0)
+            
+//        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
