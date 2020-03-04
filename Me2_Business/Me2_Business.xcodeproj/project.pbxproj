@@ -85,6 +85,9 @@
 		DD7E3450240E359D001B5836 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */; };
 		DD7E3452240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */; };
 		DD7E3454240E4200001B5836 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3453240E4200001B5836 /* TextField.swift */; };
+		DD7E3457240E76C4001B5836 /* MyContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3456240E76C4001B5836 /* MyContactsViewController.swift */; };
+		DD7E3459240E7A2D001B5836 /* MyContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3458240E7A2D001B5836 /* MyContactsViewModel.swift */; };
+		DD7E345B240F7BDA001B5836 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E345A240F7BDA001B5836 /* BaseViewController.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
 		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
 		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
@@ -262,6 +265,9 @@
 		DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAdditionalInfoTableViewCell.swift; sourceTree = "<group>"; };
 		DD7E3453240E4200001B5836 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		DD7E3456240E76C4001B5836 /* MyContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactsViewController.swift; sourceTree = "<group>"; };
+		DD7E3458240E7A2D001B5836 /* MyContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactsViewModel.swift; sourceTree = "<group>"; };
+		DD7E345A240F7BDA001B5836 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +443,7 @@
 		DD1A237724066DAC00A480CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD7E3455240E7600001B5836 /* Contacts */,
 				DD7E3446240E1E36001B5836 /* Edit profile */,
 				DD7E343D240D40EE001B5836 /* Settings */,
 				DD7E343C240D40DA001B5836 /* Place profile */,
@@ -453,6 +460,7 @@
 				DDA0D918240A8618001DBFD5 /* PlaceReviewViewModel.swift */,
 				DD7E3444240D48AB001B5836 /* SettingsViewModel.swift */,
 				DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */,
+				DD7E3458240E7A2D001B5836 /* MyContactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -527,6 +535,14 @@
 				DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */,
 			);
 			path = "Edit profile";
+			sourceTree = "<group>";
+		};
+		DD7E3455240E7600001B5836 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E3456240E76C4001B5836 /* MyContactsViewController.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		DD81E26C23D9D5D400069F23 /* User Profile */ = {
@@ -842,6 +858,7 @@
 				DD00918923C494AF00C7B370 /* VideoHelper.swift */,
 				DD583AF623E93C0C00800339 /* ListedViewController.swift */,
 				DDA0D8F52407F528001DBFD5 /* TableView.swift */,
+				DD7E345A240F7BDA001B5836 /* BaseViewController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1117,6 +1134,7 @@
 				DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */,
 				DDA0D911240A8270001DBFD5 /* PlaceReviewsCollectionViewCell.swift in Sources */,
 				DD81E2CA23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift in Sources */,
+				DD7E345B240F7BDA001B5836 /* BaseViewController.swift in Sources */,
 				DD583AD923E1AB2F00800339 /* AddEventDateTableViewCell.swift in Sources */,
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
@@ -1152,6 +1170,7 @@
 				DD81E28123DACAE000069F23 /* Place.swift in Sources */,
 				DD81E26923D97B1100069F23 /* SetNewPassViewModel.swift in Sources */,
 				DDB257C723C1F4C200DF1EB4 /* Storyboard.swift in Sources */,
+				DD7E3457240E76C4001B5836 /* MyContactsViewController.swift in Sources */,
 				DDA0D90D240A8158001DBFD5 /* PlaceMenuCollectionViewCell.swift in Sources */,
 				DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */,
 				DD81E28C23DAF4D500069F23 /* Tag.swift in Sources */,
@@ -1228,6 +1247,7 @@
 				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DD81E27B23DAC4C000069F23 /* FavouritePlacesTableViewCell.swift in Sources */,
+				DD7E3459240E7A2D001B5836 /* MyContactsViewModel.swift in Sources */,
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
 				DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */,
 				DD42F5A923C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift in Sources */,

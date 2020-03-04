@@ -117,6 +117,44 @@
             </objects>
             <point key="canvasLocation" x="1931.8840579710147" y="75.669642857142847"/>
         </scene>
+        <!--My Contacts View Controller-->
+        <scene sceneID="64k-3b-CP8">
+            <objects>
+                <viewController storyboardIdentifier="MyContactsViewController" id="jLc-Af-bKD" customClass="MyContactsViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Edc-QU-k4e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="3DR-ZB-7wN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TMy-JD-xZh">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3DR-ZB-7wN" firstAttribute="leading" secondItem="qmg-0B-9fn" secondAttribute="leading" id="5mr-QK-Rxm"/>
+                            <constraint firstItem="qmg-0B-9fn" firstAttribute="bottom" secondItem="TMy-JD-xZh" secondAttribute="bottom" id="Dj4-Pa-ms1"/>
+                            <constraint firstItem="TMy-JD-xZh" firstAttribute="top" secondItem="3DR-ZB-7wN" secondAttribute="bottom" id="Pk0-fG-fho"/>
+                            <constraint firstItem="TMy-JD-xZh" firstAttribute="leading" secondItem="qmg-0B-9fn" secondAttribute="leading" id="Rfd-NM-TKA"/>
+                            <constraint firstItem="3DR-ZB-7wN" firstAttribute="trailing" secondItem="qmg-0B-9fn" secondAttribute="trailing" id="kmN-ps-F8e"/>
+                            <constraint firstItem="3DR-ZB-7wN" firstAttribute="top" secondItem="qmg-0B-9fn" secondAttribute="top" id="uku-CD-tqS"/>
+                            <constraint firstItem="qmg-0B-9fn" firstAttribute="trailing" secondItem="TMy-JD-xZh" secondAttribute="trailing" id="wmR-Xu-yzt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qmg-0B-9fn"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="3DR-ZB-7wN" id="sRl-Gg-f5s"/>
+                        <outlet property="tableView" destination="TMy-JD-xZh" id="y2e-Ut-Ajd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39T-QQ-Ts3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="76"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2lt-tg-rYj">
             <objects>

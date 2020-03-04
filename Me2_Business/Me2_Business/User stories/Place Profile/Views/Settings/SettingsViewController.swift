@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
 
     private func configureNavBar() {
         navigationItem.title = "Настройки аккаунта"
+        removeBackButton()
     }
     
     private func configureTableView() {
@@ -59,6 +60,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         switch viewModel.parameters[indexPath.row] {
         case .edit:
             let vc = Storyboard.editProfileViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case .contacts:
+            let vc = Storyboard.myContactsViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
             return

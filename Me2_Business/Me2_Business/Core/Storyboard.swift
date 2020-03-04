@@ -93,6 +93,9 @@ extension Storyboard {
     static var editProfileViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditProfileViewController")
     }
+    static var myContactsViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "MyContactsViewController")
+    }
 }
 
 
