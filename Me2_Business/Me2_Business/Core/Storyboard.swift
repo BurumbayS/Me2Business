@@ -96,6 +96,7 @@ extension Storyboard {
     static var myContactsViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "MyContactsViewController")
     }
+    static var aboutAppViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "AboutAppViewController")
+    }
 }
-
-

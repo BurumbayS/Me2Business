@@ -88,6 +88,7 @@
 		DD7E3457240E76C4001B5836 /* MyContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3456240E76C4001B5836 /* MyContactsViewController.swift */; };
 		DD7E3459240E7A2D001B5836 /* MyContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3458240E7A2D001B5836 /* MyContactsViewModel.swift */; };
 		DD7E345B240F7BDA001B5836 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E345A240F7BDA001B5836 /* BaseViewController.swift */; };
+		DD7E345E240F866F001B5836 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E345D240F866F001B5836 /* AboutAppViewController.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
 		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
 		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
@@ -268,6 +269,7 @@
 		DD7E3456240E76C4001B5836 /* MyContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactsViewController.swift; sourceTree = "<group>"; };
 		DD7E3458240E7A2D001B5836 /* MyContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactsViewModel.swift; sourceTree = "<group>"; };
 		DD7E345A240F7BDA001B5836 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		DD7E345D240F866F001B5836 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 		DD1A237724066DAC00A480CE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD7E345C240F864F001B5836 /* Additional Pages */,
 				DD7E3455240E7600001B5836 /* Contacts */,
 				DD7E3446240E1E36001B5836 /* Edit profile */,
 				DD7E343D240D40EE001B5836 /* Settings */,
@@ -543,6 +546,14 @@
 				DD7E3456240E76C4001B5836 /* MyContactsViewController.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		DD7E345C240F864F001B5836 /* Additional Pages */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E345D240F866F001B5836 /* AboutAppViewController.swift */,
+			);
+			path = "Additional Pages";
 			sourceTree = "<group>";
 		};
 		DD81E26C23D9D5D400069F23 /* User Profile */ = {
@@ -1163,6 +1174,7 @@
 				DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */,
 				DDB257BD23C1B87400DF1EB4 /* AttributedTextField.swift in Sources */,
 				DD00918A23C494AF00C7B370 /* VideoHelper.swift in Sources */,
+				DD7E345E240F866F001B5836 /* AboutAppViewController.swift in Sources */,
 				DD583AE823E2F8B600800339 /* AddEventPriceTableViewCell.swift in Sources */,
 				DD583AD023E1A04100800339 /* AddEventViewController.swift in Sources */,
 				DD81E29D23DEF21400069F23 /* ContactsViewController.swift in Sources */,

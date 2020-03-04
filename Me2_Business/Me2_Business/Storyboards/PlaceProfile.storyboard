@@ -7,6 +7,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Place Profile View Controller-->
         <scene sceneID="eU1-C5-Yer">
@@ -173,5 +181,89 @@
             </objects>
             <point key="canvasLocation" x="-275.36231884057975" y="75.669642857142847"/>
         </scene>
+        <!--About App View Controller-->
+        <scene sceneID="XGC-AX-XUK">
+            <objects>
+                <viewController storyboardIdentifier="AboutAppViewController" hidesBottomBarWhenPushed="YES" id="k6J-5k-7na" customClass="AboutAppViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LI1-Fr-kFT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_app_image" translatesAutoresizingMaskIntoConstraints="NO" id="u4G-Zl-nlZ">
+                                <rect key="frame" x="94.5" y="94" width="225" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="6El-hd-v3U"/>
+                                    <constraint firstAttribute="height" constant="240" id="UQy-Vn-jUb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqf-D6-hPE">
+                                <rect key="frame" x="168.5" y="354" width="77" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me2 - первое приложение, ориентированное на улучшение сервиса заведений и установление контакта между гостями." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUQ-z5-fSM">
+                                <rect key="frame" x="50" y="392" width="314" height="79.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZX-XG-K3K">
+                                <rect key="frame" x="55" y="521.5" width="304" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0GK-Me-Dwn"/>
+                                    <constraint firstAttribute="width" constant="304" id="dku-tV-UmT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Условия и Политика Конфиденциальности">
+                                    <color key="titleColor" red="0.26625031230000001" green="0.69434672590000002" blue="0.97626179459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPrivacyPolicy:" destination="k6J-5k-7na" eventType="touchUpInside" id="cIT-pq-3tw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mz9-sH-kX8">
+                                <rect key="frame" x="87" y="561.5" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QCL-2w-mdO"/>
+                                    <constraint firstAttribute="width" constant="240" id="UKP-cL-a22"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="15"/>
+                                <state key="normal" title="Оценить приложение в App Store">
+                                    <color key="titleColor" red="0.26625031230000001" green="0.69434672590000002" blue="0.97626179459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="rateApp:" destination="k6J-5k-7na" eventType="touchUpInside" id="kFB-tk-8bM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kqf-D6-hPE" firstAttribute="centerX" secondItem="nNC-Y1-UWY" secondAttribute="centerX" id="7jM-nH-R7M"/>
+                            <constraint firstAttribute="trailing" secondItem="iUQ-z5-fSM" secondAttribute="trailing" constant="50" id="8KE-1g-qpG"/>
+                            <constraint firstItem="u4G-Zl-nlZ" firstAttribute="centerX" secondItem="nNC-Y1-UWY" secondAttribute="centerX" id="9yJ-b6-fsg"/>
+                            <constraint firstItem="iUQ-z5-fSM" firstAttribute="leading" secondItem="LI1-Fr-kFT" secondAttribute="leading" constant="50" id="Csm-Fd-MG3"/>
+                            <constraint firstItem="u4G-Zl-nlZ" firstAttribute="top" secondItem="nNC-Y1-UWY" secondAttribute="top" constant="50" id="Lgc-xw-xjl"/>
+                            <constraint firstItem="iUQ-z5-fSM" firstAttribute="centerX" secondItem="nNC-Y1-UWY" secondAttribute="centerX" id="SHi-es-GBo"/>
+                            <constraint firstItem="Kqf-D6-hPE" firstAttribute="top" secondItem="u4G-Zl-nlZ" secondAttribute="bottom" constant="20" id="d2x-wl-WbZ"/>
+                            <constraint firstItem="mz9-sH-kX8" firstAttribute="centerX" secondItem="nNC-Y1-UWY" secondAttribute="centerX" id="d3u-GR-asZ"/>
+                            <constraint firstItem="mz9-sH-kX8" firstAttribute="top" secondItem="tZX-XG-K3K" secondAttribute="bottom" constant="10" id="hAk-hP-CEl"/>
+                            <constraint firstItem="tZX-XG-K3K" firstAttribute="centerX" secondItem="nNC-Y1-UWY" secondAttribute="centerX" id="wuG-ah-spU"/>
+                            <constraint firstItem="tZX-XG-K3K" firstAttribute="top" secondItem="iUQ-z5-fSM" secondAttribute="bottom" constant="50" id="x54-rj-n31"/>
+                            <constraint firstItem="iUQ-z5-fSM" firstAttribute="top" secondItem="Kqf-D6-hPE" secondAttribute="bottom" constant="20" id="yci-J1-I6T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nNC-Y1-UWY"/>
+                    </view>
+                    <connections>
+                        <outlet property="appVersionLabel" destination="Kqf-D6-hPE" id="iFZ-V4-7mo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7KU-uL-js5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="781"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="about_app_image" width="224" height="208"/>
+    </resources>
 </document>
