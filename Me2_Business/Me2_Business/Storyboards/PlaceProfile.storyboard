@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSV-7h-X2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3392.753623188406" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1932" y="-642"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2lt-tg-rYj">
@@ -332,8 +332,133 @@
             </objects>
             <point key="canvasLocation" x="2657" y="783"/>
         </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="tmE-Km-XC4">
+            <objects>
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="TI0-IL-5oh" customClass="ChangePasswordViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Av-Ik-O8z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текущий пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-Wr-KSq">
+                                <rect key="frame" x="20" y="64" width="116" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="wO5-ae-Icj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vpp-3S-MMp" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="20" y="97" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0BE-Ji-Y3d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightViewImage" value="eye"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новый пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HA-w1-ael">
+                                <rect key="frame" x="20" y="157" width="102.5" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nB-ty-K3q" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="20" y="190" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BIN-3j-5P6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightViewImage" value="eye"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторить пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulf-r5-CvH">
+                                <rect key="frame" x="20" y="250" width="130" height="18"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="28k-cz-mFc" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="20" y="283" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mmf-dc-iud"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightViewImage" value="eye"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKF-I0-8IF">
+                                <rect key="frame" x="82" y="353" width="250" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.40700513119999998" blue="0.39747506379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Bye-GZ-Ktg"/>
+                                    <constraint firstAttribute="height" constant="45" id="LM1-cD-1UJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                                <state key="normal" title=" Сохранить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="savePressed:" destination="TI0-IL-5oh" eventType="touchUpInside" id="HVG-0H-oUp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5nB-ty-K3q" firstAttribute="leading" secondItem="ffW-g5-bBm" secondAttribute="leading" constant="20" id="1j4-ND-Yz5"/>
+                            <constraint firstItem="yaq-Wr-KSq" firstAttribute="leading" secondItem="ffW-g5-bBm" secondAttribute="leading" constant="20" id="2M9-Ag-7KQ"/>
+                            <constraint firstItem="5HA-w1-ael" firstAttribute="leading" secondItem="ffW-g5-bBm" secondAttribute="leading" constant="20" id="4F6-n8-siI"/>
+                            <constraint firstItem="ffW-g5-bBm" firstAttribute="trailing" secondItem="5nB-ty-K3q" secondAttribute="trailing" constant="20" id="6QT-iV-Dgb"/>
+                            <constraint firstItem="vpp-3S-MMp" firstAttribute="top" secondItem="yaq-Wr-KSq" secondAttribute="bottom" constant="15" id="6u5-AH-wml"/>
+                            <constraint firstItem="zKF-I0-8IF" firstAttribute="top" secondItem="28k-cz-mFc" secondAttribute="bottom" constant="30" id="91s-29-obi"/>
+                            <constraint firstItem="vpp-3S-MMp" firstAttribute="leading" secondItem="ffW-g5-bBm" secondAttribute="leading" constant="20" id="CbU-ew-LRm"/>
+                            <constraint firstItem="28k-cz-mFc" firstAttribute="leading" secondItem="ffW-g5-bBm" secondAttribute="leading" constant="20" id="Dcv-HC-KZe"/>
+                            <constraint firstItem="28k-cz-mFc" firstAttribute="top" secondItem="ulf-r5-CvH" secondAttribute="bottom" constant="15" id="Fgj-rz-u1G"/>
+                            <constraint firstItem="ulf-r5-CvH" firstAttribute="leading" secondItem="ffW-g5-bBm" secondAttribute="leading" constant="20" id="Kfu-gI-XmN"/>
+                            <constraint firstItem="ffW-g5-bBm" firstAttribute="trailing" secondItem="vpp-3S-MMp" secondAttribute="trailing" constant="20" id="Ody-dg-HdS"/>
+                            <constraint firstItem="ulf-r5-CvH" firstAttribute="top" secondItem="5nB-ty-K3q" secondAttribute="bottom" constant="20" id="Q8h-B7-Lni"/>
+                            <constraint firstItem="5HA-w1-ael" firstAttribute="top" secondItem="vpp-3S-MMp" secondAttribute="bottom" constant="20" id="ZYX-qi-dJV"/>
+                            <constraint firstItem="zKF-I0-8IF" firstAttribute="centerX" secondItem="ffW-g5-bBm" secondAttribute="centerX" id="mgF-Bn-2bg"/>
+                            <constraint firstItem="yaq-Wr-KSq" firstAttribute="top" secondItem="ffW-g5-bBm" secondAttribute="top" constant="20" id="peG-xd-v49"/>
+                            <constraint firstItem="ffW-g5-bBm" firstAttribute="trailing" secondItem="28k-cz-mFc" secondAttribute="trailing" constant="20" id="rwq-Wd-4dk"/>
+                            <constraint firstItem="5nB-ty-K3q" firstAttribute="top" secondItem="5HA-w1-ael" secondAttribute="bottom" constant="15" id="yzU-Vt-FtZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ffW-g5-bBm"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmNewPasswordTextField" destination="28k-cz-mFc" id="RpC-B6-tf4"/>
+                        <outlet property="currentPasswordTextField" destination="vpp-3S-MMp" id="5Vu-GD-cGX"/>
+                        <outlet property="newPasswordTextField" destination="5nB-ty-K3q" id="wIc-b7-yhh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIh-MG-jyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="-642"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_app_image" width="224" height="208"/>
+        <image name="eye" width="21.5" height="13"/>
     </resources>
 </document>

@@ -94,6 +94,8 @@
 		DD7E3465240F91A3001B5836 /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3464240F91A3001B5836 /* SecurityViewController.swift */; };
 		DD7E3467240F93E7001B5836 /* SecurityParameterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3466240F93E7001B5836 /* SecurityParameterTableViewCell.swift */; };
 		DD7E346A240FA639001B5836 /* SecurityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3469240FA639001B5836 /* SecurityViewModel.swift */; };
+		DD7E346C240FABE9001B5836 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */; };
+		DD7E346E240FB702001B5836 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E346D240FB702001B5836 /* ChangePasswordViewModel.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
 		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
 		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
@@ -280,6 +282,8 @@
 		DD7E3464240F91A3001B5836 /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
 		DD7E3466240F93E7001B5836 /* SecurityParameterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityParameterTableViewCell.swift; sourceTree = "<group>"; };
 		DD7E3469240FA639001B5836 /* SecurityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewModel.swift; sourceTree = "<group>"; };
+		DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		DD7E346D240FB702001B5836 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
@@ -572,6 +576,7 @@
 			children = (
 				DD7E3464240F91A3001B5836 /* SecurityViewController.swift */,
 				DD7E3466240F93E7001B5836 /* SecurityParameterTableViewCell.swift */,
+				DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				DDA0D8E72407E413001DBFD5 /* PlaceDetailsViewModel.swift */,
 				DDA0D8F32407F383001DBFD5 /* PlaceInfoViewModel.swift */,
 				DDA0D918240A8618001DBFD5 /* PlaceReviewViewModel.swift */,
+				DD7E346D240FB702001B5836 /* ChangePasswordViewModel.swift */,
 			);
 			path = "Place info ";
 			sourceTree = "<group>";
@@ -1208,10 +1214,12 @@
 				DD7E345E240F866F001B5836 /* AboutAppViewController.swift in Sources */,
 				DD7E3462240F8A57001B5836 /* FeedbackViewModel.swift in Sources */,
 				DD583AE823E2F8B600800339 /* AddEventPriceTableViewCell.swift in Sources */,
+				DD7E346C240FABE9001B5836 /* ChangePasswordViewController.swift in Sources */,
 				DD583AD023E1A04100800339 /* AddEventViewController.swift in Sources */,
 				DD81E29D23DEF21400069F23 /* ContactsViewController.swift in Sources */,
 				DD7E3467240F93E7001B5836 /* SecurityParameterTableViewCell.swift in Sources */,
 				DDA0D8F22407F2E4001DBFD5 /* PlaceInfoCollectionViewCell.swift in Sources */,
+				DD7E346E240FB702001B5836 /* ChangePasswordViewModel.swift in Sources */,
 				DD81E28123DACAE000069F23 /* Place.swift in Sources */,
 				DD81E26923D97B1100069F23 /* SetNewPassViewModel.swift in Sources */,
 				DDB257C723C1F4C200DF1EB4 /* Storyboard.swift in Sources */,

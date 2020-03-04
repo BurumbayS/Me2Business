@@ -69,4 +69,16 @@ extension SecurityViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(paramter: viewModel.parameters[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch viewModel.parameters[indexPath.row] {
+        case .changePassword:
+            let vc = Storyboard.changePasswordViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            return 
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
