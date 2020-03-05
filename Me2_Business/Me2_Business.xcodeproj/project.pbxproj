@@ -96,6 +96,8 @@
 		DD7E346A240FA639001B5836 /* SecurityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3469240FA639001B5836 /* SecurityViewModel.swift */; };
 		DD7E346C240FABE9001B5836 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */; };
 		DD7E346E240FB702001B5836 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E346D240FB702001B5836 /* ChangePasswordViewModel.swift */; };
+		DD7E34702410B269001B5836 /* ChangePhonenumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E346F2410B269001B5836 /* ChangePhonenumberViewController.swift */; };
+		DD7E34722410B3AB001B5836 /* ChangePhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E34712410B3AB001B5836 /* ChangePhoneViewModel.swift */; };
 		DD81E25F23D863F000069F23 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */; };
 		DD81E26123D86A5900069F23 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */; };
 		DD81E26323D879EC00069F23 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */; };
@@ -284,6 +286,8 @@
 		DD7E3469240FA639001B5836 /* SecurityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewModel.swift; sourceTree = "<group>"; };
 		DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		DD7E346D240FB702001B5836 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		DD7E346F2410B269001B5836 /* ChangePhonenumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhonenumberViewController.swift; sourceTree = "<group>"; };
+		DD7E34712410B3AB001B5836 /* ChangePhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewModel.swift; sourceTree = "<group>"; };
 		DD81E25E23D863F000069F23 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DD81E26223D879EC00069F23 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 				DD7E3458240E7A2D001B5836 /* MyContactsViewModel.swift */,
 				DD7E3461240F8A57001B5836 /* FeedbackViewModel.swift */,
 				DD7E3469240FA639001B5836 /* SecurityViewModel.swift */,
+				DD7E34712410B3AB001B5836 /* ChangePhoneViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				DD7E3464240F91A3001B5836 /* SecurityViewController.swift */,
 				DD7E3466240F93E7001B5836 /* SecurityParameterTableViewCell.swift */,
 				DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */,
+				DD7E346F2410B269001B5836 /* ChangePhonenumberViewController.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -1185,6 +1191,7 @@
 				DD7E345B240F7BDA001B5836 /* BaseViewController.swift in Sources */,
 				DD583AD923E1AB2F00800339 /* AddEventDateTableViewCell.swift in Sources */,
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
+				DD7E34722410B3AB001B5836 /* ChangePhoneViewModel.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
 				DD583AE423E2EDC800800339 /* AddEventTimeTableViewCell.swift in Sources */,
 				DDA0D8ED2407E7F1001DBFD5 /* PlaceProfileViewModel.swift in Sources */,
@@ -1249,6 +1256,7 @@
 				DD81E28523DACF1E00069F23 /* UserProfileViewModel.swift in Sources */,
 				DD583AF323E4461900800339 /* AddEventTableViewCell.swift in Sources */,
 				DD81E29523DB18E200069F23 /* ComplaintReasonTableViewCell.swift in Sources */,
+				DD7E34702410B269001B5836 /* ChangePhonenumberViewController.swift in Sources */,
 				DD583AED23E42E3500800339 /* AddEventTagsViewController.swift in Sources */,
 				DDA0D8F42407F383001DBFD5 /* PlaceInfoViewModel.swift in Sources */,
 				DD81E28723DADCB300069F23 /* ProfileSectionHeader.swift in Sources */,

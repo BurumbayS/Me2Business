@@ -108,4 +108,7 @@ extension Storyboard {
     static var changePasswordViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "ChangePasswordViewController")
     }
+    static var changePhonenumberViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "ChangePhonenumberViewController")
+    }
 }

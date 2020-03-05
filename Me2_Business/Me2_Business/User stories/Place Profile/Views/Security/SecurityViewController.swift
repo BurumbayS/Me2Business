@@ -75,6 +75,9 @@ extension SecurityViewController: UITableViewDelegate, UITableViewDataSource {
         case .changePassword:
             let vc = Storyboard.changePasswordViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case .changePhone:
+            let vc = Storyboard.changePhonenumberViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             return 
         }

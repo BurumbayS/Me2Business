@@ -456,6 +456,78 @@
             </objects>
             <point key="canvasLocation" x="2657" y="-642"/>
         </scene>
+        <!--Change Phonenumber View Controller-->
+        <scene sceneID="S6z-ui-ola">
+            <objects>
+                <viewController storyboardIdentifier="ChangePhonenumberViewController" id="F7p-8d-i4P" customClass="ChangePhonenumberViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9n-V4-cRx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwG-qo-5ci">
+                                <rect key="frame" x="20" y="64" width="118" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="LOz-bO-bcQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-7I-oVN" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
+                                <rect key="frame" x="20" y="102" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="L7R-6M-s1K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcM-CH-Ln0">
+                                <rect key="frame" x="82" y="172" width="250" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.40700513119999998" blue="0.39747506379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="8FV-lJ-Upr"/>
+                                    <constraint firstAttribute="height" constant="45" id="yqI-y8-awM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                                <state key="normal" title=" Изменить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeButtonPressed:" destination="F7p-8d-i4P" eventType="touchUpInside" id="Uei-vZ-UZT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fcM-CH-Ln0" firstAttribute="centerX" secondItem="40m-ul-VXa" secondAttribute="centerX" id="6mJ-JU-4P6"/>
+                            <constraint firstItem="ZwG-qo-5ci" firstAttribute="leading" secondItem="40m-ul-VXa" secondAttribute="leading" constant="20" id="TRl-9C-odp"/>
+                            <constraint firstItem="Eeh-7I-oVN" firstAttribute="leading" secondItem="40m-ul-VXa" secondAttribute="leading" constant="20" id="bh9-l5-o5W"/>
+                            <constraint firstItem="Eeh-7I-oVN" firstAttribute="top" secondItem="ZwG-qo-5ci" secondAttribute="bottom" constant="20" id="n9m-Xn-I3Z"/>
+                            <constraint firstItem="ZwG-qo-5ci" firstAttribute="top" secondItem="40m-ul-VXa" secondAttribute="top" constant="20" id="odM-t0-5Xp"/>
+                            <constraint firstItem="40m-ul-VXa" firstAttribute="trailing" secondItem="Eeh-7I-oVN" secondAttribute="trailing" constant="20" id="pSI-DP-PuZ"/>
+                            <constraint firstItem="fcM-CH-Ln0" firstAttribute="top" secondItem="Eeh-7I-oVN" secondAttribute="bottom" constant="30" id="zSH-qv-Vfz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="40m-ul-VXa"/>
+                    </view>
+                    <connections>
+                        <outlet property="changeButton" destination="fcM-CH-Ln0" id="whr-W4-Qmb"/>
+                        <outlet property="phoneNumberTextField" destination="Eeh-7I-oVN" id="ghm-Z8-K3c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ivQ-Cd-kRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394" y="-642"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_app_image" width="224" height="208"/>
