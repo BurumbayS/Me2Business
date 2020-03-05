@@ -34,27 +34,27 @@ class SecurityViewController: UIViewController {
 
 extension SecurityViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footer = UIView()
-        
-        let label = UILabel()
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.font = UIFont(name: "Roboto-Regular", size: 15)
-        label.text = "Код доступа позволяет быстрый вход в приложение, а также вход по отпечатку пальца TouchID/FaceID."
-        footer.addSubview(label)
-        constrain(label, footer) { label, footer in
-            label.left == footer.left + 20
-            label.right == footer.right - 20
-            label.top == footer.top + 20
-        }
-        
-        return footer
-    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 100
+//    }
+//    
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footer = UIView()
+//        
+//        let label = UILabel()
+//        label.textColor = .gray
+//        label.numberOfLines = 0
+//        label.font = UIFont(name: "Roboto-Regular", size: 15)
+//        label.text = "Код доступа позволяет быстрый вход в приложение, а также вход по отпечатку пальца TouchID/FaceID."
+//        footer.addSubview(label)
+//        constrain(label, footer) { label, footer in
+//            label.left == footer.left + 20
+//            label.right == footer.right - 20
+//            label.top == footer.top + 20
+//        }
+//        
+//        return footer
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

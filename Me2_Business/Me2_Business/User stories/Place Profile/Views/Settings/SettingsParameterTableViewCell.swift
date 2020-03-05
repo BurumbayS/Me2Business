@@ -62,6 +62,12 @@ class SettingsParameterTableViewCell: UITableViewCell {
             switcher.isHidden = false
         default:
             switcher.isHidden = true
+        }
+        
+        switch parameter {
+        case .notifications, .logout:
+            self.accessoryType = .none
+        default:
             self.accessoryType = .disclosureIndicator
         }
     }

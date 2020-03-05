@@ -9,5 +9,6 @@
 import Foundation
 
 class SecurityViewModel {
-    let parameters = [SecurityParameter.changePassword, .changePhone, .accessCode]
+//    let parameters = [SecurityParameter.changePassword, .changePhone, .accessCode]
+    let parameters = [SecurityParameter.changePassword, .changePhone]
 }
