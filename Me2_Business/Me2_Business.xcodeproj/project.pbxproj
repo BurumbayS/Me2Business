@@ -77,6 +77,10 @@
 		DD7D0AE5241111B800C69404 /* EditableWorkTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AE3241111B800C69404 /* EditableWorkTimeTableViewCell.swift */; };
 		DD7D0AE6241111B800C69404 /* EditableWorkTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7D0AE4241111B800C69404 /* EditableWorkTimeTableViewCell.xib */; };
 		DD7D0AEA24122B7E00C69404 /* EditWorkTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */; };
+		DD7D0AEC2412700B00C69404 /* EditTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AEB2412700B00C69404 /* EditTagsViewController.swift */; };
+		DD7D0AF024128CC000C69404 /* EditTagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AEE24128CC000C69404 /* EditTagsTableViewCell.swift */; };
+		DD7D0AF124128CC000C69404 /* EditTagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7D0AEF24128CC000C69404 /* EditTagsTableViewCell.xib */; };
+		DD7D0AF3241295D600C69404 /* EditTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AF2241295D600C69404 /* EditTagsViewModel.swift */; };
 		DD7E343F240D4136001B5836 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E343E240D4136001B5836 /* SettingsViewController.swift */; };
 		DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */; };
 		DD7E3443240D41A3001B5836 /* SettingsParameterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */; };
@@ -271,6 +275,10 @@
 		DD7D0AE3241111B800C69404 /* EditableWorkTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableWorkTimeTableViewCell.swift; sourceTree = "<group>"; };
 		DD7D0AE4241111B800C69404 /* EditableWorkTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditableWorkTimeTableViewCell.xib; sourceTree = "<group>"; };
 		DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkTimeViewModel.swift; sourceTree = "<group>"; };
+		DD7D0AEB2412700B00C69404 /* EditTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagsViewController.swift; sourceTree = "<group>"; };
+		DD7D0AEE24128CC000C69404 /* EditTagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagsTableViewCell.swift; sourceTree = "<group>"; };
+		DD7D0AEF24128CC000C69404 /* EditTagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTagsTableViewCell.xib; sourceTree = "<group>"; };
+		DD7D0AF2241295D600C69404 /* EditTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTagsViewModel.swift; sourceTree = "<group>"; };
 		DD7E343E240D4136001B5836 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DD7E3440240D41A3001B5836 /* SettingsParameterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParameterTableViewCell.swift; sourceTree = "<group>"; };
 		DD7E3441240D41A3001B5836 /* SettingsParameterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsParameterTableViewCell.xib; sourceTree = "<group>"; };
@@ -555,8 +563,19 @@
 			children = (
 				DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */,
 				DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */,
+				DD7D0AF2241295D600C69404 /* EditTagsViewModel.swift */,
 			);
 			path = "Edit profile";
+			sourceTree = "<group>";
+		};
+		DD7D0AED2412797A00C69404 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				DD7D0AEB2412700B00C69404 /* EditTagsViewController.swift */,
+				DD7D0AEE24128CC000C69404 /* EditTagsTableViewCell.swift */,
+				DD7D0AEF24128CC000C69404 /* EditTagsTableViewCell.xib */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		DD7E343C240D40DA001B5836 /* Place profile */ = {
@@ -591,6 +610,7 @@
 				DD7E344D240E2767001B5836 /* EditDefaultInfoTableViewCell.swift */,
 				DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */,
 				DD7D0AE22411115E00C69404 /* Work time */,
+				DD7D0AED2412797A00C69404 /* Tags */,
 			);
 			path = "Edit profile";
 			sourceTree = "<group>";
@@ -1165,6 +1185,7 @@
 				DD00917923C370A100C7B370 /* Roboto-RegularItalic.ttf in Resources */,
 				DD00917123C370A100C7B370 /* Roboto-BlackItalic.ttf in Resources */,
 				DD81E27523DABB1D00069F23 /* UserProfile.storyboard in Resources */,
+				DD7D0AF124128CC000C69404 /* EditTagsTableViewCell.xib in Resources */,
 				DD7D0AE6241111B800C69404 /* EditableWorkTimeTableViewCell.xib in Resources */,
 				DD81E27923DABF2500069F23 /* ProfileHeaderTableViewCell.xib in Resources */,
 				DD81E2AA23DFEB7800069F23 /* Events.storyboard in Resources */,
@@ -1226,6 +1247,7 @@
 				DD7D0AEA24122B7E00C69404 /* EditWorkTimeViewModel.swift in Sources */,
 				DDA0D911240A8270001DBFD5 /* PlaceReviewsCollectionViewCell.swift in Sources */,
 				DD81E2CA23E0668F00069F23 /* EventLocationAndWorkTimeTableViewCell.swift in Sources */,
+				DD7D0AF024128CC000C69404 /* EditTagsTableViewCell.swift in Sources */,
 				DD7E345B240F7BDA001B5836 /* BaseViewController.swift in Sources */,
 				DD583AD923E1AB2F00800339 /* AddEventDateTableViewCell.swift in Sources */,
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
@@ -1300,6 +1322,7 @@
 				DD81E28723DADCB300069F23 /* ProfileSectionHeader.swift in Sources */,
 				DD583AEF23E430B300800339 /* EventTagTableViewCell.swift in Sources */,
 				DDA0D902240A7F4B001DBFD5 /* NotificationCenterExtensions.swift in Sources */,
+				DD7D0AF3241295D600C69404 /* EditTagsViewModel.swift in Sources */,
 				DDA0D8EB2407E5B5001DBFD5 /* PlaceDetailsCollectionCell.swift in Sources */,
 				DD583ADF23E1C77F00800339 /* Checkbox.swift in Sources */,
 				DDA0D8FC240A78DE001DBFD5 /* PlaceWorkTimeTableViewCell.swift in Sources */,
@@ -1337,6 +1360,7 @@
 				DD7E346A240FA639001B5836 /* SecurityViewModel.swift in Sources */,
 				DD00917D23C4890500C7B370 /* ChatViewController.swift in Sources */,
 				DD00914A23C3215C00C7B370 /* ChatTableViewCell.swift in Sources */,
+				DD7D0AEC2412700B00C69404 /* EditTagsViewController.swift in Sources */,
 				DDA0D8DE2407A267001DBFD5 /* PlaceProfileViewController.swift in Sources */,
 				DDA0D8F62407F528001DBFD5 /* TableView.swift in Sources */,
 				DD81E2BE23E0442000069F23 /* ArchivedEventsViewController.swift in Sources */,

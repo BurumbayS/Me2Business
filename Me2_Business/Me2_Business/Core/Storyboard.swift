@@ -114,4 +114,7 @@ extension Storyboard {
     static var workTimeViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "WorkTimeViewController")
     }
+    static var editTagsViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditTagsViewController")
+    }
 }

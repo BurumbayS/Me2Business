@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bl4-iy-hoq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1931.8840579710147" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1228" y="806"/>
         </scene>
         <!--My Contacts View Controller-->
         <scene sceneID="64k-3b-CP8">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39T-QQ-Ts3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657" y="76"/>
+            <point key="canvasLocation" x="1932" y="76"/>
         </scene>
         <!--Security View Controller-->
         <scene sceneID="QWt-zT-lcO">
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KU-uL-js5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="783"/>
+            <point key="canvasLocation" x="2657" y="76"/>
         </scene>
         <!--Work Time View Controller-->
         <scene sceneID="57f-Jz-5g4">
@@ -320,7 +320,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPN-eg-jxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="1480"/>
+            <point key="canvasLocation" x="1932" y="806"/>
+        </scene>
+        <!--Edit Tags View Controller-->
+        <scene sceneID="14M-pU-Pi3">
+            <objects>
+                <viewController storyboardIdentifier="EditTagsViewController" id="Myu-Vf-kvh" customClass="EditTagsViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gms-Uf-f5s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8b4-Ue-Fqm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="se8-83-qqo" firstAttribute="bottom" secondItem="8b4-Ue-Fqm" secondAttribute="bottom" id="0qB-7w-tIl"/>
+                            <constraint firstItem="se8-83-qqo" firstAttribute="trailing" secondItem="8b4-Ue-Fqm" secondAttribute="trailing" id="H1t-aK-sQZ"/>
+                            <constraint firstItem="8b4-Ue-Fqm" firstAttribute="top" secondItem="se8-83-qqo" secondAttribute="top" id="dyx-b0-4s2"/>
+                            <constraint firstItem="8b4-Ue-Fqm" firstAttribute="leading" secondItem="se8-83-qqo" secondAttribute="leading" id="oij-jA-ePn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="se8-83-qqo"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8b4-Ue-Fqm" id="zXe-I3-dJg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sl0-TM-zRO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2657" y="806"/>
         </scene>
         <!--Feedback View Controller-->
         <scene sceneID="YYB-Y7-e3Z">
@@ -360,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cw-5z-aTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657" y="783"/>
+            <point key="canvasLocation" x="3342" y="76"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="tmE-Km-XC4">

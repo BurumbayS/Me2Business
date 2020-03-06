@@ -137,9 +137,16 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         
         switch viewModel.additionalCells[indexPath.row] {
         case .workTime:
+            
             let vc = Storyboard.workTimeViewController() as! WorkTimeViewController
             vc.viewModel = EditWorlTimeViewModel(workingHours: viewModel.placeInfo.workingHours!)
             navigationController?.pushViewController(vc, animated: true)
+            
+        case .tags:
+            
+            let vc = Storyboard.editTagsViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            
         default:
             break
         }
