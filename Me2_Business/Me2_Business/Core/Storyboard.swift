@@ -111,4 +111,7 @@ extension Storyboard {
     static var changePhonenumberViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "ChangePhonenumberViewController")
     }
+    static var workTimeViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "WorkTimeViewController")
+    }
 }

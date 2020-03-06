@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = SettingsViewModel()
+    var viewModel: SettingsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch viewModel.parameters[indexPath.row] {
         case .edit:
-            let vc = Storyboard.editProfileViewController()
+            let vc = Storyboard.editProfileViewController() as! EditProfileViewController
+            vc.viewModel = EditProfileViewModel(place: viewModel.placeInfo)
             navigationController?.pushViewController(vc, animated: true)
         case .contacts:
             let vc = Storyboard.myContactsViewController()

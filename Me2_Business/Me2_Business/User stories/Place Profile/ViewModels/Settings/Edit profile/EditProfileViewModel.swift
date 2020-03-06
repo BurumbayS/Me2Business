@@ -52,4 +52,23 @@ enum EditProfileSection {
 class EditProfileViewModel {
     let sections = [EditProfileSection.mainInfo, .phone, .instagram, .website, .additional]
     let additionalCells = [AdditionalInfoType.workTime, .tags, .gallery, .menu]
+    
+    let placeInfo: Place
+    
+    init(place: Place) {
+        self.placeInfo = place
+    }
+    
+    func dataForSection(atIndex index: Int) -> String {
+        switch sections[index] {
+        case .phone:
+            return placeInfo.phone ?? ""
+        case .instagram:
+            return placeInfo.instagram ?? ""
+        case .website:
+            return placeInfo.website ?? ""
+        default:
+            return ""
+        }
+    }
 }

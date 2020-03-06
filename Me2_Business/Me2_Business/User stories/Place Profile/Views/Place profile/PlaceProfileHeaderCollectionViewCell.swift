@@ -183,7 +183,8 @@ class PlaceProfileHeaderCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func showSettings() {
-        let vc = Storyboard.settingsViewController()
+        let vc = Storyboard.settingsViewController() as! SettingsViewController
+        vc.viewModel = SettingsViewModel(place: place)
         parentVC.navigationController?.pushViewController(vc, animated: true)
     }
 }

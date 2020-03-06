@@ -21,6 +21,13 @@ class EditMainInfoTableViewCell: UITableViewCell {
         descriptionTextView.contentInset = UIEdgeInsets(top: 15, left: 10, bottom: 10, right: 10)
     }
     
+    func configure(place: Place) {
+        titleLabel.text = place.name
+        categoryLabel.text = place.category
+        logoImageView.kf.setImage(with: URL(string: place.logo ?? ""), placeholder: UIImage(named: "default_place_logo"), options: [])
+        descriptionTextView.text = place.description
+    }
+    
     @IBAction func chooseLogoPressed(_ sender: Any) {
     }
 }

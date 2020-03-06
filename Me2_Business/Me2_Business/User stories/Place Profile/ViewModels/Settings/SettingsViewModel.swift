@@ -10,4 +10,10 @@ import Foundation
 
 class SettingsViewModel {
     let parameters = [SettingsParameter.edit, .contacts, .notifications, .security, .feedback, .about_app, .logout]
+    
+    let placeInfo: Place
+    
+    init(place: Place) {
+        self.placeInfo = place
+    }
 }
