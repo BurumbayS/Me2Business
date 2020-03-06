@@ -22,6 +22,8 @@ class EditProfileViewController: UIViewController {
     }
     
     private func configureNavBar() {
+        removeBackButton()
+        
         navigationItem.title = "Редактировать профиль"
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelEditing))
@@ -136,10 +138,12 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         switch viewModel.additionalCells[indexPath.row] {
         case .workTime:
             let vc = Storyboard.workTimeViewController() as! WorkTimeViewController
-            vc.viewModel = EditWorlTimeViewModel(place: viewModel.editedPlaceInfo)
+            vc.viewModel = EditWorlTimeViewModel(workingHours: viewModel.placeInfo.workingHours!)
             navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

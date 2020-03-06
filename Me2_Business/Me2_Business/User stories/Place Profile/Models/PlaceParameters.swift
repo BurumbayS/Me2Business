@@ -136,7 +136,7 @@ enum WeekDayName: String {
     }
 }
 
-struct WeekDay {
+class WeekDay {
     var name: WeekDayName
     var title: String
     var start: String
@@ -172,6 +172,15 @@ struct WeekDay {
         }
     }
     
+    init(title: String, json: JSON) {
+        self.title = title
+        self.name = WeekDayName(rawValue: title)!
+        self.start = json["start"].stringValue
+        self.end = json["end"].stringValue
+        self.works = json["works"].boolValue
+        self.dayNnight = json["day_and_night"].boolValue
+    }
+    
     func isEgual(to weekDay: WeekDay) -> Bool {
         if self.start == weekDay.start && self.end == weekDay.end {
             return true
@@ -186,14 +195,16 @@ class WorkingHours {
     
     init(json: JSON) {
         for item in json.dictionaryValue {
-            let title = item.key
-            let name = WeekDayName(rawValue: title)!
-            let start = item.value["start"].stringValue
-            let end = item.value["end"].stringValue
-            let works = item.value["works"].boolValue
-            let dayNnight = item.value["day_and_night"].boolValue
-                
-            weekDays.append(WeekDay(name: name, title: title, start: start, end: end, works: works, dayNnight: dayNnight))
+//            let title = item.key
+//            let name = WeekDayName(rawValue: title)!
+//            let start = item.value["start"].stringValue
+//            let end = item.value["end"].stringValue
+//            let works = item.value["works"].boolValue
+//            let dayNnight = item.value["day_and_night"].boolValue
+            
+            let weekDay = WeekDay(title: item.key, json: item.value)
+            weekDays.append(weekDay)
+//            weekDays.append(WeekDay(name: name, title: title, start: start, end: end, works: works, dayNnight: dayNnight))
         }
     }
 }

@@ -22,6 +22,9 @@ class EditableWorkTimeTableViewCell: UITableViewCell {
     
     var dayNnightSelectionHandler: VoidBlock?
     
+    let timePicker = UIDatePicker()
+    var weekDay: WeekDay!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,8 +36,15 @@ class EditableWorkTimeTableViewCell: UITableViewCell {
         daynnightCheck.layer.borderColor = Color.gray.cgColor
         daynnightCheck.layer.borderWidth = 1
         
+        timePicker.datePickerMode = .time
+        timePicker.locale = .init(identifier: "ru")
+        timePicker.backgroundColor = .white
+        timePicker.addTarget(self, action: #selector(timePicked), for: .valueChanged)
+        
         timeFromTextField.keyboardType = .numberPad
         timeToTextField.keyboardType = .numberPad
+        timeFromTextField.inputView = timePicker
+        timeToTextField.inputView = timePicker
         
         //configure day'N'night label depend on screen width
         daynnightLabel.text = (UIScreen.main.bounds.width == 320) ? "24 ч." : "Круглосуточно"
@@ -42,6 +52,7 @@ class EditableWorkTimeTableViewCell: UITableViewCell {
 
     func configure(weekDay: WeekDay, onDayNnightSelected: VoidBlock?) {
         self.dayNnightSelectionHandler = onDayNnightSelected
+        self.weekDay = weekDay
         
         weekdayLabel.text = weekDay.name.localTitle
         timeFromTextField.text = weekDay.start
@@ -88,6 +99,21 @@ class EditableWorkTimeTableViewCell: UITableViewCell {
         }
         
         daynnightSelected = !daynnightSelected
+    }
+    
+    @objc private func timePicked() {
+        let formatter = DateFormatter()
+        formatter.locale = .init(identifier: "ru")
+        formatter.dateFormat = "HH:mm"
+        
+        if timeFromTextField.isFirstResponder {
+            timeFromTextField.text = formatter.string(from: timePicker.date)
+            weekDay.start = formatter.string(from: timePicker.date)
+        }
+        if timeToTextField.isFirstResponder {
+            timeToTextField.text = formatter.string(from: timePicker.date)
+            weekDay.start = formatter.string(from: timePicker.date)
+        }
     }
     
     @IBAction func dayNnightPressed(_ sender: Any) {
