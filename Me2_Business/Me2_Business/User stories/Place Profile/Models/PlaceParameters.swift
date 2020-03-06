@@ -116,8 +116,45 @@ enum WeekDayName: String {
         }
     }
     
-    var order: Int {
+    var localTitle: String {
         switch self {
+        case .sunday:
+            return "Воскресенье"
+        case .monday:
+            return "Понедельник"
+        case .tuesday:
+            return "Вторник"
+        case .wednesday:
+            return "Среда"
+        case .thursday:
+            return "Четверг"
+        case .friday:
+            return "Пятница"
+        case .saturday:
+            return "Суббота"
+        }
+    }
+}
+
+struct WeekDay {
+    var name: WeekDayName
+    var title: String
+    var start: String
+    var end: String
+    var works: Bool
+    var dayNnight: Bool
+    
+    var isWeekend: Bool {
+        switch name {
+        case .sunday, .saturday:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var order: Int {
+        switch name {
         case .sunday:
             return 7
         case .monday:
@@ -132,23 +169,6 @@ enum WeekDayName: String {
             return 5
         case .saturday:
             return 6
-        }
-    }
-}
-
-struct WeekDay {
-    var name: WeekDayName
-    var title: String
-    var start: String
-    var end: String
-    var works: Bool
-    
-    var isWeekend: Bool {
-        switch name {
-        case .sunday, .saturday:
-            return true
-        default:
-            return false
         }
     }
     
@@ -171,8 +191,9 @@ class WorkingHours {
             let start = item.value["start"].stringValue
             let end = item.value["end"].stringValue
             let works = item.value["works"].boolValue
-            
-            weekDays.append(WeekDay(name: name, title: title, start: start, end: end, works: works))
+            let dayNnight = item.value["day_and_night"].boolValue
+                
+            weekDays.append(WeekDay(name: name, title: title, start: start, end: end, works: works, dayNnight: dayNnight))
         }
     }
 }

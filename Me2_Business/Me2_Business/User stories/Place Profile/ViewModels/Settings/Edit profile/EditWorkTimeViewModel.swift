@@ -10,4 +10,12 @@ import Foundation
 
 class EditWorlTimeViewModel {
     let weekdays = [WeekDayName.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday]
+    let placeInfo: Place
+    
+    init(place: Place) {
+        self.placeInfo = place
+        
+        self.placeInfo.workingHours?.weekDays.sort(by: { $0.order < $1.order })
+        print("")
+    }
 }

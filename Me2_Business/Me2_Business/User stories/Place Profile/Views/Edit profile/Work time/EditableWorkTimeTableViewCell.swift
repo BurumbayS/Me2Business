@@ -17,6 +17,11 @@ class EditableWorkTimeTableViewCell: UITableViewCell {
     @IBOutlet weak var daynnightCheck: UIButton!
     @IBOutlet weak var daynnightLabel: UILabel!
     
+    var weekDaySelected = false
+    var daynnightSelected = false
+    
+    var dayNnightSelectionHandler: VoidBlock?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -35,7 +40,57 @@ class EditableWorkTimeTableViewCell: UITableViewCell {
         daynnightLabel.text = (UIScreen.main.bounds.width == 320) ? "24 ч." : "Круглосуточно"
     }
 
-    func configure() {
+    func configure(weekDay: WeekDay, onDayNnightSelected: VoidBlock?) {
+        self.dayNnightSelectionHandler = onDayNnightSelected
         
+        weekdayLabel.text = weekDay.name.localTitle
+        timeFromTextField.text = weekDay.start
+        timeToTextField.text = weekDay.end
+        
+        weekDaySelected = weekDay.works
+        switch weekDaySelected {
+        case true:
+            daySelectedCheck.isHidden = false
+            weekdayLabel.textColor = Color.blue
+        default:
+            daySelectedCheck.isHidden = true
+            weekdayLabel.textColor = .darkGray
+        }
+        
+        daynnightSelected = weekDay.dayNnight
+        switch daynnightSelected {
+        case true:
+            daynnightCheck.setImage(UIImage(named: "blue_checked_icon"), for: .normal)
+        default:
+            daynnightCheck.setImage(nil, for: .normal)
+        }
     }
-}
+    
+    func selectWeekday() {
+        switch weekDaySelected {
+        case true:
+            daySelectedCheck.isHidden = true
+            weekdayLabel.textColor = .darkGray
+        default:
+            daySelectedCheck.isHidden = false
+            weekdayLabel.textColor = Color.blue
+        }
+        
+        weekDaySelected = !weekDaySelected
+    }
+    
+    func selectDaynNight() {
+        switch daynnightSelected {
+        case true:
+            daynnightCheck.setImage(UIImage(), for: .normal)
+        default:
+            daynnightCheck.setImage(UIImage(named: "blue_checked_icon"), for: .normal)
+        }
+        
+        daynnightSelected = !daynnightSelected
+    }
+    
+    @IBAction func dayNnightPressed(_ sender: Any) {
+        dayNnightSelectionHandler?()
+    }
+ }

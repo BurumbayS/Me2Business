@@ -13,7 +13,7 @@ class WorkTimeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = EditWorlTimeViewModel()
+    var viewModel: EditWorlTimeViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,16 @@ extension WorkTimeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EditableWorkTimeTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.selectionStyle = .none
+        let weekday = viewModel.placeInfo.workingHours!.weekDays[indexPath.row]
+        cell.configure(weekDay: weekday, onDayNnightSelected: { [weak self] in
+            self?.viewModel.placeInfo.workingHours!.weekDays[indexPath.row].dayNnight = !(self?.viewModel.placeInfo.workingHours!.weekDays[indexPath.row].dayNnight ?? false)
+            self?.tableView.reloadData()
+        })
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.placeInfo.workingHours!.weekDays[indexPath.row].works = !viewModel.placeInfo.workingHours!.weekDays[indexPath.row].works
+        tableView.reloadData()
     }
 }

@@ -54,9 +54,11 @@ class EditProfileViewModel {
     let additionalCells = [AdditionalInfoType.workTime, .tags, .gallery, .menu]
     
     let placeInfo: Place
+    let editedPlaceInfo: Place
     
     init(place: Place) {
         self.placeInfo = place
+        self.editedPlaceInfo = place
     }
     
     func dataForSection(atIndex index: Int) -> String {
