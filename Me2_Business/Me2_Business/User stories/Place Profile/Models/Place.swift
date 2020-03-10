@@ -33,6 +33,8 @@ class Place {
 //    var roomInfo: RoomInfo?
     var tags = [String]()
     var branch: Int
+    var averageCheck = 0
+    var businessLunch = 0
     var subsidiaries: [Place]?
     
     init(json: JSON) {
@@ -55,7 +57,9 @@ class Place {
         workingHours = WorkingHours(json: json["working_hours"])
 //        roomInfo = RoomInfo(json: json["room_info"])
         branch = json["branch"].intValue
-        
+        averageCheck = json["average_check"].intValue
+        businessLunch = json["business_lunch"].intValue
+            
         images = []
         for image in json["images"].arrayValue {
             images.append(image.stringValue)

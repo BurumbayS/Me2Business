@@ -72,7 +72,7 @@ class LoaderViewController: UIViewController {
     }
     
     func dismiss() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.dismiss(animated: false) { [weak self] in
                 self?.loadingCompletionHandler?()
             }

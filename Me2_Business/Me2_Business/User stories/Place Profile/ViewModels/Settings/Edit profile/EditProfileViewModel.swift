@@ -49,16 +49,27 @@ enum EditProfileSection {
     }
 }
 
+class TagsDataToSave {
+    var businessLaunchPrice = 0
+    var averageBillPrice = 0
+    var tagIDs = [Int]()
+    var placeTagNames = [String]()
+}
+
 class EditProfileViewModel {
     let sections = [EditProfileSection.mainInfo, .phone, .instagram, .website, .additional]
     let additionalCells = [AdditionalInfoType.workTime, .tags, .gallery, .menu]
     
     let placeInfo: Place
     let editedPlaceInfo: Place
+    let tagsData = TagsDataToSave()
     
     init(place: Place) {
         self.placeInfo = place
         self.editedPlaceInfo = place
+        self.tagsData.placeTagNames = place.tags
+        self.tagsData.averageBillPrice = place.averageCheck
+        self.tagsData.businessLaunchPrice = place.businessLunch
     }
     
     func dataForSection(atIndex index: Int) -> String {

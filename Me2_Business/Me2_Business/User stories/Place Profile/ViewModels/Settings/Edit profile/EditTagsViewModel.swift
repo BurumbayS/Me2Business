@@ -43,8 +43,27 @@ enum EditTagsParameters {
             return "Средний чек"
         }
     }
+    
+    var key: String {
+        switch self {
+        case .kitchen:
+            return "KITCHEN"
+        case .mainDish:
+            return "DISH"
+        case .extra:
+            return "EXTRA"
+        default:
+            return ""
+        }
+    }
 }
 
 class EditTagsViewModel {
     let parameters = [EditTagsParameters.kitchen, .mainDish, .extra, .halal, .businessLunch, .averageBill]
+    
+    let tagsData: TagsDataToSave
+    
+    init(data: TagsDataToSave) {
+        self.tagsData = data
+    }
 }

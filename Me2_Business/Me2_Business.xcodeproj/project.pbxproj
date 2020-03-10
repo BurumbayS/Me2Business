@@ -74,6 +74,9 @@
 		DD583AF723E93C0C00800339 /* ListedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD583AF623E93C0C00800339 /* ListedViewController.swift */; };
 		DD5FD00F23CBAB5B00F01725 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */; };
 		DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */; };
+		DD7AD4B924179854001D95A0 /* PlaceTagsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4B824179854001D95A0 /* PlaceTagsListViewController.swift */; };
+		DD7AD4BB2417986C001D95A0 /* PlaceTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4BA2417986C001D95A0 /* PlaceTagTableViewCell.swift */; };
+		DD7AD4BD24179C5E001D95A0 /* PlaceTagsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */; };
 		DD7D0AE5241111B800C69404 /* EditableWorkTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AE3241111B800C69404 /* EditableWorkTimeTableViewCell.swift */; };
 		DD7D0AE6241111B800C69404 /* EditableWorkTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7D0AE4241111B800C69404 /* EditableWorkTimeTableViewCell.xib */; };
 		DD7D0AEA24122B7E00C69404 /* EditWorkTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */; };
@@ -272,6 +275,9 @@
 		DD583AF623E93C0C00800339 /* ListedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListedViewController.swift; sourceTree = "<group>"; };
 		DD5FD00E23CBAB5B00F01725 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		DD5FD01023CBAB8100F01725 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		DD7AD4B824179854001D95A0 /* PlaceTagsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTagsListViewController.swift; sourceTree = "<group>"; };
+		DD7AD4BA2417986C001D95A0 /* PlaceTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTagTableViewCell.swift; sourceTree = "<group>"; };
+		DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTagsListViewModel.swift; sourceTree = "<group>"; };
 		DD7D0AE3241111B800C69404 /* EditableWorkTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableWorkTimeTableViewCell.swift; sourceTree = "<group>"; };
 		DD7D0AE4241111B800C69404 /* EditableWorkTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditableWorkTimeTableViewCell.xib; sourceTree = "<group>"; };
 		DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkTimeViewModel.swift; sourceTree = "<group>"; };
@@ -564,6 +570,7 @@
 				DD7E344F240E359D001B5836 /* EditProfileViewModel.swift */,
 				DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */,
 				DD7D0AF2241295D600C69404 /* EditTagsViewModel.swift */,
+				DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */,
 			);
 			path = "Edit profile";
 			sourceTree = "<group>";
@@ -574,6 +581,8 @@
 				DD7D0AEB2412700B00C69404 /* EditTagsViewController.swift */,
 				DD7D0AEE24128CC000C69404 /* EditTagsTableViewCell.swift */,
 				DD7D0AEF24128CC000C69404 /* EditTagsTableViewCell.xib */,
+				DD7AD4B824179854001D95A0 /* PlaceTagsListViewController.swift */,
+				DD7AD4BA2417986C001D95A0 /* PlaceTagTableViewCell.swift */,
 			);
 			path = Tags;
 			sourceTree = "<group>";
@@ -1354,6 +1363,7 @@
 				DDA0D8FA240A787D001DBFD5 /* AdressTableViewCell.swift in Sources */,
 				DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */,
 				DD00915323C32CB000C7B370 /* StringExtensions.swift in Sources */,
+				DD7AD4BD24179C5E001D95A0 /* PlaceTagsListViewModel.swift in Sources */,
 				DD81E29B23DEEC6600069F23 /* CustomLargeTitleBarButton.swift in Sources */,
 				DD81E2A723DEFAF500069F23 /* ContactUser.swift in Sources */,
 				DD00917F23C4898900C7B370 /* CollectionView.swift in Sources */,
@@ -1367,6 +1377,7 @@
 				DDA0D8F82407F572001DBFD5 /* PlaceDescriptionTableViewCell.swift in Sources */,
 				DD583AF123E4326600800339 /* EventTagsViewModel.swift in Sources */,
 				DD00918423C48E9F00C7B370 /* UIViewExtensions.swift in Sources */,
+				DD7AD4BB2417986C001D95A0 /* PlaceTagTableViewCell.swift in Sources */,
 				DD81E2B023DFEC7C00069F23 /* EventsTabViewController.swift in Sources */,
 				DD7E3454240E4200001B5836 /* TextField.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
@@ -1378,6 +1389,7 @@
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
 				DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */,
 				DD42F5A923C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift in Sources */,
+				DD7AD4B924179854001D95A0 /* PlaceTagsListViewController.swift in Sources */,
 				DDB257BF23C1B8B000DF1EB4 /* Color.swift in Sources */,
 				DDA0D8EF2407E921001DBFD5 /* PlaceParameters.swift in Sources */,
 				DDA0D8E42407D466001DBFD5 /* PlaceProfileHeaderCollectionViewCell.swift in Sources */,

@@ -117,4 +117,7 @@ extension Storyboard {
     static var editTagsViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditTagsViewController")
     }
+    static var placeTagsListViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "PlaceTagsListViewController")
+    }
 }

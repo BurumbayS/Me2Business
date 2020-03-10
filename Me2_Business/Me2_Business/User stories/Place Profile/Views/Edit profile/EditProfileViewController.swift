@@ -144,7 +144,8 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             
         case .tags:
             
-            let vc = Storyboard.editTagsViewController()
+            let vc = Storyboard.editTagsViewController() as! EditTagsViewController
+            vc.viewModel = EditTagsViewModel(data: viewModel.tagsData)
             navigationController?.pushViewController(vc, animated: true)
             
         default:

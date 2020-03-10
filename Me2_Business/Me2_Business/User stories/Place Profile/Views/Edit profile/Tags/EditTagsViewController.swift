@@ -12,7 +12,7 @@ class EditTagsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel = EditTagsViewModel()
+    var viewModel: EditTagsViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,8 @@ class EditTagsViewController: UIViewController {
         
         navigationItem.title = "Тэги"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeEditing))
-        navigationItem.rightBarButtonItem?.tintColor = Color.blue
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeEditing))
+//        navigationItem.rightBarButtonItem?.tintColor = Color.blue
     }
     
     private func configureTableView() {
@@ -67,7 +67,21 @@ extension EditTagsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: EditTagsTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.configure(parameter: viewModel.parameters[indexPath.row])
+        cell.selectionStyle = .none
+        cell.configure(parameter: viewModel.parameters[indexPath.row], data: viewModel.tagsData)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let parameter = viewModel.parameters[indexPath.row]
+        
+        switch parameter {
+        case .kitchen, .mainDish, .extra:
+            let vc = Storyboard.placeTagsListViewController() as! PlaceTagsListViewController
+            vc.viewModel = PlaceTagsListViewModel(type: parameter.key, data: viewModel.tagsData)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }
