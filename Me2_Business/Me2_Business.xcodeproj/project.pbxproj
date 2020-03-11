@@ -77,6 +77,9 @@
 		DD7AD4B924179854001D95A0 /* PlaceTagsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4B824179854001D95A0 /* PlaceTagsListViewController.swift */; };
 		DD7AD4BB2417986C001D95A0 /* PlaceTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4BA2417986C001D95A0 /* PlaceTagTableViewCell.swift */; };
 		DD7AD4BD24179C5E001D95A0 /* PlaceTagsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */; };
+		DD7AD4C02417C2A7001D95A0 /* EditGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4BF2417C2A7001D95A0 /* EditGalleryViewController.swift */; };
+		DD7AD4C22417C3C4001D95A0 /* GalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4C12417C3C4001D95A0 /* GalleryImageCollectionViewCell.swift */; };
+		DD7AD4C42417C541001D95A0 /* EditGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AD4C32417C541001D95A0 /* EditGalleryViewModel.swift */; };
 		DD7D0AE5241111B800C69404 /* EditableWorkTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AE3241111B800C69404 /* EditableWorkTimeTableViewCell.swift */; };
 		DD7D0AE6241111B800C69404 /* EditableWorkTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD7D0AE4241111B800C69404 /* EditableWorkTimeTableViewCell.xib */; };
 		DD7D0AEA24122B7E00C69404 /* EditWorkTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */; };
@@ -278,6 +281,9 @@
 		DD7AD4B824179854001D95A0 /* PlaceTagsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTagsListViewController.swift; sourceTree = "<group>"; };
 		DD7AD4BA2417986C001D95A0 /* PlaceTagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTagTableViewCell.swift; sourceTree = "<group>"; };
 		DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTagsListViewModel.swift; sourceTree = "<group>"; };
+		DD7AD4BF2417C2A7001D95A0 /* EditGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGalleryViewController.swift; sourceTree = "<group>"; };
+		DD7AD4C12417C3C4001D95A0 /* GalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DD7AD4C32417C541001D95A0 /* EditGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGalleryViewModel.swift; sourceTree = "<group>"; };
 		DD7D0AE3241111B800C69404 /* EditableWorkTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableWorkTimeTableViewCell.swift; sourceTree = "<group>"; };
 		DD7D0AE4241111B800C69404 /* EditableWorkTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditableWorkTimeTableViewCell.xib; sourceTree = "<group>"; };
 		DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkTimeViewModel.swift; sourceTree = "<group>"; };
@@ -541,6 +547,15 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		DD7AD4BE2417C281001D95A0 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				DD7AD4BF2417C2A7001D95A0 /* EditGalleryViewController.swift */,
+				DD7AD4C12417C3C4001D95A0 /* GalleryImageCollectionViewCell.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		DD7D0AE22411115E00C69404 /* Work time */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,6 +586,7 @@
 				DD7D0AE924122B7E00C69404 /* EditWorkTimeViewModel.swift */,
 				DD7D0AF2241295D600C69404 /* EditTagsViewModel.swift */,
 				DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */,
+				DD7AD4C32417C541001D95A0 /* EditGalleryViewModel.swift */,
 			);
 			path = "Edit profile";
 			sourceTree = "<group>";
@@ -620,6 +636,7 @@
 				DD7E3451240E39D4001B5836 /* EditAdditionalInfoTableViewCell.swift */,
 				DD7D0AE22411115E00C69404 /* Work time */,
 				DD7D0AED2412797A00C69404 /* Tags */,
+				DD7AD4BE2417C281001D95A0 /* Gallery */,
 			);
 			path = "Edit profile";
 			sourceTree = "<group>";
@@ -1310,11 +1327,13 @@
 				DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */,
 				DD81E2CE23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift in Sources */,
 				DD81E27323DABAFD00069F23 /* UserProfileViewController.swift in Sources */,
+				DD7AD4C42417C541001D95A0 /* EditGalleryViewModel.swift in Sources */,
 				DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */,
 				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,
 				DD81E2A523DEF9E600069F23 /* Contact.swift in Sources */,
 				DDA0D90F240A81AA001DBFD5 /* MenuFileTableViewCell.swift in Sources */,
 				DD7E343F240D4136001B5836 /* SettingsViewController.swift in Sources */,
+				DD7AD4C02417C2A7001D95A0 /* EditGalleryViewController.swift in Sources */,
 				DD81E2A323DEF95800069F23 /* ContactsViewModel.swift in Sources */,
 				DDA0D913240A82B9001DBFD5 /* PlaceReviewTableViewCell.swift in Sources */,
 				DD81E2C623E05D7F00069F23 /* EventInfoHeaderTableViewCell.swift in Sources */,
@@ -1326,6 +1345,7 @@
 				DD583AF323E4461900800339 /* AddEventTableViewCell.swift in Sources */,
 				DD81E29523DB18E200069F23 /* ComplaintReasonTableViewCell.swift in Sources */,
 				DD7E34702410B269001B5836 /* ChangePhonenumberViewController.swift in Sources */,
+				DD7AD4C22417C3C4001D95A0 /* GalleryImageCollectionViewCell.swift in Sources */,
 				DD583AED23E42E3500800339 /* AddEventTagsViewController.swift in Sources */,
 				DDA0D8F42407F383001DBFD5 /* PlaceInfoViewModel.swift in Sources */,
 				DD81E28723DADCB300069F23 /* ProfileSectionHeader.swift in Sources */,

@@ -120,4 +120,7 @@ extension Storyboard {
     static var placeTagsListViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "PlaceTagsListViewController")
     }
+    static var editGalleryViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditGalleryViewController")
+    }
 }

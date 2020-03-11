@@ -417,6 +417,43 @@
             </objects>
             <point key="canvasLocation" x="3340.579710144928" y="805.58035714285711"/>
         </scene>
+        <!--Edit Gallery View Controller-->
+        <scene sceneID="1Xj-H3-qVt">
+            <objects>
+                <viewController storyboardIdentifier="EditGalleryViewController" id="xEZ-4r-ikK" customClass="EditGalleryViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TeW-Tc-fGD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NWp-HR-SdD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yJP-Cd-eiQ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NWp-HR-SdD" firstAttribute="top" secondItem="glQ-kc-zXt" secondAttribute="top" id="Cap-Ty-Rbp"/>
+                            <constraint firstItem="NWp-HR-SdD" firstAttribute="leading" secondItem="glQ-kc-zXt" secondAttribute="leading" id="P2s-YE-cwr"/>
+                            <constraint firstItem="glQ-kc-zXt" firstAttribute="trailing" secondItem="NWp-HR-SdD" secondAttribute="trailing" id="bGf-Fr-0M2"/>
+                            <constraint firstItem="glQ-kc-zXt" firstAttribute="bottom" secondItem="NWp-HR-SdD" secondAttribute="bottom" id="uem-lh-qoT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="glQ-kc-zXt"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="NWp-HR-SdD" id="Xdu-r0-t2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4c-ih-oSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4045" y="806"/>
+        </scene>
         <!--Feedback View Controller-->
         <scene sceneID="YYB-Y7-e3Z">
             <objects>

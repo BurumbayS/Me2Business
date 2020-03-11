@@ -29,6 +29,7 @@ class Place {
     var logo: String?
     var menus: [Menu]?
     var images = [String]()
+    var imageIDs = [Int]()
     var workingHours: WorkingHours?
 //    var roomInfo: RoomInfo?
     var tags = [String]()
@@ -63,6 +64,11 @@ class Place {
         images = []
         for image in json["images"].arrayValue {
             images.append(image.stringValue)
+        }
+        
+        imageIDs = []
+        for image in json["images_list"].arrayValue {
+            imageIDs.append(image["id"].intValue)
         }
         
         menus = [Menu]()

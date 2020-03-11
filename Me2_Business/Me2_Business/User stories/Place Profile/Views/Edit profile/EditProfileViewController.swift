@@ -139,13 +139,19 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         case .workTime:
             
             let vc = Storyboard.workTimeViewController() as! WorkTimeViewController
-            vc.viewModel = EditWorlTimeViewModel(workingHours: viewModel.placeInfo.workingHours!)
+            vc.viewModel = EditWorlTimeViewModel(workingHours: viewModel.editedPlaceInfo.workingHours!)
             navigationController?.pushViewController(vc, animated: true)
             
         case .tags:
             
             let vc = Storyboard.editTagsViewController() as! EditTagsViewController
             vc.viewModel = EditTagsViewModel(data: viewModel.tagsData)
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case .gallery:
+            
+            let vc = Storyboard.editGalleryViewController() as! EditGalleryViewController
+            vc.viewModel = EditGalleryViewModel(place: viewModel.editedPlaceInfo)
             navigationController?.pushViewController(vc, animated: true)
             
         default:
