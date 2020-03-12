@@ -59,7 +59,8 @@ class PlaceProfileHeaderCollectionViewCell: UICollectionViewCell {
         }
         
         var imageInputs = [InputSource]()
-        for imageURL in place.images {
+        for image in place.imageList {
+            let imageURL = image.url
             let source = KingfisherSource(url: URL(string: imageURL)!, placeholder: UIImage(named: "default_place_wallpaper"), options: [])
             imageInputs.append(source)
         }

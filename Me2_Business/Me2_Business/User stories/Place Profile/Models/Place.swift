@@ -28,8 +28,10 @@ class Place {
     var website: String?
     var logo: String?
     var menus: [Menu]?
-    var images = [String]()
-    var imageIDs = [Int]()
+    var imageList = [PlaceImage]()
+//    var images = [String]()
+//    var imageIDs = [Int]()
+    var imageIDsToRemove = [Int]()
     var workingHours: WorkingHours?
 //    var roomInfo: RoomInfo?
     var tags = [String]()
@@ -60,16 +62,20 @@ class Place {
         branch = json["branch"].intValue
         averageCheck = json["average_check"].intValue
         businessLunch = json["business_lunch"].intValue
-            
-        images = []
-        for image in json["images"].arrayValue {
-            images.append(image.stringValue)
-        }
-        
-        imageIDs = []
+          
+        imageList = []
         for image in json["images_list"].arrayValue {
-            imageIDs.append(image["id"].intValue)
+            imageList.append(PlaceImage(id: image["id"].intValue, url: image["image"].stringValue))
         }
+//        images = []
+//        for image in json["images"].arrayValue {
+//            images.append(image.stringValue)
+//        }
+//
+//        imageIDs = []
+//        for image in json["images_list"].arrayValue {
+//            imageIDs.append(image["id"].intValue)
+//        }
         
         menus = [Menu]()
         for item in json["menu"].arrayValue {

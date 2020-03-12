@@ -61,7 +61,7 @@ class EditGalleryViewController: UIViewController {
             switch status{
             case .ok:
                 self?.stopLoader()
-                self?.collectionView.insertItems(at: [IndexPath(row: (self?.viewModel.placeInfo.images.count)! - 1, section: 0)])
+                self?.collectionView.insertItems(at: [IndexPath(row: (self?.viewModel.placeInfo.imageList.count)! - 1, section: 0)])
             case .fail, .error:
                 self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             }
@@ -97,7 +97,7 @@ class EditGalleryViewController: UIViewController {
     }
     
     @objc private func cancelEditing() {
-        viewModel.imageIndexesToRemove = []
+        viewModel.imageIDsToRemove = []
         viewModel.isEditing = false
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(editGallery))
@@ -126,34 +126,37 @@ extension EditGalleryViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isEditing {
-            return viewModel.placeInfo.images.count
+            return viewModel.placeInfo.imageList.count
         } else {
             //with add new image cell
-            return viewModel.placeInfo.images.count + 1
+            return viewModel.placeInfo.imageList.count + 1
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GalleryImageCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         
-        let isAddNewCell = !viewModel.isEditing && indexPath.row == viewModel.placeInfo.images.count
-        let selected = viewModel.imageIndexesToRemove.contains(indexPath.row)
+        let isAddNewCell = !viewModel.isEditing && indexPath.row == viewModel.placeInfo.imageList.count
+        
         if isAddNewCell {
-            cell.configure(isAddNewCell: true, selected: selected)
+            cell.configure(isAddNewCell: true, selected: false)
         } else {
-            cell.configure(image: viewModel.placeInfo.images[indexPath.row], selected: selected)
+            let placeImage = viewModel.placeInfo.imageList[indexPath.row]
+            let selected = viewModel.imageIDsToRemove.contains(placeImage.id)
+            
+            cell.configure(image: placeImage.url, selected: selected)
         }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if !viewModel.isEditing && indexPath.row == viewModel.placeInfo.images.count {
+        if !viewModel.isEditing && indexPath.row == viewModel.placeInfo.imageList.count {
             addActionSheet(titles: ["Камера","Фотопленка"], actions: [openCamera, openPhotoLibrary], styles: [.default, .default])
         }
         
         if viewModel.isEditing {
-            viewModel.selectImage(atIndex: indexPath.row)
+            viewModel.selectImage(atIndexPath: indexPath)
             collectionView.reloadData()
         }
     }

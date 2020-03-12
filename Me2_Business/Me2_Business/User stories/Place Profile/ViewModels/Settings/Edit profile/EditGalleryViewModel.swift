@@ -14,27 +14,32 @@ class EditGalleryViewModel {
     
     var isEditing = false
     
-    var imageIndexesToRemove = [Int]()
+    var imageIDsToRemove = [Int]()
     
     init(place: Place) {
         self.placeInfo = place
     }
     
-    func selectImage(atIndex index: Int) {
-        if let pos = imageIndexesToRemove.firstIndex(of: index) {
-            imageIndexesToRemove.remove(at: pos)
+    func selectImage(atIndexPath indexPath: IndexPath) {
+        let id = placeInfo.imageList[indexPath.row].id
+        
+        if let pos = imageIDsToRemove.firstIndex(of: id) {
+            imageIDsToRemove.remove(at: pos)
         } else {
-            imageIndexesToRemove.append(index)
+            imageIDsToRemove.append(id)
         }
     }
     
     func removeImages() {
-        for index in imageIndexesToRemove {
-            placeInfo.imageIDs.remove(at: index)
-            placeInfo.images.remove(at: index)
+        for id in imageIDsToRemove {
+            if let index = placeInfo.imageList.firstIndex(where: { $0.id == id }) {
+                placeInfo.imageList.remove(at: index)
+            }
+            
+            placeInfo.imageIDsToRemove.append(id)
         }
         
-        imageIndexesToRemove = []
+        imageIDsToRemove = []
         
         isEditing = false
     }
@@ -60,8 +65,7 @@ class EditGalleryViewModel {
                     switch json["code"].intValue {
                     case 0:
                         
-                        self.placeInfo.images.append(json["data"]["file"].stringValue)
-                        self.placeInfo.imageIDs.append(json["data"]["id"].intValue)
+                        self.placeInfo.imageList.append(PlaceImage(id: json["data"]["id"].intValue, url: json["data"]["file"].stringValue))
                         
                         completion?(.ok, "")
                         

@@ -195,16 +195,18 @@ class WorkingHours {
     
     init(json: JSON) {
         for item in json.dictionaryValue {
-//            let title = item.key
-//            let name = WeekDayName(rawValue: title)!
-//            let start = item.value["start"].stringValue
-//            let end = item.value["end"].stringValue
-//            let works = item.value["works"].boolValue
-//            let dayNnight = item.value["day_and_night"].boolValue
-            
             let weekDay = WeekDay(title: item.key, json: item.value)
             weekDays.append(weekDay)
-//            weekDays.append(WeekDay(name: name, title: title, start: start, end: end, works: works, dayNnight: dayNnight))
         }
+    }
+}
+
+class PlaceImage {
+    let id: Int
+    let url: String
+    
+    init(id: Int, url: String) {
+        self.id = id
+        self.url = url
     }
 }
