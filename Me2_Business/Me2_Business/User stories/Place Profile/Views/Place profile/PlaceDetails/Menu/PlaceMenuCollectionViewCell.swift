@@ -31,6 +31,8 @@ class PlaceMenuCollectionViewCell: PlaceDetailCollectionCell {
     }
     
     private func setUpViews() {
+        self.contentView.backgroundColor = .white
+        
         placeholderLabel.textColor = .darkGray
         placeholderLabel.font = UIFont(name: "Roboto-Regular", size: 17)
         placeholderLabel.text = "Пока нет меню"
@@ -98,7 +100,7 @@ extension PlaceMenuCollectionViewCell: UITableViewDelegate, UITableViewDataSourc
         let cell: MenuFileTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         
         let menu = menus[indexPath.row]
-        cell.configure(with: menu.menu_type.title, and: menu.menu_type.image)
+        cell.configure(menu: menu)
         cell.selectionStyle = .none
         
         return cell

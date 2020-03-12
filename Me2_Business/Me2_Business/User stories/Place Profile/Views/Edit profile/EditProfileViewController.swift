@@ -154,6 +154,12 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             vc.viewModel = EditGalleryViewModel(place: viewModel.editedPlaceInfo)
             navigationController?.pushViewController(vc, animated: true)
             
+        case .menu:
+            
+            let vc = Storyboard.editMenuViewController() as! EditMenuViewController
+            vc.viewModel = EditMenuViewModel(placeInfo: viewModel.placeInfo)
+            navigationController?.pushViewController(vc, animated: true)
+            
         default:
             break
         }

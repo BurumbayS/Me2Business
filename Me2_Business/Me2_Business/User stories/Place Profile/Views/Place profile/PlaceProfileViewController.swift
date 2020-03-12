@@ -9,7 +9,7 @@
 import UIKit
 import Cartography
 
-class PlaceProfileViewController: BaseViewController {
+class PlaceProfileViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var topBarView: UIView!
@@ -33,16 +33,17 @@ class PlaceProfileViewController: BaseViewController {
     }
     
     private func fetchData() {
+        startLoader()
+        
         viewModel.fetchData { [weak self] (status, message) in
             switch status {
             case .ok:
+                self?.stopLoader()
                 self?.topBarView.isHidden = false
                 self?.collectionView.reloadData()
                 self?.collectionView.alpha = 1.0
-            case .error:
-                break
-            case .fail:
-                break
+            case .error, .fail:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             }
         }
     }
@@ -238,6 +239,7 @@ extension PlaceProfileViewController: ControllerPresenterDelegate {
     func present(controller: UIViewController, presntationType: PresentationType, completion: VoidBlock?) {
         switch presntationType {
         case .present:
+            controller.modalPresentationStyle = .fullScreen
             present(controller, animated: true, completion: nil)
         case .push:
             navigationController?.pushViewController(controller, animated: true)

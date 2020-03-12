@@ -123,4 +123,7 @@ extension Storyboard {
     static var editGalleryViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditGalleryViewController")
     }
+    static var editMenuViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditMenuViewController")
+    }
 }

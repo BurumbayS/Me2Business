@@ -207,6 +207,8 @@
 		DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257D623C20F0600DF1EB4 /* MainTabsViewController.swift */; };
 		DDB257DD23C2118200DF1EB4 /* ChatTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */; };
 		DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257DE23C2119200DF1EB4 /* Chat.storyboard */; };
+		DDBEC21A241A3210000814C6 /* EditMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC219241A3210000814C6 /* EditMenuViewController.swift */; };
+		DDBEC21C241A32BB000814C6 /* EditMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC21B241A32BB000814C6 /* EditMenuViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -415,6 +417,8 @@
 		DDB257D623C20F0600DF1EB4 /* MainTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabsViewController.swift; sourceTree = "<group>"; };
 		DDB257DC23C2118200DF1EB4 /* ChatTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabViewController.swift; sourceTree = "<group>"; };
 		DDB257DE23C2119200DF1EB4 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		DDBEC219241A3210000814C6 /* EditMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewController.swift; sourceTree = "<group>"; };
+		DDBEC21B241A32BB000814C6 /* EditMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewModel.swift; sourceTree = "<group>"; };
 		E15B6D99DD4F89919ACF0F75 /* Pods_Me2_Business.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me2_Business.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -587,6 +591,7 @@
 				DD7D0AF2241295D600C69404 /* EditTagsViewModel.swift */,
 				DD7AD4BC24179C5E001D95A0 /* PlaceTagsListViewModel.swift */,
 				DD7AD4C32417C541001D95A0 /* EditGalleryViewModel.swift */,
+				DDBEC21B241A32BB000814C6 /* EditMenuViewModel.swift */,
 			);
 			path = "Edit profile";
 			sourceTree = "<group>";
@@ -637,6 +642,7 @@
 				DD7D0AE22411115E00C69404 /* Work time */,
 				DD7D0AED2412797A00C69404 /* Tags */,
 				DD7AD4BE2417C281001D95A0 /* Gallery */,
+				DDBEC218241A31F4000814C6 /* Menu */,
 			);
 			path = "Edit profile";
 			sourceTree = "<group>";
@@ -1112,6 +1118,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DDBEC218241A31F4000814C6 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DDBEC219241A3210000814C6 /* EditMenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1310,6 +1324,7 @@
 				DD7E346C240FABE9001B5836 /* ChangePasswordViewController.swift in Sources */,
 				DD583AD023E1A04100800339 /* AddEventViewController.swift in Sources */,
 				DD81E29D23DEF21400069F23 /* ContactsViewController.swift in Sources */,
+				DDBEC21A241A3210000814C6 /* EditMenuViewController.swift in Sources */,
 				DD7E3467240F93E7001B5836 /* SecurityParameterTableViewCell.swift in Sources */,
 				DDA0D8F22407F2E4001DBFD5 /* PlaceInfoCollectionViewCell.swift in Sources */,
 				DD7E346E240FB702001B5836 /* ChangePasswordViewModel.swift in Sources */,
@@ -1327,6 +1342,7 @@
 				DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */,
 				DD81E2CE23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift in Sources */,
 				DD81E27323DABAFD00069F23 /* UserProfileViewController.swift in Sources */,
+				DDBEC21C241A32BB000814C6 /* EditMenuViewModel.swift in Sources */,
 				DD7AD4C42417C541001D95A0 /* EditGalleryViewModel.swift in Sources */,
 				DD42F5B023C7090A000ADF02 /* UIButtonExtensions.swift in Sources */,
 				DD00918623C48EFC00C7B370 /* ChatViewModel.swift in Sources */,

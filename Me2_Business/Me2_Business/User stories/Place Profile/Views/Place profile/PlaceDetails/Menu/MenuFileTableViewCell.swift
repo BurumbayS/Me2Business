@@ -24,9 +24,9 @@ class MenuFileTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with title: String, and icon: UIImage) {
-        titleLabel.text = title
-        iconImageView.image = icon
+    func configure(menu: Menu) {
+        titleLabel.text = menu.menu_type.title
+        iconImageView.image = menu.menu_type.image
     }
     
     private func setUpViews() {
