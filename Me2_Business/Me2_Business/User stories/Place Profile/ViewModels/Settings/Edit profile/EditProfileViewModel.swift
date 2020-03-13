@@ -6,7 +6,8 @@
 //  Copyright © 2020 AVSoft. All rights reserved.
 //
 
-import Foundation
+import Alamofire
+import SwiftyJSON
 
 enum AdditionalInfoType {
     case workTime
@@ -60,16 +61,16 @@ class EditProfileViewModel {
     let sections = [EditProfileSection.mainInfo, .phone, .instagram, .website, .additional]
     let additionalCells = [AdditionalInfoType.workTime, .tags, .gallery, .menu]
     
-    let placeInfo: Place
-    let editedPlaceInfo: Place
-    let tagsData = TagsDataToSave()
+    var placeInfo: Place
+    let editedPlaceInfo: Dynamic<Place>
+    let tagsData: Dynamic<TagsDataToSave> = Dynamic(TagsDataToSave())
     
     init(place: Place) {
         self.placeInfo = place
-        self.editedPlaceInfo = place
-        self.tagsData.placeTagNames = place.tags
-        self.tagsData.averageBillPrice = place.averageCheck
-        self.tagsData.businessLaunchPrice = place.businessLunch
+        self.editedPlaceInfo = Dynamic(place)
+        self.tagsData.value.placeTagNames = place.tags
+        self.tagsData.value.averageBillPrice = place.averageCheck
+        self.tagsData.value.businessLaunchPrice = place.businessLunch
     }
     
     func dataForSection(atIndex index: Int) -> String {
@@ -83,5 +84,48 @@ class EditProfileViewModel {
         default:
             return ""
         }
+    }
+    
+    func updatePlaceInfo(completion: ResponseBlock?) {
+        let url = Network.business + "/place/\(UserDefaults().object(forKey: UserDefaultKeys.placeID.rawValue) ?? 0)/"
+        
+        let params = [  "description": editedPlaceInfo.value.description as Any,
+                        "instagram": editedPlaceInfo.value.instagram as Any,
+                        "phone": editedPlaceInfo.value.phone as Any,
+                        "website": editedPlaceInfo.value.website as Any,
+                        "email": editedPlaceInfo.value.email as Any,
+                        "working_hours": editedPlaceInfo.value.workingHours?.toJSONParams() as Any,
+                        "business_lunch": tagsData.value.businessLaunchPrice,
+                        "average_check": tagsData.value.averageBillPrice,
+                        "tags": tagsData.value.tagIDs,
+                        "images": [],
+                        "remove_images": editedPlaceInfo.value.imageIDsToRemove
+                    ]
+        
+        Alamofire.request(url, method: .put, parameters: params, encoding: JSONEncoding.default, headers: Network.getAuthorizedHeaders()).validate()
+            .responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    
+                    let json = JSON(value)
+                    
+                    switch json["code"].intValue {
+                    case 0:
+                        self.placeInfo = self.editedPlaceInfo.value
+                        self.placeInfo.updated.value = true
+                        
+                        completion?(.ok, "")
+                    default:
+                        completion?(.error, json["message"].stringValue)
+                    }
+                    
+                case .failure(_):
+                    
+                    let json = JSON(response.data as Any)
+                    completion?(.fail, json["message"].stringValue)
+                    
+                }
+        }
+        
     }
 }

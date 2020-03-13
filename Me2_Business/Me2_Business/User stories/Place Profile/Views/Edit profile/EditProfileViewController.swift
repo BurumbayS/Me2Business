@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         
         configureNavBar()
+        bindDynamics()
         configureTableView()
     }
     
@@ -29,7 +30,7 @@ class EditProfileViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отмена", style: .plain, target: self, action: #selector(cancelEditing))
         navigationItem.leftBarButtonItem?.tintColor = Color.red
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Готово", style: .plain, target: self, action: #selector(completeEditing))
-        navigationItem.rightBarButtonItem?.isEnabled = false
+//        navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.rightBarButtonItem?.tintColor = Color.blue
     }
     
@@ -45,6 +46,16 @@ class EditProfileViewController: UIViewController {
         tableView.register(EditAdditionalInfoTableViewCell.self)
     }
     
+    private func bindDynamics() {
+        viewModel.editedPlaceInfo.bind { (place) in
+            print("Info edited")
+        }
+        
+        viewModel.tagsData.bind { (tagsData) in
+            print("Info edited")
+        }
+    }
+    
     @objc private func cancelEditing() {
         self.view.endEditing(true)
         self.navigationController?.popViewController(animated: true)
@@ -52,19 +63,19 @@ class EditProfileViewController: UIViewController {
     
     @objc private func completeEditing() {
         self.view.endEditing(true)
+
+        startLoader()
         
-//        startLoader()
-//
-//        booking.edit(dateAndTime: pickedDate, numOfGuests: pickedNumberOfGuests) { [weak self] (status, message) in
-//            switch status {
-//            case .ok:
-//                self?.stopLoader(withStatus: .success, andText: "Бронь изменена") {
-//                    self?.dismiss(animated: true , completion: nil)
-//                }
-//            default:
-//                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
-//            }
-//        }
+        viewModel.updatePlaceInfo { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                self?.stopLoader(withStatus: .success, andText: "Данные обновлены", completion: {
+                    self?.navigationController?.popViewController(animated: true)
+                })
+            case .error, .fail:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
+            }
+        }
     }
     
 }
@@ -114,19 +125,20 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         case .mainInfo:
             
             let cell: EditMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configure(place: viewModel.placeInfo)
+            cell.configure(place: viewModel.editedPlaceInfo.value)
             return cell
             
         case .additional:
             
             let cell: EditAdditionalInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cell.selectionStyle = .none
             cell.configure(title: viewModel.additionalCells[indexPath.row].title)
             return cell
             
         default:
             
             let cell: EditDefaultInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configure(sectionType: section, data: viewModel.dataForSection(atIndex: indexPath.section))
+            cell.configure(sectionType: section, data: viewModel.dataForSection(atIndex: indexPath.section), place: viewModel.editedPlaceInfo.value)
             return cell
             
         }
@@ -139,29 +151,28 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         case .workTime:
             
             let vc = Storyboard.workTimeViewController() as! WorkTimeViewController
-            vc.viewModel = EditWorlTimeViewModel(workingHours: viewModel.editedPlaceInfo.workingHours!)
+            vc.viewModel = EditWorlTimeViewModel(workingHours: viewModel.editedPlaceInfo.value.workingHours!)
             navigationController?.pushViewController(vc, animated: true)
             
         case .tags:
             
+            viewModel.tagsData.value.averageBillPrice = 100
             let vc = Storyboard.editTagsViewController() as! EditTagsViewController
-            vc.viewModel = EditTagsViewModel(data: viewModel.tagsData)
+            vc.viewModel = EditTagsViewModel(data: viewModel.tagsData.value)
             navigationController?.pushViewController(vc, animated: true)
             
         case .gallery:
             
             let vc = Storyboard.editGalleryViewController() as! EditGalleryViewController
-            vc.viewModel = EditGalleryViewModel(place: viewModel.editedPlaceInfo)
+            vc.viewModel = EditGalleryViewModel(place: viewModel.editedPlaceInfo.value)
             navigationController?.pushViewController(vc, animated: true)
             
         case .menu:
             
             let vc = Storyboard.editMenuViewController() as! EditMenuViewController
-            vc.viewModel = EditMenuViewModel(placeInfo: viewModel.placeInfo)
+            vc.viewModel = EditMenuViewModel(placeInfo: viewModel.editedPlaceInfo.value)
             navigationController?.pushViewController(vc, animated: true)
-            
-        default:
-            break
+
         }
         
         tableView.deselectRow(at: indexPath, animated: true)

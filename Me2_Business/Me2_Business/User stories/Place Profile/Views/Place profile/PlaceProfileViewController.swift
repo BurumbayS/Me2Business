@@ -9,7 +9,7 @@
 import UIKit
 import Cartography
 
-class PlaceProfileViewController: UIViewController {
+class PlaceProfileViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var topBarView: UIView!
@@ -38,10 +38,15 @@ class PlaceProfileViewController: UIViewController {
         viewModel.fetchData { [weak self] (status, message) in
             switch status {
             case .ok:
+                
                 self?.stopLoader()
                 self?.topBarView.isHidden = false
+                
+                self?.bindViewModel()
+                
                 self?.collectionView.reloadData()
                 self?.collectionView.alpha = 1.0
+                
             case .error, .fail:
                 self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
             }
@@ -70,6 +75,12 @@ class PlaceProfileViewController: UIViewController {
         collectionView.register(PlaceProfileHeaderCollectionViewCell.self)
         collectionView.registerHeader(PlaceTabView.self)
         collectionView.registerHeader(UICollectionReusableView.self)
+    }
+    
+    private func bindViewModel() {
+        viewModel.place.updated.bind { [weak self] (_) in
+            self?.collectionView.reloadData()
+        }
     }
     
     private func setupTopBar() {

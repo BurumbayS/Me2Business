@@ -15,13 +15,22 @@ class EditMainInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    var placeInfo: Place!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        configureViews()
+    }
+    
+    private func configureViews() {
         descriptionTextView.contentInset = UIEdgeInsets(top: 15, left: 10, bottom: 10, right: 10)
+        descriptionTextView.delegate = self
     }
     
     func configure(place: Place) {
+        self.placeInfo = place
+        
         titleLabel.text = place.name
         categoryLabel.text = place.category
         logoImageView.kf.setImage(with: URL(string: place.logo ?? ""), placeholder: UIImage(named: "default_place_logo"), options: [])
@@ -29,5 +38,11 @@ class EditMainInfoTableViewCell: UITableViewCell {
     }
     
     @IBAction func chooseLogoPressed(_ sender: Any) {
+    }
+}
+
+extension EditMainInfoTableViewCell: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        placeInfo.description = textView.text
     }
 }

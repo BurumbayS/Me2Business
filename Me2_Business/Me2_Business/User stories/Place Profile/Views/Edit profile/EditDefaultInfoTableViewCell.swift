@@ -14,6 +14,10 @@ class EditDefaultInfoTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let textField = TextField()
     
+    var placeInfo: Place!
+    
+    var sectionType: EditProfileSection!
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -38,6 +42,8 @@ class EditDefaultInfoTableViewCell: UITableViewCell {
         textField.borderStyle = .none
         textField.layer.cornerRadius = 5
         textField.backgroundColor = .white
+        textField.delegate = self
+        textField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         textField.font = UIFont(name: "Roboto-Regular", size: 15)
         self.contentView.addSubview(textField)
         constrain(textField, titleLabel, self.contentView) { textField, label, view in
@@ -49,10 +55,41 @@ class EditDefaultInfoTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(sectionType: EditProfileSection, data: String) {
+    func configure(sectionType: EditProfileSection, data: String, place: Place) {
+        self.sectionType = sectionType
+        self.placeInfo = place
+        
         titleLabel.text = sectionType.title
         textField.text = data
         textField.keyboardType = (sectionType == .phone) ? .numberPad : .default
     }
     
+    @objc private func textFieldChanged() {
+        switch sectionType {
+        case .phone:
+            placeInfo.phone = textField.text
+        case .website:
+            placeInfo.website = textField.text
+        case .instagram:
+            placeInfo.instagram = textField.text
+        default:
+            break
+        }
+    }
+    
+}
+
+extension EditDefaultInfoTableViewCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        
+        if sectionType == .phone {
+            let phonePattern = "+# (###) ###-##-##"
+               
+            if text.count == phonePattern.count && !string.isBackspace() { return false }
+            textField.text = text.applyPatternOnNumbers(pattern: phonePattern, replacmentCharacter: "#")
+        }
+        
+        return true
+    }
 }

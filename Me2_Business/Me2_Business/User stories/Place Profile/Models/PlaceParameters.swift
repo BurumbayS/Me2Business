@@ -7,6 +7,7 @@
 //
 
 import SwiftyJSON
+import Alamofire
 
 enum PlaceStatus {
     case registered
@@ -198,6 +199,32 @@ class WorkingHours {
             let weekDay = WeekDay(title: item.key, json: item.value)
             weekDays.append(weekDay)
         }
+    }
+    
+    func toJSONParams() -> Parameters {
+        var params = Parameters()
+        
+        for weekDay in weekDays {
+            params[weekDay.name.rawValue] = ["start_s": 0,
+                                             "end_s": 0,
+                                             "start": weekDay.start,
+                                             "end": weekDay.end,
+                                             "works": weekDay.works,
+                                             "day_and_night": weekDay.dayNnight
+                                            ]
+//            let item: Parameters =  ["\(weekDay.name.rawValue)": ["start_s": 0,
+//                                                      "end_s": 0,
+//                                                      "start": weekDay.start,
+//                                                      "end": weekDay.end,
+//                                                      "works": weekDay.works,
+//                                                      "day_and_night": weekDay.dayNnight
+//                                                     ]
+//                        ]
+            
+//            jsonParameters.append(item)
+        }
+        
+        return params
     }
 }
 

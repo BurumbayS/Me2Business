@@ -29,8 +29,6 @@ class Place {
     var logo: String?
     var menus: [Menu]?
     var imageList = [PlaceImage]()
-//    var images = [String]()
-//    var imageIDs = [Int]()
     var imageIDsToRemove = [Int]()
     var workingHours: WorkingHours?
 //    var roomInfo: RoomInfo?
@@ -39,6 +37,16 @@ class Place {
     var averageCheck = 0
     var businessLunch = 0
     var subsidiaries: [Place]?
+    var imageIDs: [Int] {
+        var IDs = [Int]()
+        for image in imageList {
+            IDs.append(image.id)
+        }
+        
+        return IDs
+    }
+    
+    var updated: Dynamic<Bool>
     
     init(json: JSON) {
         id = json["id"].intValue
@@ -62,20 +70,12 @@ class Place {
         branch = json["branch"].intValue
         averageCheck = json["average_check"].intValue
         businessLunch = json["business_lunch"].intValue
+        updated = Dynamic(false)
           
         imageList = []
         for image in json["images_list"].arrayValue {
             imageList.append(PlaceImage(id: image["id"].intValue, url: image["image"].stringValue))
         }
-//        images = []
-//        for image in json["images"].arrayValue {
-//            images.append(image.stringValue)
-//        }
-//
-//        imageIDs = []
-//        for image in json["images_list"].arrayValue {
-//            imageIDs.append(image["id"].intValue)
-//        }
         
         menus = [Menu]()
         for item in json["menu"].arrayValue {
