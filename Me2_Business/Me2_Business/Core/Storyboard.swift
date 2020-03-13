@@ -126,4 +126,7 @@ extension Storyboard {
     static var editMenuViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "EditMenuViewController")
     }
+    static var answerToReviewViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "AnswerToReviewViewController")
+    }
 }

@@ -126,6 +126,7 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             
             let cell: EditMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.configure(place: viewModel.editedPlaceInfo.value)
+            cell.selectionStyle = .none
             return cell
             
         case .additional:
@@ -139,6 +140,7 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
             
             let cell: EditDefaultInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cell.configure(sectionType: section, data: viewModel.dataForSection(atIndex: indexPath.section), place: viewModel.editedPlaceInfo.value)
+            cell.selectionStyle = .none
             return cell
             
         }

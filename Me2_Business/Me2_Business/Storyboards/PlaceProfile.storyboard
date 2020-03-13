@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cw-5z-aTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="76"/>
+            <point key="canvasLocation" x="3372" y="76"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="tmE-Km-XC4">
@@ -719,6 +719,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivQ-Cd-kRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3394" y="-642"/>
+        </scene>
+        <!--Answer To Review View Controller-->
+        <scene sceneID="mdb-ny-b88">
+            <objects>
+                <viewController storyboardIdentifier="AnswerToReviewViewController" hidesBottomBarWhenPushed="YES" id="MSi-z4-wgp" customClass="AnswerToReviewViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wh2-aY-tRA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ваш отзыв" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m48-PF-M2l">
+                                <rect key="frame" x="15" y="64" width="384" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="4zE-33-Odm"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m48-PF-M2l" firstAttribute="top" secondItem="SgA-PY-vGU" secondAttribute="top" constant="20" id="1Ap-L8-LNb"/>
+                            <constraint firstItem="m48-PF-M2l" firstAttribute="leading" secondItem="SgA-PY-vGU" secondAttribute="leading" constant="15" id="BgT-0J-7ii"/>
+                            <constraint firstItem="SgA-PY-vGU" firstAttribute="trailing" secondItem="m48-PF-M2l" secondAttribute="trailing" constant="15" id="jSB-YL-8iy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SgA-PY-vGU"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerTextView" destination="m48-PF-M2l" id="NzU-BA-jbI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJH-jw-IAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4071" y="76"/>
         </scene>
     </scenes>
     <resources>

@@ -34,7 +34,7 @@ class ResponseReviewTableViewCell: UITableViewCell {
     }
     
     private func setUpViews() {
-        let replyIcon = UIImageView(image: UIImage(named: "reply_icon"))
+        let replyIcon = UIImageView(image: UIImage(named: "response_icon"))
         self.contentView.addSubview(replyIcon)
         constrain(replyIcon, self.contentView) { icon, view in
             icon.left == view.left + 40

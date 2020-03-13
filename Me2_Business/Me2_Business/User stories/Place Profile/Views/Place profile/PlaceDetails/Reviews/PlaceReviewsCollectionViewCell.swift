@@ -64,6 +64,7 @@ class PlaceReviewsCollectionViewCell: PlaceDetailCollectionCell {
         
         tableView.register(PlaceReviewTableViewCell.self)
         tableView.register(ResponseReviewTableViewCell.self)
+        tableView.register(AnswerToTableViewCell.self)
     }
     
     func configure(itemSize: Dynamic<CGSize>?, placeID: Int, vc: UIViewController) {
@@ -125,7 +126,7 @@ extension PlaceReviewsCollectionViewCell: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (viewModel.reviews[section].responses.count > 0) ? 2 : 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,12 +142,31 @@ extension PlaceReviewsCollectionViewCell: UITableViewDelegate, UITableViewDataSo
             
         default:
             
-            let cell: ResponseReviewTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            
-            cell.configure(with: viewModel.reviews[indexPath.section].responses[0])
-            cell.selectionStyle = .none
-            
-            return cell
+            if viewModel.reviews[indexPath.section].responses.count == 0 {
+                
+                let cell: AnswerToTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                cell.selectionStyle = .none
+                cell.configure { [weak self] in
+                    
+                    let vc = Storyboard.answerToReviewViewController() as! AnswerToReviewViewController
+                    vc.viewModel = AnswerToReviewViewModel(baseReview: (self?.viewModel.reviews[indexPath.section])!, onAnswerToReview: {
+                        self?.reload()
+                    })
+                    self?.parentVC.navigationController?.pushViewController(vc, animated: true)
+                    
+                }
+                return cell
+                
+            } else {
+                
+                let cell: ResponseReviewTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+                
+                cell.configure(with: viewModel.reviews[indexPath.section].responses[0])
+                cell.selectionStyle = .none
+                
+                return cell
+                
+            }
         }
     }
     

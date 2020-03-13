@@ -209,6 +209,9 @@
 		DDB257DF23C2119200DF1EB4 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB257DE23C2119200DF1EB4 /* Chat.storyboard */; };
 		DDBEC21A241A3210000814C6 /* EditMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC219241A3210000814C6 /* EditMenuViewController.swift */; };
 		DDBEC21C241A32BB000814C6 /* EditMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC21B241A32BB000814C6 /* EditMenuViewModel.swift */; };
+		DDBEC21E241BA675000814C6 /* AnswerToTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC21D241BA675000814C6 /* AnswerToTableViewCell.swift */; };
+		DDBEC220241BAC8E000814C6 /* AnswerToReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC21F241BAC8E000814C6 /* AnswerToReviewViewController.swift */; };
+		DDBEC222241BAF7B000814C6 /* AnswerToReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC221241BAF7B000814C6 /* AnswerToReviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -419,6 +422,9 @@
 		DDB257DE23C2119200DF1EB4 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		DDBEC219241A3210000814C6 /* EditMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewController.swift; sourceTree = "<group>"; };
 		DDBEC21B241A32BB000814C6 /* EditMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuViewModel.swift; sourceTree = "<group>"; };
+		DDBEC21D241BA675000814C6 /* AnswerToTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerToTableViewCell.swift; sourceTree = "<group>"; };
+		DDBEC21F241BAC8E000814C6 /* AnswerToReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerToReviewViewController.swift; sourceTree = "<group>"; };
+		DDBEC221241BAF7B000814C6 /* AnswerToReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerToReviewViewModel.swift; sourceTree = "<group>"; };
 		E15B6D99DD4F89919ACF0F75 /* Pods_Me2_Business.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me2_Business.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -683,6 +689,7 @@
 				DDA0D8F32407F383001DBFD5 /* PlaceInfoViewModel.swift */,
 				DDA0D918240A8618001DBFD5 /* PlaceReviewViewModel.swift */,
 				DD7E346D240FB702001B5836 /* ChangePasswordViewModel.swift */,
+				DDBEC221241BAF7B000814C6 /* AnswerToReviewViewModel.swift */,
 			);
 			path = "Place info ";
 			sourceTree = "<group>";
@@ -886,6 +893,8 @@
 				DDA0D910240A8270001DBFD5 /* PlaceReviewsCollectionViewCell.swift */,
 				DDA0D912240A82B9001DBFD5 /* PlaceReviewTableViewCell.swift */,
 				DDA0D914240A85E5001DBFD5 /* ResponseReviewTableViewCell.swift */,
+				DDBEC21D241BA675000814C6 /* AnswerToTableViewCell.swift */,
+				DDBEC21F241BAC8E000814C6 /* AnswerToReviewViewController.swift */,
 			);
 			path = Reviews;
 			sourceTree = "<group>";
@@ -1293,6 +1302,7 @@
 				DD81E28E23DAF4E500069F23 /* TagView.swift in Sources */,
 				DD7E34722410B3AB001B5836 /* ChangePhoneViewModel.swift in Sources */,
 				DD42F5AC23C6FB71000ADF02 /* ApplicationViewModel.swift in Sources */,
+				DDBEC21E241BA675000814C6 /* AnswerToTableViewCell.swift in Sources */,
 				DD583AE423E2EDC800800339 /* AddEventTimeTableViewCell.swift in Sources */,
 				DDA0D8ED2407E7F1001DBFD5 /* PlaceProfileViewModel.swift in Sources */,
 				DD81E2C223E05CDC00069F23 /* EventInfoViewController.swift in Sources */,
@@ -1395,6 +1405,7 @@
 				DDA0D907240A8093001DBFD5 /* CustomSegmentedControl.swift in Sources */,
 				DD7E3450240E359D001B5836 /* EditProfileViewModel.swift in Sources */,
 				DDB257D723C20F0600DF1EB4 /* MainTabsViewController.swift in Sources */,
+				DDBEC222241BAF7B000814C6 /* AnswerToReviewViewModel.swift in Sources */,
 				DD00915123C32A4400C7B370 /* MediaFile.swift in Sources */,
 				DDA0D8FA240A787D001DBFD5 /* AdressTableViewCell.swift in Sources */,
 				DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */,
@@ -1416,6 +1427,7 @@
 				DD7AD4BB2417986C001D95A0 /* PlaceTagTableViewCell.swift in Sources */,
 				DD81E2B023DFEC7C00069F23 /* EventsTabViewController.swift in Sources */,
 				DD7E3454240E4200001B5836 /* TextField.swift in Sources */,
+				DDBEC220241BAC8E000814C6 /* AnswerToReviewViewController.swift in Sources */,
 				DD00915723C32D1100C7B370 /* ChatParticipant.swift in Sources */,
 				DD7E3460240F888E001B5836 /* FeedbackViewController.swift in Sources */,
 				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,

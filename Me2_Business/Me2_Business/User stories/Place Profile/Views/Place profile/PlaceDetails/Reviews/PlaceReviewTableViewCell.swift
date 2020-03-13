@@ -81,7 +81,7 @@ class PlaceReviewTableViewCell: UITableViewCell {
         constrain(reviewLabel, avatarImageView, self.contentView) { review, avatar, view in
             review.top == avatar.bottom + 10
             review.leading == avatar.leading
-            review.bottom == view.bottom - 20
+            review.bottom == view.bottom
             review.right == view.right - 20
         }
     }
