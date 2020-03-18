@@ -16,5 +16,6 @@ target 'Me2_Business' do
   pod 'IQKeyboardManagerSwift'
   pod 'KKPinCodeTextField'
   pod 'Cosmos', '~> 19.0'
+  pod 'Firebase/Analytics'
 
 end
