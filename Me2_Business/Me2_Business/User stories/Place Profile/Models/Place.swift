@@ -14,7 +14,7 @@ class Place {
     var name: String!
     var description: String?
     var category: String!
-//    var regStatus: PlaceStatus!
+    var regStatus: PlaceStatus!
     var isFavourite: Bool
     var rating: Double?
     var longitute: Double!
@@ -27,13 +27,26 @@ class Place {
     var email: String?
     var website: String?
     var logo: String?
-//    var menus: [Menu]?
-    var images = [String]()
-//    var workingHours: WorkingHours?
+    var menus: [Menu]?
+    var imageList = [PlaceImage]()
+    var imageIDsToRemove = [Int]()
+    var workingHours: WorkingHours?
 //    var roomInfo: RoomInfo?
     var tags = [String]()
     var branch: Int
+    var averageCheck = 0
+    var businessLunch = 0
     var subsidiaries: [Place]?
+    var imageIDs: [Int] {
+        var IDs = [Int]()
+        for image in imageList {
+            IDs.append(image.id)
+        }
+        
+        return IDs
+    }
+    
+    var updated: Dynamic<Bool>
     
     init(json: JSON) {
         id = json["id"].intValue
@@ -45,27 +58,30 @@ class Place {
         longitute = json["location"]["longitude"].doubleValue
         address1 = json["location"]["address1"].stringValue
         address2 = json["location"]["address2"].stringValue
-//        regStatus = (json["reg_status"].stringValue == "REGISTERED") ? .registered : .not_registered
+        regStatus = (json["reg_status"].stringValue == "REGISTERED") ? .registered : .not_registered
         rating = json["rating"].doubleValue
         logo = json["logo"].stringValue
         instagram = json["instagram"].stringValue
         email = json["email"].stringValue
         phone = json["phone"].stringValue
         website = json["website"].stringValue
-//        workingHours = WorkingHours(json: json["working_hours"])
+        workingHours = WorkingHours(json: json["working_hours"])
 //        roomInfo = RoomInfo(json: json["room_info"])
         branch = json["branch"].intValue
-        
-        images = []
-        for image in json["images"].arrayValue {
-            images.append(image.stringValue)
+        averageCheck = json["average_check"].intValue
+        businessLunch = json["business_lunch"].intValue
+        updated = Dynamic(false)
+          
+        imageList = []
+        for image in json["images_list"].arrayValue {
+            imageList.append(PlaceImage(id: image["id"].intValue, url: image["image"].stringValue))
         }
         
-//        menus = [Menu]()
-//        for item in json["menu"].arrayValue {
-//            let menu = Menu(json: item)
-//            menus?.append(menu)
-//        }
+        menus = [Menu]()
+        for item in json["menu"].arrayValue {
+            let menu = Menu(json: item)
+            menus?.append(menu)
+        }
         
         tags = []
         for item in json["tags_display"].arrayValue {

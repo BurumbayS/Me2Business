@@ -279,7 +279,7 @@
                                             <constraint firstAttribute="height" constant="135" id="jge-Zr-heP"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email или номер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-Zh-eGB" customClass="AttributedTextField" customModule="Me2" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email или номер" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3I-Zh-eGB" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="195" width="240" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="pv9-2q-KGa"/>
@@ -441,7 +441,7 @@
                                     <constraint firstAttribute="width" constant="163" id="cuS-JZ-BNg"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Новый пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-b2-rxp" customClass="AttributedTextField" customModule="Me2" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Новый пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-b2-rxp" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
                                 <rect key="frame" x="87" y="245" width="240" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="DPo-ak-Zbz"/>
@@ -456,7 +456,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Подтвердите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BwH-wV-FW0" customClass="AttributedTextField" customModule="Me2" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Подтвердите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BwH-wV-FW0" customClass="AttributedTextField" customModule="Me2_Business" customModuleProvider="target">
                                 <rect key="frame" x="87" y="298" width="240" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Se4-2t-A4j"/>

@@ -11,6 +11,7 @@ import Foundation
 enum UserDefaultKeys: String {
     case token
     case userID
+    case placeID
     case userInfo
     case notificationsSubscriptionStatus
     case accessCode

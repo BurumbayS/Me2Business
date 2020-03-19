@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Isf-DV-n0p" customClass="ContactTableViewCell" customModule="Me2" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Isf-DV-n0p" customClass="ContactTableViewCell" customModule="Me2_Business" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Isf-DV-n0p" id="0uv-8C-q9W">
@@ -35,7 +35,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burumbay Sanzhar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acg-EZ-jVD">
-                        <rect key="frame" x="75" y="13" width="145.5" height="20"/>
+                        <rect key="frame" x="75" y="13" width="142.5" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="SKC-Ux-8fU"/>
                         </constraints>
@@ -44,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@maria_zzz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDL-4N-Ob6">
-                        <rect key="frame" x="75" y="33" width="145.5" height="15"/>
+                        <rect key="frame" x="75" y="33" width="142.5" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="GA0-vV-FoN"/>
                         </constraints>
@@ -77,6 +77,7 @@
             <viewLayoutGuide key="safeArea" id="Zxi-aZ-73z"/>
             <connections>
                 <outlet property="avatarImageView" destination="eR0-93-LSB" id="d8H-PI-j7P"/>
+                <outlet property="checkStatusImageView" destination="lNJ-GO-rZg" id="T2x-8E-FGF"/>
                 <outlet property="nameLabel" destination="fDL-4N-Ob6" id="7yW-iD-szM"/>
                 <outlet property="usernameLabel" destination="Acg-EZ-jVD" id="LY8-N9-pkW"/>
             </connections>
@@ -84,7 +85,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="checked" width="16" height="16"/>
+        <image name="checked" width="22" height="22"/>
         <image name="placeholder_avatar" width="240" height="241"/>
     </resources>
 </document>
