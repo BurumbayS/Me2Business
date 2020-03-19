@@ -17,5 +17,12 @@ target 'Me2_Business' do
   pod 'KKPinCodeTextField'
   pod 'Cosmos', '~> 19.0'
   pod 'Firebase/Analytics'
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
 
+end
+
+target 'OneSignalNotificationServiceExtension' do
+    use_frameworks!
+    
+    pod 'OneSignal', '>= 2.11.2', '< 3.0'
 end
