@@ -15,3 +15,4 @@ class Color {
     static let blue = UIColor(stringHex: "#00AAFF")
     static let green = UIColor(stringHex: "#30BF26")
 }
+ 

@@ -33,3 +33,4 @@ class CollectionView : UICollectionView {
         self.reloadData()
     }
 }
+
