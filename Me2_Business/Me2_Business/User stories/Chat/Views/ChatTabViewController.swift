@@ -18,7 +18,7 @@ class ChatTabViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadChatsList()
+        updateChatList()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,8 +44,27 @@ class ChatTabViewController: UIViewController {
     }
     
     private func loadChatsList() {
+        startLoader()
+        
         viewModel.getChatList { [weak self] (status, message) in
-            self?.tableView.reloadData()
+            switch status {
+            case .ok:
+                self?.stopLoader()
+                self?.tableView.reloadData()
+            case .error, .fail:
+                self?.stopLoader(withStatus: .fail, andText: message, completion: nil)
+            }
+        }
+    }
+    
+    private func updateChatList() {
+        viewModel.getChatList { [weak self] (status, message) in
+            switch status {
+            case .ok:
+                self?.tableView.reloadData()
+            case .error, .fail:
+                break
+            }
         }
     }
     
