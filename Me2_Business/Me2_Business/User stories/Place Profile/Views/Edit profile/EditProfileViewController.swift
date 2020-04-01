@@ -14,6 +14,8 @@ class EditProfileViewController: UIViewController {
     
     var viewModel: EditProfileViewModel!
     
+    var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -125,7 +127,7 @@ extension EditProfileViewController: UITableViewDelegate, UITableViewDataSource 
         case .mainInfo:
             
             let cell: EditMainInfoTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-            cell.configure(place: viewModel.editedPlaceInfo.value)
+            cell.configure(place: viewModel.editedPlaceInfo.value, vc: self)
             cell.selectionStyle = .none
             return cell
             
