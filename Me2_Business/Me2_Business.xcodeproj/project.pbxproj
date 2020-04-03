@@ -220,6 +220,9 @@
 		DDBEC233242352C2000814C6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBEC231242352C2000814C6 /* MainInterface.storyboard */; };
 		DDBEC237242352C2000814C6 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DDBEC229242352C2000814C6 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DDBEC23D24235329000814C6 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC23C24235329000814C6 /* NotificationService.swift */; };
+		DDBEC2402434CA78000814C6 /* ConfigureAccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC23F2434CA78000814C6 /* ConfigureAccessCodeViewController.swift */; };
+		DDBEC2422434D11F000814C6 /* AccessCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC2412434D11F000814C6 /* AccessCodeViewController.swift */; };
+		DDBEC2442435D361000814C6 /* AccessCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBEC2432435D360000814C6 /* AccessCodeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -468,6 +471,9 @@
 		DDBEC234242352C2000814C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDBEC23C24235329000814C6 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		DDBEC23E2423572A000814C6 /* Me2 Business.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Me2 Business.entitlements"; sourceTree = "<group>"; };
+		DDBEC23F2434CA78000814C6 /* ConfigureAccessCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureAccessCodeViewController.swift; sourceTree = "<group>"; };
+		DDBEC2412434D11F000814C6 /* AccessCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCodeViewController.swift; sourceTree = "<group>"; };
+		DDBEC2432435D360000814C6 /* AccessCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessCodeViewModel.swift; sourceTree = "<group>"; };
 		E15B6D99DD4F89919ACF0F75 /* Pods_Me2_Business.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me2_Business.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C6657F38D9AF839C7C2928 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -736,6 +742,7 @@
 				DD7E3466240F93E7001B5836 /* SecurityParameterTableViewCell.swift */,
 				DD7E346B240FABE9001B5836 /* ChangePasswordViewController.swift */,
 				DD7E346F2410B269001B5836 /* ChangePhonenumberViewController.swift */,
+				DDBEC23F2434CA78000814C6 /* ConfigureAccessCodeViewController.swift */,
 			);
 			path = Security;
 			sourceTree = "<group>";
@@ -1100,6 +1107,7 @@
 				DD42F5A523C6F75E000ADF02 /* ApplicationViewController.swift */,
 				DD42F5A723C6F8CC000ADF02 /* ApplicationFieldTableViewCell.swift */,
 				DD42F5A823C6F8CC000ADF02 /* ApplicationFieldTableViewCell.xib */,
+				DDBEC2412434D11F000814C6 /* AccessCodeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1112,6 +1120,7 @@
 				DD81E26023D86A5900069F23 /* ResetPasswordViewModel.swift */,
 				DD81E26423D96D5D00069F23 /* ConfirmCodeViewModel.swift */,
 				DD81E26823D97B1000069F23 /* SetNewPassViewModel.swift */,
+				DDBEC2432435D360000814C6 /* AccessCodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1479,6 +1488,7 @@
 				DDA0D909240A80C0001DBFD5 /* CustomSegmentedControlViewModel.swift in Sources */,
 				DD583AEB23E4270B00800339 /* AddEventViewModel.swift in Sources */,
 				DD7E3442240D41A3001B5836 /* SettingsParameterTableViewCell.swift in Sources */,
+				DDBEC2442435D361000814C6 /* AccessCodeViewModel.swift in Sources */,
 				DD81E2CE23E0679E00069F23 /* EventAdditionalInfoTableViewCell.swift in Sources */,
 				DD81E27323DABAFD00069F23 /* UserProfileViewController.swift in Sources */,
 				DDBEC21C241A32BB000814C6 /* EditMenuViewModel.swift in Sources */,
@@ -1540,6 +1550,7 @@
 				DD81E2B823E01F5B00069F23 /* EventsTabViewModel.swift in Sources */,
 				DD00915323C32CB000C7B370 /* StringExtensions.swift in Sources */,
 				DD7AD4BD24179C5E001D95A0 /* PlaceTagsListViewModel.swift in Sources */,
+				DDBEC2422434D11F000814C6 /* AccessCodeViewController.swift in Sources */,
 				DD81E29B23DEEC6600069F23 /* CustomLargeTitleBarButton.swift in Sources */,
 				DD81E2A723DEFAF500069F23 /* ContactUser.swift in Sources */,
 				DD00917F23C4898900C7B370 /* CollectionView.swift in Sources */,
@@ -1562,6 +1573,7 @@
 				DD00919C23C5EE0B00C7B370 /* EditBookingViewController.swift in Sources */,
 				DDB257C523C1B98700DF1EB4 /* UserDefaultsKeys.swift in Sources */,
 				DD81E27B23DAC4C000069F23 /* FavouritePlacesTableViewCell.swift in Sources */,
+				DDBEC2402434CA78000814C6 /* ConfigureAccessCodeViewController.swift in Sources */,
 				DD7E3459240E7A2D001B5836 /* MyContactsViewModel.swift in Sources */,
 				DD00914F23C329DD00C7B370 /* Message.swift in Sources */,
 				DD5FD01123CBAB8100F01725 /* LoaderViewController.swift in Sources */,

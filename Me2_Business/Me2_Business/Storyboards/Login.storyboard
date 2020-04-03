@@ -544,6 +544,139 @@
             </objects>
             <point key="canvasLocation" x="4158" y="183"/>
         </scene>
+        <!--Access Code View Controller-->
+        <scene sceneID="mzY-UW-bri">
+            <objects>
+                <viewController storyboardIdentifier="AccessCodeViewController" hidesBottomBarWhenPushed="YES" id="0jt-3S-bBc" customClass="AccessCodeViewController" customModule="Me2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4BG-UR-e1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wc0-Ay-NIk">
+                                <rect key="frame" x="20" y="425" width="374" height="387"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="P4c-I7-OFc">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NumberPadCell" id="wt5-Hv-NHK">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите код доступа" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTA-SK-POh">
+                                <rect key="frame" x="88.5" y="223" width="237" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DqQ-OC-CEf"/>
+                                    <constraint firstAttribute="width" constant="237" id="g9U-28-Kvk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5U5-aC-KoI">
+                                <rect key="frame" x="153" y="333" width="108" height="12"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwB-8n-ZVz">
+                                        <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="LQK-zX-xxs"/>
+                                            <constraint firstAttribute="width" constant="12" id="qmX-v3-Jwc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3H-cM-VDV">
+                                        <rect key="frame" x="32" y="0.0" width="12" height="12"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="Uc3-AV-JHj"/>
+                                            <constraint firstAttribute="height" constant="12" id="dzu-6b-zXR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07V-WY-vV0">
+                                        <rect key="frame" x="64" y="0.0" width="12" height="12"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="jGt-rY-puQ"/>
+                                            <constraint firstAttribute="height" constant="12" id="sxC-NT-iYw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xk0-Ee-9yL">
+                                        <rect key="frame" x="96" y="0.0" width="12" height="12"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="36q-L5-quk"/>
+                                            <constraint firstAttribute="height" constant="12" id="Bpl-ri-QBx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="7HP-Ts-1u2"/>
+                                    <constraint firstAttribute="width" constant="108" id="kdw-oU-p6q"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неверный код доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZY-eb-zPH">
+                                <rect key="frame" x="131.5" y="375" width="151" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.40700513119999998" blue="0.39747506379999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pZY-eb-zPH" firstAttribute="top" secondItem="5U5-aC-KoI" secondAttribute="bottom" constant="30" id="4Zg-bG-rdh"/>
+                            <constraint firstItem="XTA-SK-POh" firstAttribute="centerY" secondItem="W7o-bH-nna" secondAttribute="centerY" constant="-200" id="Ljo-Wh-j2d"/>
+                            <constraint firstItem="W7o-bH-nna" firstAttribute="trailing" secondItem="Wc0-Ay-NIk" secondAttribute="trailing" constant="20" id="PRF-ro-bfv"/>
+                            <constraint firstItem="Wc0-Ay-NIk" firstAttribute="centerX" secondItem="W7o-bH-nna" secondAttribute="centerX" id="RHz-fg-e4y"/>
+                            <constraint firstItem="Wc0-Ay-NIk" firstAttribute="leading" secondItem="W7o-bH-nna" secondAttribute="leading" constant="20" id="UU5-ar-J40"/>
+                            <constraint firstItem="5U5-aC-KoI" firstAttribute="centerX" secondItem="XTA-SK-POh" secondAttribute="centerX" id="Wce-d8-3pr"/>
+                            <constraint firstItem="W7o-bH-nna" firstAttribute="bottom" secondItem="Wc0-Ay-NIk" secondAttribute="bottom" constant="50" id="b8S-Uh-KSa"/>
+                            <constraint firstItem="pZY-eb-zPH" firstAttribute="centerX" secondItem="W7o-bH-nna" secondAttribute="centerX" id="dKq-GD-JUr"/>
+                            <constraint firstItem="5U5-aC-KoI" firstAttribute="centerX" secondItem="W7o-bH-nna" secondAttribute="centerX" id="gtH-hs-94f"/>
+                            <constraint firstItem="5U5-aC-KoI" firstAttribute="top" secondItem="XTA-SK-POh" secondAttribute="bottom" constant="50" id="qaj-aD-8bi"/>
+                            <constraint firstItem="Wc0-Ay-NIk" firstAttribute="top" secondItem="5U5-aC-KoI" secondAttribute="bottom" constant="80" id="xQU-Ul-8hH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W7o-bH-nna"/>
+                    </view>
+                    <connections>
+                        <outlet property="accessCodeStackView" destination="5U5-aC-KoI" id="XKU-Qa-CIi"/>
+                        <outlet property="errorLabel" destination="pZY-eb-zPH" id="FCV-qf-5gd"/>
+                        <outlet property="numberPadCollectionView" destination="Wc0-Ay-NIk" id="wKx-AU-PVK"/>
+                        <outlet property="titleLabel" destination="XTA-SK-POh" id="qrf-BS-0nS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ckh-rB-mia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="183"/>
+        </scene>
     </scenes>
     <resources>
         <image name="hide_eye" width="24.5" height="16"/>
