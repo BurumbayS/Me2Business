@@ -36,6 +36,7 @@ class AdditionalPlaceInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
     }
     
     func configure(type: AdditionalPlaceInfoType, detail: String) {

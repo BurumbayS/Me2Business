@@ -103,6 +103,7 @@ class EventsTabViewController: ListedViewController {
         vc.viewModel = AddEventViewModel(eventChangesType: .create, onEventAdded: { [weak self] (event) in
             self?.viewModel.events.insert(event, at: 0)
             self?.tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .automatic)
+            self?.hideEmptyListStatusLabel()
         })
         present(navigation, animated: true, completion: nil)
     }
