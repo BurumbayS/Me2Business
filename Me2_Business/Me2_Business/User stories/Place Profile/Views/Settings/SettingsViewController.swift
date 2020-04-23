@@ -76,6 +76,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case .security:
             let vc = Storyboard.securityViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case .logout:
+            window.rootViewController = Storyboard.loginViewController()
         default:
             return
         }
