@@ -52,7 +52,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SettingsParameterTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.selectionStyle = .none
-        cell.configure(parameter: viewModel.parameters[indexPath.row])
+        cell.configure(parameter: viewModel.parameters[indexPath.row], onSwitch: { [weak self] (isOn) in
+            self?.viewModel.switchNotifications(isOn: isOn)
+        })
         return cell
     }
     
@@ -74,6 +76,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case .security:
             let vc = Storyboard.securityViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case .logout:
+            window.rootViewController = Storyboard.loginViewController()
         default:
             return
         }

@@ -38,6 +38,9 @@ extension Storyboard {
     static var confirmCodeViewController = {
         return loginPage.storyboard.instantiateViewController(withIdentifier: "ConfirmCodeViewController")
     }
+    static var accessCodeViewController = {
+        return loginPage.storyboard.instantiateViewController(withIdentifier: "AccessCodeViewController")
+    }
     
     //Main tab page
     static var mainTabsViewController = {
@@ -110,6 +113,9 @@ extension Storyboard {
     }
     static var changePhonenumberViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "ChangePhonenumberViewController")
+    }
+    static var configureAccessCodeViewController = {
+        return placeProfile.storyboard.instantiateViewController(withIdentifier: "ConfigureAccessCodeViewController")
     }
     static var workTimeViewController = {
         return placeProfile.storyboard.instantiateViewController(withIdentifier: "WorkTimeViewController")

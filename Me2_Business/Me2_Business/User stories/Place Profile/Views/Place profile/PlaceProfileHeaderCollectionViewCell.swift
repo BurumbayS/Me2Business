@@ -118,6 +118,7 @@ class PlaceProfileHeaderCollectionViewCell: UICollectionViewCell {
         
         logoImageView.layer.cornerRadius = 20
         logoImageView.clipsToBounds = true
+        logoImageView.contentMode = .scaleAspectFill
         view.addSubview(logoImageView)
         constrain(logoImageView, view) { logo, view in
             logo.left == view.left + 20

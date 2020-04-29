@@ -755,6 +755,82 @@
             </objects>
             <point key="canvasLocation" x="4071" y="76"/>
         </scene>
+        <!--Configure Access Code View Controller-->
+        <scene sceneID="NcE-ab-UqF">
+            <objects>
+                <viewController storyboardIdentifier="ConfigureAccessCodeViewController" id="eFD-Jw-nUT" customClass="ConfigureAccessCodeViewController" customModule="Me2_Business" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbf-fd-1GM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="biA-Hm-91c">
+                                <rect key="frame" x="0.0" y="54" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Код быстрого доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZX-mO-K6s">
+                                        <rect key="frame" x="20" y="21" width="302" height="18"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ud8-P8-bow">
+                                        <rect key="frame" x="342" y="14" width="54" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="Cgm-3t-mif"/>
+                                            <constraint firstAttribute="height" constant="32" id="XeC-SJ-nSZ"/>
+                                        </constraints>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ud8-P8-bow" firstAttribute="centerY" secondItem="biA-Hm-91c" secondAttribute="centerY" id="83s-91-azk"/>
+                                    <constraint firstItem="ud8-P8-bow" firstAttribute="leading" secondItem="rZX-mO-K6s" secondAttribute="trailing" constant="20" id="Cdp-nO-5NH"/>
+                                    <constraint firstAttribute="trailing" secondItem="ud8-P8-bow" secondAttribute="trailing" constant="20" id="HSR-Hf-EhI"/>
+                                    <constraint firstItem="rZX-mO-K6s" firstAttribute="leading" secondItem="biA-Hm-91c" secondAttribute="leading" constant="20" id="Ods-9c-Wlo"/>
+                                    <constraint firstAttribute="height" constant="60" id="d9h-hb-H62"/>
+                                    <constraint firstItem="rZX-mO-K6s" firstAttribute="centerY" secondItem="biA-Hm-91c" secondAttribute="centerY" id="lei-bg-lbk"/>
+                                </constraints>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LfZ-Lf-iO9">
+                                <rect key="frame" x="0.0" y="114" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изменить код быстрого доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JL-wc-mnB">
+                                        <rect key="frame" x="20" y="21" width="374" height="18"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="6JL-wc-mnB" firstAttribute="leading" secondItem="LfZ-Lf-iO9" secondAttribute="leading" constant="20" id="WSn-5z-ydT"/>
+                                    <constraint firstItem="6JL-wc-mnB" firstAttribute="centerY" secondItem="LfZ-Lf-iO9" secondAttribute="centerY" id="YrN-kQ-RnS"/>
+                                    <constraint firstAttribute="trailing" secondItem="6JL-wc-mnB" secondAttribute="trailing" constant="20" id="ehr-mb-ddr"/>
+                                    <constraint firstAttribute="height" constant="60" id="zNf-ha-hCV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LfZ-Lf-iO9" firstAttribute="top" secondItem="biA-Hm-91c" secondAttribute="bottom" id="1sn-Ho-ppD"/>
+                            <constraint firstItem="biA-Hm-91c" firstAttribute="trailing" secondItem="NLG-8J-Lsm" secondAttribute="trailing" id="2yb-mQ-hhT"/>
+                            <constraint firstItem="LfZ-Lf-iO9" firstAttribute="trailing" secondItem="NLG-8J-Lsm" secondAttribute="trailing" id="8FK-il-RTi"/>
+                            <constraint firstItem="LfZ-Lf-iO9" firstAttribute="leading" secondItem="NLG-8J-Lsm" secondAttribute="leading" id="E5p-qz-wbN"/>
+                            <constraint firstItem="biA-Hm-91c" firstAttribute="top" secondItem="NLG-8J-Lsm" secondAttribute="top" constant="10" id="IKE-1j-1Y9"/>
+                            <constraint firstItem="biA-Hm-91c" firstAttribute="leading" secondItem="NLG-8J-Lsm" secondAttribute="leading" id="TGI-pJ-YHw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NLG-8J-Lsm"/>
+                    </view>
+                    <connections>
+                        <outlet property="activationSwitcher" destination="ud8-P8-bow" id="fUf-Gc-0LF"/>
+                        <outlet property="activationView" destination="biA-Hm-91c" id="aPM-YP-zY2"/>
+                        <outlet property="changeView" destination="LfZ-Lf-iO9" id="o5Y-x8-UOr"/>
+                        <outlet property="changeViewHeight" destination="zNf-ha-hCV" id="PGn-cv-Wbs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDg-XN-hBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4116" y="-642"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about_app_image" width="224" height="208"/>

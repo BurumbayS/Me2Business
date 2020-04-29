@@ -16,6 +16,10 @@ class EditMainInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     var placeInfo: Place!
+    var parentVC: UIViewController!
+    
+    var editLogoHandler: VoidBlock?
+    var imagePicker = UIImagePickerController()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,10 +30,13 @@ class EditMainInfoTableViewCell: UITableViewCell {
     private func configureViews() {
         descriptionTextView.contentInset = UIEdgeInsets(top: 15, left: 10, bottom: 10, right: 10)
         descriptionTextView.delegate = self
+        
+        imagePicker.delegate = self
     }
     
-    func configure(place: Place) {
+    func configure(place: Place, vc: UIViewController) {
         self.placeInfo = place
+        self.parentVC = vc
         
         titleLabel.text = place.name
         categoryLabel.text = place.category
@@ -38,6 +45,31 @@ class EditMainInfoTableViewCell: UITableViewCell {
     }
     
     @IBAction func chooseLogoPressed(_ sender: Any) {
+        parentVC.addActionSheet(titles: ["Камера","Фотопленка"], actions: [openCamera, openPhotolibrary], styles: [.default, .default])
+    }
+    
+    private func openCamera() {
+        imagePicker.sourceType = .camera
+        
+        parentVC.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func openPhotolibrary() {
+        imagePicker.sourceType = .photoLibrary
+        
+        parentVC.present(imagePicker, animated: true, completion: nil)
+    }
+    
+}
+
+extension EditMainInfoTableViewCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            logoImageView.image = pickedImage
+            placeInfo.newLogo = pickedImage
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
 }
 

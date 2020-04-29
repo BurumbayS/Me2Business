@@ -27,6 +27,7 @@ class Place {
     var email: String?
     var website: String?
     var logo: String?
+    var newLogo: UIImage?
     var menus: [Menu]?
     var imageList = [PlaceImage]()
     var imageIDsToRemove = [Int]()

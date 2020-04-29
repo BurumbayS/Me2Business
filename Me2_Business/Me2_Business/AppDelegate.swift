@@ -9,12 +9,12 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Firebase
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -23,7 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Set root view controller
         if let _ = UserDefaults().object(forKey: UserDefaultKeys.token.rawValue) {
-            window?.rootViewController = Storyboard.mainTabsViewController()
+            if let _ = UserDefaults().object(forKey: UserDefaultKeys.accessCode.rawValue) {
+                window?.rootViewController = Storyboard.accessCodeViewController()
+            } else {
+                window?.rootViewController = Storyboard.mainTabsViewController()
+            }
         } else {
             window?.rootViewController = Storyboard.loginViewController()
         }
@@ -33,6 +37,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
         IQKeyboardManager.shared.toolbarTintColor = Color.blue
         
+        //Configure One Signal
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
+
+        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+        // 462f64c8-e66d-4a20-9ccc-389b3c271b55 (production key)
+        OneSignal.initWithLaunchOptions(launchOptions,
+                                        appId: "d69e25ef-0932-4eb1-87b0-b886548ee373",
+                                        handleNotificationAction: nil,
+                                        settings: onesignalInitSettings)
+
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+
+        window?.makeKeyAndVisible()
         return true
     }
 

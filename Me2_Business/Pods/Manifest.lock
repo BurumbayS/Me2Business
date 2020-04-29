@@ -78,6 +78,7 @@ PODS:
   - NVActivityIndicatorView (4.7.0):
     - NVActivityIndicatorView/Presenter (= 4.7.0)
   - NVActivityIndicatorView/Presenter (4.7.0)
+  - OneSignal (2.12.6)
   - Starscream (3.0.6)
   - SwiftyJSON (4.3.0)
 
@@ -91,6 +92,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KKPinCodeTextField
   - NVActivityIndicatorView
+  - OneSignal (< 3.0, >= 2.11.2)
   - Starscream (~> 3.0.2)
   - SwiftyJSON (~> 4.0)
 
@@ -115,6 +117,7 @@ SPEC REPOS:
     - KKPinCodeTextField
     - nanopb
     - NVActivityIndicatorView
+    - OneSignal
     - Starscream
     - SwiftyJSON
 
@@ -138,9 +141,10 @@ SPEC CHECKSUMS:
   KKPinCodeTextField: 63a1fb841fd6a412cf664ef64dc065fc6767bd3c
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
+  OneSignal: a6df91542d1cf133b9dd19d89f2b533d8f2d3163
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: effc9a28c6d8420ff50ac304364d6fdf76df3ac4
+PODFILE CHECKSUM: bab8e4662bbfe6c5f6d2980bbcb1013a0616f3b3
 
 COCOAPODS: 1.7.4

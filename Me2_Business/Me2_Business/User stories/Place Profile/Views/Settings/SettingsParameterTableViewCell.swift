@@ -47,12 +47,25 @@ class SettingsParameterTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switcher: UISwitch!
     
+    var onSwitchHandler: ((Bool) -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        setupSwitcher()
     }
     
-    func configure(parameter: SettingsParameter) {
+    private func setupSwitcher() {
+        switcher.addTarget(self, action: #selector(switchParameter), for: .allEvents)
+    }
+    
+    @objc private func switchParameter() {
+        onSwitchHandler?(switcher.isOn)
+    }
+    
+    func configure(parameter: SettingsParameter, onSwitch: ((Bool) -> ())?) {
+        self.onSwitchHandler = onSwitch
+        
         iconImageView.image = parameter.icon
         titleLabel.text = parameter.title
         titleLabel.textColor = (parameter == .logout) ? Color.red : .black
@@ -60,6 +73,7 @@ class SettingsParameterTableViewCell: UITableViewCell {
         switch parameter {
         case .notifications:
             switcher.isHidden = false
+            switcher.isOn = (UserDefaults().object(forKey: UserDefaultKeys.notificationsSubscriptionStatus.rawValue) as? Bool) ?? false
         default:
             switcher.isHidden = true
         }

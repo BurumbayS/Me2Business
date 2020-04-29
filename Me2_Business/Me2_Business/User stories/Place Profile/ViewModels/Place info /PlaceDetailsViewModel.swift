@@ -16,7 +16,7 @@ class PlaceDetailsViewModel {
     
     init(place: Place, currentPage: Dynamic<Int>) {
         self.place = place
-        self.placeStatus = place.regStatus
+        self.placeStatus = .registered
         self.currentPage = currentPage
     }
 }
